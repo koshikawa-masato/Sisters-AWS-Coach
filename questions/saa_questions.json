@@ -1,0 +1,100 @@
+{
+  "certification": "AWS Solutions Architect Associate (SAA-C03)",
+  "questions": [
+    {
+      "id": 1,
+      "category": "Compute",
+      "question": {
+        "en": "A company needs to run a stateless web application that can scale based on demand. The application requires high availability across multiple Availability Zones. Which AWS service should be used?",
+        "ja": "企業が需要に応じてスケールできるステートレスなWebアプリケーションを実行する必要があります。アプリケーションは複数のアベイラビリティーゾーンにわたる高可用性が必要です。どのAWSサービスを使用すべきですか？"
+      },
+      "options": {
+        "A": "Amazon EC2 with Auto Scaling and Application Load Balancer",
+        "B": "Amazon EC2 Single Instance",
+        "C": "AWS Lambda only",
+        "D": "Amazon Lightsail"
+      },
+      "correct": "A",
+      "explanation": {
+        "en": "EC2 with Auto Scaling automatically adjusts capacity based on demand, and ALB distributes traffic across multiple AZs for high availability. This is the classic architecture for stateless, scalable web applications.",
+        "ja": "Auto Scaling付きのEC2は需要に応じて自動的にキャパシティを調整し、ALBは高可用性のために複数のAZにトラフィックを分散します。これはステートレスでスケーラブルなWebアプリケーションの典型的なアーキテクチャです。"
+      }
+    },
+    {
+      "id": 2,
+      "category": "Storage",
+      "question": {
+        "en": "A company stores files that are frequently accessed for the first 30 days, then rarely accessed afterward. Which S3 storage class is most cost-effective?",
+        "ja": "企業が最初の30日間は頻繁にアクセスされ、その後はほとんどアクセスされないファイルを保存しています。最もコスト効率の良いS3ストレージクラスはどれですか？"
+      },
+      "options": {
+        "A": "S3 Standard",
+        "B": "S3 Intelligent-Tiering",
+        "C": "S3 Glacier",
+        "D": "S3 One Zone-IA"
+      },
+      "correct": "B",
+      "explanation": {
+        "en": "S3 Intelligent-Tiering automatically moves objects between access tiers based on changing access patterns. It's ideal when access patterns are unpredictable or change over time.",
+        "ja": "S3 Intelligent-Tieringはアクセスパターンの変化に基づいてオブジェクトを自動的にアクセス層間で移動します。アクセスパターンが予測不能または時間とともに変化する場合に最適です。"
+      }
+    },
+    {
+      "id": 3,
+      "category": "Database",
+      "question": {
+        "en": "An application needs a fully managed relational database with automatic failover and read replicas. Which AWS service provides this?",
+        "ja": "アプリケーションが自動フェイルオーバーとリードレプリカを備えたフルマネージドのリレーショナルデータベースを必要としています。これを提供するAWSサービスはどれですか？"
+      },
+      "options": {
+        "A": "Amazon DynamoDB",
+        "B": "Amazon RDS Multi-AZ",
+        "C": "Amazon ElastiCache",
+        "D": "Amazon Redshift"
+      },
+      "correct": "B",
+      "explanation": {
+        "en": "Amazon RDS Multi-AZ provides automatic failover to a standby instance in another AZ. Combined with Read Replicas, it offers both high availability and read scaling for relational databases.",
+        "ja": "Amazon RDS Multi-AZは別のAZにあるスタンバイインスタンスへの自動フェイルオーバーを提供します。リードレプリカと組み合わせることで、リレーショナルデータベースの高可用性と読み取りスケーリングの両方を実現します。"
+      }
+    },
+    {
+      "id": 4,
+      "category": "Networking",
+      "question": {
+        "en": "A company wants to connect their on-premises data center to AWS with a dedicated, private connection. Which service should they use?",
+        "ja": "企業がオンプレミスのデータセンターを専用のプライベート接続でAWSに接続したいと考えています。どのサービスを使用すべきですか？"
+      },
+      "options": {
+        "A": "AWS VPN",
+        "B": "AWS Direct Connect",
+        "C": "Amazon VPC Peering",
+        "D": "AWS Transit Gateway"
+      },
+      "correct": "B",
+      "explanation": {
+        "en": "AWS Direct Connect provides a dedicated, private network connection from your premises to AWS. It offers more consistent network performance than internet-based connections and can reduce bandwidth costs.",
+        "ja": "AWS Direct Connectはオンプレミスからの専用のプライベートネットワーク接続を提供します。インターネットベースの接続よりも一貫したネットワークパフォーマンスを提供し、帯域幅コストを削減できます。"
+      }
+    },
+    {
+      "id": 5,
+      "category": "Security",
+      "question": {
+        "en": "Which AWS service should be used to manage encryption keys for encrypting data at rest?",
+        "ja": "保存データを暗号化するための暗号化キーを管理するために使用すべきAWSサービスはどれですか？"
+      },
+      "options": {
+        "A": "AWS IAM",
+        "B": "AWS KMS",
+        "C": "AWS Secrets Manager",
+        "D": "Amazon Cognito"
+      },
+      "correct": "B",
+      "explanation": {
+        "en": "AWS Key Management Service (KMS) is designed to create and manage encryption keys. It integrates with most AWS services to encrypt data at rest and provides centralized key management.",
+        "ja": "AWS Key Management Service (KMS)は暗号化キーの作成と管理のために設計されています。ほとんどのAWSサービスと統合して保存データを暗号化し、集中的なキー管理を提供します。"
+      }
+    }
+  ]
+}
