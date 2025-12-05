@@ -1,6 +1,6 @@
 # Sisters AWS Coach
 
-**3姉妹+おじさんと一緒にAWS資格を学ぼう！**
+**3姉妹+オジサンと一緒にAWS資格を学ぼう！**
 **Learn AWS Certification with 3 Sisters + Uncle!**
 
 ## 🎬 Live Demo / デモ動画
