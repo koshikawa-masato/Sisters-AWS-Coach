@@ -24,7 +24,7 @@ UI_TEXT = {
         "explanation": "解説",
         "listen_explanation": "解説を聴く",
         "quiz_complete": "クイズ完了！",
-        "restart": "もう一度",
+        "restart": "最初から",
         "characters": {
             "Botan": "🌸 牡丹 - カジュアルに楽しく",
             "Kasho": "🎵 Kasho - しっかり正確に",
