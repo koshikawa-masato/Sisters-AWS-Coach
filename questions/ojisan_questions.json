@@ -1,0 +1,3106 @@
+{
+  "character": "Ojisan",
+  "specialty": "現場の知恵・失敗談・セキュリティ",
+  "questions": [
+    {
+      "id": 1,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "AWSルートアカウントで絶対にやってはいけないことは？",
+        "en": "What should you NEVER do with the AWS root account?"
+      },
+      "options": {
+        "A": {
+          "ja": "MFAを有効にする",
+          "en": "Enable MFA"
+        },
+        "B": {
+          "ja": "日常業務に使う",
+          "en": "Use for daily operations"
+        },
+        "C": {
+          "ja": "請求アラートを設定する",
+          "en": "Set up billing alerts"
+        },
+        "D": {
+          "ja": "パスワードを強くする",
+          "en": "Use a strong password"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ルートアカウントを普段使いするな！俺は実際にルートアカウントが乗っ取られて一晩で$50,000請求された会社を知ってる。IAMユーザーを作れ、これは本当だぞ。",
+        "en": "Never use root for daily work! I've seen a company get hacked and charged $50,000 overnight because someone used root credentials. Create IAM users, trust me on this."
+      }
+    },
+    {
+      "id": 2,
+      "category": "緊急対応",
+      "question": {
+        "ja": "「やべぇ、アクセスキーがGitHubに上がっちゃった！」最初にやることは？",
+        "en": "Oh no, you accidentally pushed your access keys to GitHub! What's the FIRST thing to do?"
+      },
+      "options": {
+        "A": {
+          "ja": "GitHubのリポジトリを削除する",
+          "en": "Delete the GitHub repository"
+        },
+        "B": {
+          "ja": "上司に報告する",
+          "en": "Report to supervisor"
+        },
+        "C": {
+          "ja": "キーを即座に無効化/ローテーションする",
+          "en": "Immediately disable/rotate the key"
+        },
+        "D": {
+          "ja": "様子を見る",
+          "en": "Wait and see"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "まずキーを無効化しろ！1秒でも早く！GitHubには悪意あるボットが24時間パトロールしてて、公開されたキーは数分で悪用される。俺の同僚は10分で$3,000マイニングされた。",
+        "en": "Invalidate the keys IMMEDIATELY! Malicious bots patrol GitHub 24/7 - exposed keys get exploited within minutes. My colleague got $3,000 in mining charges in just 10 minutes."
+      }
+    },
+    {
+      "id": 3,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "「バックアップは取ってあります」←これを信用していいのはいつ？",
+        "en": "When should you trust 'We have backups'?"
+      },
+      "options": {
+        "A": {
+          "ja": "担当者がそう言った時",
+          "en": "担当者がそう言った時"
+        },
+        "B": {
+          "ja": "ドキュメントに書いてある時",
+          "en": "ドキュメントに書いてある時"
+        },
+        "C": {
+          "ja": "実際にリストアをテストした後",
+          "en": "実際にリストアをテストした後"
+        },
+        "D": {
+          "ja": "自動バックアップを設定した時",
+          "en": "自動バックアップを設定した時"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "リストアをテストしてないバックアップはバックアップじゃない！俺は「バックアップある」って言ってた会社が、いざ復旧しようとしたら壊れてて泣いてるのを何度も見てきた。四半期ごとにテストしろ。",
+        "en": "An untested backup isn't a backup! I've seen too many teams cry when their 'backups' turned out corrupted. Test your restores quarterly, minimum."
+      }
+    },
+    {
+      "id": 4,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "Security Groupで0.0.0.0/0からSSH(22番ポート)を許可するのは？",
+        "en": "Allowing SSH (port 22) from 0.0.0.0/0 in a Security Group is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利で良い設定",
+          "en": "便利で良い設定"
+        },
+        "B": {
+          "ja": "危険すぎる設定",
+          "en": "危険すぎる設定"
+        },
+        "C": {
+          "ja": "AWSの推奨設定",
+          "en": "AWSの推奨設定"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "世界中から誰でもSSHできる状態だぞ！？ブルートフォース攻撃の餌食だ。IPを制限するか、Session Managerを使え。俺は「ちょっとだけ」のつもりで開けて3日でハッキングされたサーバーを見たことがある。",
+        "en": "You're letting ANYONE in the world SSH into your server! It's a brute force target. Restrict IPs or use Session Manager. I've seen servers hacked within 3 days of opening this 'temporarily'."
+      }
+    },
+    {
+      "id": 5,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "本番環境のモニタリングアラートはいつ設定する？",
+        "en": "When should you set up monitoring alerts for production?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題が起きてから",
+          "en": "問題が起きてから"
+        },
+        "B": {
+          "ja": "お客さんからクレームが来たら",
+          "en": "お客さんからクレームが来たら"
+        },
+        "C": {
+          "ja": "本番リリース前",
+          "en": "本番リリース前"
+        },
+        "D": {
+          "ja": "暇な時",
+          "en": "暇な時"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "リリース前に設定しろ！「お客さんからサイト落ちてるって連絡来た」が最初の検知なんて最悪だぞ。俺もそれで胃を壊したことがある。CloudWatchアラームは保険だと思え。",
+        "en": "Set it up BEFORE launch! Learning about outages from angry customers is the worst. I've gotten stress ulcers from that. Think of CloudWatch alarms as insurance."
+      }
+    },
+    {
+      "id": 6,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "S3バケットを「パブリック」に設定したらどうなる可能性がある？",
+        "en": "What could happen if you set an S3 bucket to 'public'?"
+      },
+      "options": {
+        "A": {
+          "ja": "アクセスが速くなる",
+          "en": "アクセスが速くなる"
+        },
+        "B": {
+          "ja": "世界中の誰でもファイルを見られる",
+          "en": "世界中の誰でもファイルを見られる"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "特に何も起きない",
+          "en": "特に何も起きない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "2019年にCapital Oneで1億人分の個人情報が漏洩したのを覚えてるか？S3の設定ミスが原因だ。「とりあえずパブリック」は絶対ダメ。俺の知り合いの会社も顧客データ流出でニュースになった。",
+        "en": "Remember the Capital One breach in 2019? 100 million records leaked due to S3 misconfiguration. Never use 'public' unless absolutely necessary. I know a company that made headlines for leaking customer data this way."
+      }
+    },
+    {
+      "id": 7,
+      "category": "失敗談",
+      "question": {
+        "ja": "本番のRDSインスタンスを誤って削除してしまった！防げた方法は？",
+        "en": "You accidentally deleted the production RDS instance! How could this have been prevented?"
+      },
+      "options": {
+        "A": {
+          "ja": "大きなインスタンスを使う",
+          "en": "大きなインスタンスを使う"
+        },
+        "B": {
+          "ja": "削除保護を有効にしておく",
+          "en": "削除保護を有効にしておく"
+        },
+        "C": {
+          "ja": "もっと高いプランにする",
+          "en": "もっと高いプランにする"
+        },
+        "D": {
+          "ja": "運に任せる",
+          "en": "運に任せる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "削除保護（Deletion Protection）は必ず有効にしろ！俺は新人が「このインスタンス要らないでしょ」って本番DBを消したのを見た。復旧に48時間かかって、CTOが泣いてた。",
+        "en": "Always enable Deletion Protection! I watched a junior engineer delete production DB thinking 'we don't need this anymore.' Recovery took 48 hours and the CTO literally cried."
+      }
+    },
+    {
+      "id": 8,
+      "category": "コスト事故",
+      "question": {
+        "ja": "開発環境のEC2を止め忘れて1ヶ月放置。防ぐ方法は？",
+        "en": "Left a dev EC2 running for a month by accident. How to prevent this?"
+      },
+      "options": {
+        "A": {
+          "ja": "より大きなインスタンスを使う",
+          "en": "より大きなインスタンスを使う"
+        },
+        "B": {
+          "ja": "請求アラートとタグ付けルール",
+          "en": "請求アラートとタグ付けルール"
+        },
+        "C": {
+          "ja": "ルートアカウントで管理",
+          "en": "ルートアカウントで管理"
+        },
+        "D": {
+          "ja": "気をつける",
+          "en": "気をつける"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "請求アラートは絶対設定しろ！俺は月末に$2,000の請求書見て青ざめた経験がある。「Environment: dev」タグと予算アラートで、想定外の課金を防げ。",
+        "en": "ALWAYS set up billing alerts! I once got a $2,000 surprise at month end. Use 'Environment: dev' tags and budget alerts to catch runaway costs before they hurt."
+      }
+    },
+    {
+      "id": 9,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "IAMユーザーに「AdministratorAccess」を与えるのは？",
+        "en": "Giving an IAM user 'AdministratorAccess' is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利で効率的",
+          "en": "便利で効率的"
+        },
+        "B": {
+          "ja": "最小権限の原則に反する",
+          "en": "最小権限の原則に反する"
+        },
+        "C": {
+          "ja": "AWSの推奨事項",
+          "en": "AWSの推奨事項"
+        },
+        "D": {
+          "ja": "セキュリティ上問題ない",
+          "en": "セキュリティ上問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「面倒だから全権限あげちゃえ」は最悪の判断だ。そのアカウントが乗っ取られたら全部終わり。必要な権限だけ与える「最小権限の原則」を守れ。俺の前の会社はこれで大事故を起こした。",
+        "en": "Giving everyone admin rights because 'it's easier' is a disaster waiting to happen. If that account gets compromised, EVERYTHING is at risk. Follow least privilege. My previous company learned this the hard way."
+      }
+    },
+    {
+      "id": 10,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "AWSリソースの「タグ付け」が重要な理由は？",
+        "en": "Why is 'tagging' AWS resources important?"
+      },
+      "options": {
+        "A": {
+          "ja": "見た目がかっこいいから",
+          "en": "見た目がかっこいいから"
+        },
+        "B": {
+          "ja": "コスト管理と責任者特定のため",
+          "en": "コスト管理と責任者特定のため"
+        },
+        "C": {
+          "ja": "AWSが強制しているから",
+          "en": "AWSが強制しているから"
+        },
+        "D": {
+          "ja": "特に理由はない",
+          "en": "特に理由はない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "タグがないと「この$500のEC2誰が作った？」が分からなくなる。俺は3ヶ月も放置されてた謎のリソースを発見したことがある。Environment、Owner、Projectタグは必須だ。",
+        "en": "Without tags, you can't figure out 'who created this $500 EC2?' I once found mystery resources running for 3 months with no owner. Environment, Owner, and Project tags are mandatory."
+      }
+    },
+    {
+      "id": 11,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "MFA（多要素認証）を設定すべきアカウントは？",
+        "en": "Which accounts should have MFA enabled?"
+      },
+      "options": {
+        "A": {
+          "ja": "ルートアカウントだけ",
+          "en": "ルートアカウントだけ"
+        },
+        "B": {
+          "ja": "管理者だけ",
+          "en": "管理者だけ"
+        },
+        "C": {
+          "ja": "全てのIAMユーザー",
+          "en": "全てのIAMユーザー"
+        },
+        "D": {
+          "ja": "誰にも不要",
+          "en": "誰にも不要"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "全員だ！特にルートと管理者は絶対。パスワードは漏れる前提で考えろ。俺の知り合いはMFAなしで、フィッシングメールに引っかかって全環境を乗っ取られた。",
+        "en": "Everyone! Especially root and admins. Assume passwords will leak. A friend of mine had no MFA, fell for a phishing email, and lost control of their entire environment."
+      }
+    },
+    {
+      "id": 12,
+      "category": "失敗談",
+      "question": {
+        "ja": "「テスト用だから」とHTTPでAPIを公開。何が起きた？",
+        "en": "Published an API over HTTP 'because it's just for testing.' What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題なく動いた",
+          "en": "問題なく動いた"
+        },
+        "B": {
+          "ja": "認証情報が盗まれた",
+          "en": "認証情報が盗まれた"
+        },
+        "C": {
+          "ja": "速度が上がった",
+          "en": "速度が上がった"
+        },
+        "D": {
+          "ja": "コストが下がった",
+          "en": "コストが下がった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "HTTPは暗号化されてない！同じWi-Fiの人に通信内容丸見えだ。「テスト用」でも本番のAPIキーや認証情報を使ってたら、それが盗まれる。必ずHTTPSを使え。",
+        "en": "HTTP is unencrypted! Anyone on the same network can see your traffic. If you used real credentials for 'testing,' they got stolen. Always use HTTPS, no exceptions."
+      }
+    },
+    {
+      "id": 13,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "本番デプロイの前に絶対やるべきことは？",
+        "en": "What should you ALWAYS do before deploying to production?"
+      },
+      "options": {
+        "A": {
+          "ja": "お祈りする",
+          "en": "お祈りする"
+        },
+        "B": {
+          "ja": "ステージング環境でテスト",
+          "en": "ステージング環境でテスト"
+        },
+        "C": {
+          "ja": "直接本番で試す",
+          "en": "直接本番で試す"
+        },
+        "D": {
+          "ja": "ドキュメントを書く",
+          "en": "ドキュメントを書く"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "本番に直接デプロイは自殺行為だ！俺は「ちょっとした修正」を直接本番に入れて、3時間サービス停止させた経験がある。ステージング環境は命綱だと思え。",
+        "en": "Deploying directly to production is suicide! I once pushed a 'small fix' directly to prod and caused a 3-hour outage. Staging environments are your lifeline."
+      }
+    },
+    {
+      "id": 14,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "EC2インスタンスにアクセスキーを直接保存するのは？",
+        "en": "Storing access keys directly on an EC2 instance is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利な方法",
+          "en": "便利な方法"
+        },
+        "B": {
+          "ja": "セキュリティリスク",
+          "en": "セキュリティリスク"
+        },
+        "C": {
+          "ja": "AWSの推奨方法",
+          "en": "AWSの推奨方法"
+        },
+        "D": {
+          "ja": "必要な設定",
+          "en": "必要な設定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "IAMロールを使え！インスタンスにキーを置くと、そのサーバーが乗っ取られた時にキーも盗まれる。IAMロールならキーの管理が不要で、自動でローテーションされる。",
+        "en": "Use IAM Roles instead! If you store keys on an instance and it gets compromised, those keys are stolen too. IAM Roles handle credentials automatically and rotate them for you."
+      }
+    },
+    {
+      "id": 15,
+      "category": "コスト事故",
+      "question": {
+        "ja": "NATゲートウェイの請求が想定の10倍に！原因として考えられるのは？",
+        "en": "NAT Gateway bill is 10x expected! What's likely the cause?"
+      },
+      "options": {
+        "A": {
+          "ja": "インスタンスが大きすぎる",
+          "en": "インスタンスが大きすぎる"
+        },
+        "B": {
+          "ja": "大量のデータ転送",
+          "en": "大量のデータ転送"
+        },
+        "C": {
+          "ja": "S3の保存容量",
+          "en": "S3の保存容量"
+        },
+        "D": {
+          "ja": "CloudWatchログ",
+          "en": "CloudWatchログ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "NATゲートウェイは転送量課金だ！プライベートサブネットから大量のAPIコールやログ送信があると爆発する。俺は月$3,000のNAT請求を見たことがある。VPCエンドポイントで節約しろ。",
+        "en": "NAT Gateway charges per GB transferred! Heavy API calls or log shipping from private subnets can explode costs. I've seen $3,000/month NAT bills. Use VPC Endpoints to save money."
+      }
+    },
+    {
+      "id": 16,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "Secrets Managerを使う理由は？",
+        "en": "Why use Secrets Manager?"
+      },
+      "options": {
+        "A": {
+          "ja": "ファイルより速いから",
+          "en": "ファイルより速いから"
+        },
+        "B": {
+          "ja": "認証情報を安全に管理・ローテーションできる",
+          "en": "認証情報を安全に管理・ローテーションできる"
+        },
+        "C": {
+          "ja": "無料だから",
+          "en": "無料だから"
+        },
+        "D": {
+          "ja": "見た目がかっこいいから",
+          "en": "見た目がかっこいいから"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "パスワードをコードや設定ファイルに書くな！Secrets Managerなら暗号化保存、アクセス制御、自動ローテーションができる。俺は設定ファイルのDBパスワードがGitHubに漏れた事故を見た。",
+        "en": "Never put passwords in code or config files! Secrets Manager encrypts, controls access, and rotates automatically. I've seen DB passwords in config files leak via GitHub."
+      }
+    },
+    {
+      "id": 17,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "CloudTrailを有効にする理由は？",
+        "en": "Why should you enable CloudTrail?"
+      },
+      "options": {
+        "A": {
+          "ja": "サーバーが速くなる",
+          "en": "サーバーが速くなる"
+        },
+        "B": {
+          "ja": "誰が何をしたか記録される",
+          "en": "誰が何をしたか記録される"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "特に意味はない",
+          "en": "特に意味はない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「誰がこのリソース消した！？」って時に、CloudTrailがないと犯人が分からない。俺はCloudTrailのおかげで、退職した社員が最後にやらかした設定変更を特定できた。",
+        "en": "When someone asks 'WHO deleted this!?', CloudTrail is your answer. I once used it to trace a config change back to an employee who had just quit. It's your audit trail."
+      }
+    },
+    {
+      "id": 18,
+      "category": "失敗談",
+      "question": {
+        "ja": "Auto Scalingの最大数を設定し忘れた。何が起きた？",
+        "en": "Forgot to set Auto Scaling maximum. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        },
+        "B": {
+          "ja": "インスタンスが無限に増えて請求爆発",
+          "en": "インスタンスが無限に増えて請求爆発"
+        },
+        "C": {
+          "ja": "自動で止まった",
+          "en": "自動で止まった"
+        },
+        "D": {
+          "ja": "パフォーマンスが上がった",
+          "en": "パフォーマンスが上がった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "DDoS攻撃や設定ミスで、インスタンスが100台以上立ち上がった事例を知ってる。請求書見て目が飛び出たって。最小・最大・希望台数は必ず設定しろ。",
+        "en": "I know cases where DDoS or misconfig caused 100+ instances to spin up. The bill made their eyes pop out. Always set min, max, and desired capacity limits."
+      }
+    },
+    {
+      "id": 19,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番DBのスナップショットを「パブリック」で共有するのは？",
+        "en": "Sharing a production DB snapshot as 'public' is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利な共有方法",
+          "en": "便利な共有方法"
+        },
+        "B": {
+          "ja": "重大なセキュリティ違反",
+          "en": "重大なセキュリティ違反"
+        },
+        "C": {
+          "ja": "推奨される方法",
+          "en": "推奨される方法"
+        },
+        "D": {
+          "ja": "コスト削減になる",
+          "en": "コスト削減になる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "パブリックスナップショット＝世界中の誰でもDBをコピーできる。顧客データ、パスワード、全部漏れる。2020年に実際にこれで大企業のデータが漏れた事件があった。",
+        "en": "Public snapshot = anyone in the world can copy your DB. Customer data, passwords, everything exposed. There was a major breach in 2020 from exactly this mistake."
+      }
+    },
+    {
+      "id": 20,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "障害発生時、最初に確認すべきAWSサービスは？",
+        "en": "During an outage, what AWS service should you check first?"
+      },
+      "options": {
+        "A": {
+          "ja": "S3",
+          "en": "S3"
+        },
+        "B": {
+          "ja": "AWS Health Dashboard",
+          "en": "AWS Health Dashboard"
+        },
+        "C": {
+          "ja": "Lambda",
+          "en": "Lambda"
+        },
+        "D": {
+          "ja": "DynamoDB",
+          "en": "DynamoDB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "まずAWS側の障害かどうか確認しろ！俺は2時間原因調査して、結局AWS側のus-east-1障害だったことがある。Health Dashboardを最初に見る癖をつけろ。",
+        "en": "First check if it's AWS's problem! I once spent 2 hours debugging only to find it was a us-east-1 outage. Make checking Health Dashboard your first habit during incidents."
+      }
+    },
+    {
+      "id": 21,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "GuardDutyが検知するものは？",
+        "en": "What does GuardDuty detect?"
+      },
+      "options": {
+        "A": {
+          "ja": "コストの異常",
+          "en": "コストの異常"
+        },
+        "B": {
+          "ja": "不正アクセスや脅威",
+          "en": "不正アクセスや脅威"
+        },
+        "C": {
+          "ja": "パフォーマンス問題",
+          "en": "パフォーマンス問題"
+        },
+        "D": {
+          "ja": "ストレージ容量",
+          "en": "ストレージ容量"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "GuardDutyは脅威検知サービスだ。不審なAPIコール、マルウェア通信、暗号通貨マイニングを検知する。俺の担当アカウントでビットコインマイニングを検知して、大事故を防いだことがある。",
+        "en": "GuardDuty is threat detection. It catches suspicious API calls, malware communication, crypto mining. It once caught Bitcoin mining in an account I managed, preventing a major incident."
+      }
+    },
+    {
+      "id": 22,
+      "category": "コスト事故",
+      "question": {
+        "ja": "EBSボリュームを削除せずにEC2だけ削除。何が起きる？",
+        "en": "Deleted EC2 but left EBS volumes. What happens?"
+      },
+      "options": {
+        "A": {
+          "ja": "自動で消える",
+          "en": "自動で消える"
+        },
+        "B": {
+          "ja": "EBSの課金が続く",
+          "en": "EBSの課金が続く"
+        },
+        "C": {
+          "ja": "データが別のEC2に移る",
+          "en": "データが別のEC2に移る"
+        },
+        "D": {
+          "ja": "何も起きない",
+          "en": "何も起きない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "孤立したEBSボリュームは課金され続ける！俺は100個以上の「誰のか分からないボリューム」を発見したことがある。EC2削除時に「削除時にボリュームを削除」にチェックを入れろ。",
+        "en": "Orphaned EBS volumes keep charging! I once found 100+ 'mystery volumes' no one knew about. Check 'Delete on Termination' when launching EC2, or clean up manually."
+      }
+    },
+    {
+      "id": 23,
+      "category": "失敗談",
+      "question": {
+        "ja": "CloudFormationスタックを削除したら本番DBも消えた！原因は？",
+        "en": "Deleted CloudFormation stack and production DB disappeared! Why?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSのバグ",
+          "en": "AWSのバグ"
+        },
+        "B": {
+          "ja": "DeletionPolicy: Retainを設定していなかった",
+          "en": "DeletionPolicy: Retainを設定していなかった"
+        },
+        "C": {
+          "ja": "DBが壊れていた",
+          "en": "DBが壊れていた"
+        },
+        "D": {
+          "ja": "権限の問題",
+          "en": "権限の問題"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルトではスタック削除時にリソースも消える！RDSやS3には必ずDeletionPolicy: Retainを設定しろ。俺の同僚は開発スタックと間違えて本番を消して、転職することになった。",
+        "en": "By default, stack deletion removes resources! Always set DeletionPolicy: Retain for RDS and S3. A colleague deleted prod instead of dev and... let's say they work elsewhere now."
+      }
+    },
+    {
+      "id": 24,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "Lambda関数のタイムアウトは何を考慮して設定すべき？",
+        "en": "What should you consider when setting Lambda timeout?"
+      },
+      "options": {
+        "A": {
+          "ja": "常に最大の15分にする",
+          "en": "常に最大の15 minutesにする"
+        },
+        "B": {
+          "ja": "実際の処理時間より少し余裕を持たせる",
+          "en": "実際の処理時間より少し余裕を持たせる"
+        },
+        "C": {
+          "ja": "1秒に固定する",
+          "en": "1 second(s)に固定する"
+        },
+        "D": {
+          "ja": "考えなくていい",
+          "en": "考えなくていい"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "タイムアウトは長すぎても短すぎてもダメ！長すぎるとエラー時に無駄にコストがかかる。短すぎると正常処理も失敗する。俺は15分設定のLambdaが無限ループして大変なことになった現場を見た。",
+        "en": "Timeout shouldn't be too long or too short! Too long wastes money on errors, too short fails valid requests. I saw a 15-min Lambda enter an infinite loop - it wasn't pretty."
+      }
+    },
+    {
+      "id": 25,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "VPC Flow Logsを有効にする理由は？",
+        "en": "Why enable VPC Flow Logs?"
+      },
+      "options": {
+        "A": {
+          "ja": "ネットワークが速くなる",
+          "en": "ネットワークが速くなる"
+        },
+        "B": {
+          "ja": "通信の記録と分析ができる",
+          "en": "通信の記録と分析ができる"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「誰がどこに通信してるか」を記録するんだ。不正アクセスの調査や、想定外の通信先の発見に必須。俺はFlow Logsで、マルウェアが中国のIPに通信してるのを発見したことがある。",
+        "en": "It records 'who communicates with whom.' Essential for investigating attacks and finding unexpected connections. I once found malware communicating with Chinese IPs through Flow Logs."
+      }
+    },
+    {
+      "id": 26,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番環境で「テスト」という名前のリソースを使うのは？",
+        "en": "Using resources named 'test' in production is?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        },
+        "B": {
+          "ja": "混乱と事故の原因",
+          "en": "混乱と事故の原因"
+        },
+        "C": {
+          "ja": "推奨される方法",
+          "en": "推奨される方法"
+        },
+        "D": {
+          "ja": "コスト削減になる",
+          "en": "コスト削減になる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「test」って名前があると「消していいんだ」と思われる。俺は本番で使ってた「test-db」が「テストでしょ？」って消された事故を知ってる。命名規則は厳格に守れ。",
+        "en": "Names with 'test' make people think 'OK to delete.' I know of a 'test-db' in production that got deleted because someone assumed it was just a test. Naming conventions save lives."
+      }
+    },
+    {
+      "id": 27,
+      "category": "コスト事故",
+      "question": {
+        "ja": "Elastic IPを取得して、何にも紐付けずに放置。何が起きる？",
+        "en": "Got an Elastic IP but left it unattached. What happens?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料で保持できる",
+          "en": "無料で保持できる"
+        },
+        "B": {
+          "ja": "使ってないのに課金される",
+          "en": "使ってないのに課金される"
+        },
+        "C": {
+          "ja": "自動で解放される",
+          "en": "自動で解放される"
+        },
+        "D": {
+          "ja": "他の人が使える",
+          "en": "他の人が使える"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "未使用のElastic IPには課金される！AWSの「もったいない税」だ。使ってないなら解放しろ。俺は20個の未使用EIPを見つけて、月$50節約したことがある。",
+        "en": "Unused Elastic IPs cost money! It's AWS's 'waste tax.' Release them if not using. I once found 20 unused EIPs and saved $50/month just by releasing them."
+      }
+    },
+    {
+      "id": 28,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "複数リージョンを使う時、最初に考えるべきことは？",
+        "en": "When using multiple regions, what should you consider first?"
+      },
+      "options": {
+        "A": {
+          "ja": "かっこいいから使う",
+          "en": "かっこいいから使う"
+        },
+        "B": {
+          "ja": "データの法規制とレイテンシ",
+          "en": "データの法規制とレイテンシ"
+        },
+        "C": {
+          "ja": "とりあえず全リージョン使う",
+          "en": "とりあえず全リージョン使う"
+        },
+        "D": {
+          "ja": "コストだけ",
+          "en": "コストだけ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "GDPRならEU内にデータを置く必要がある。日本の個人情報保護法も同様。俺はこれを無視して後から全部移行することになったプロジェクトを見た。法規制は最初に確認しろ。",
+        "en": "GDPR requires data in EU. Similar rules exist in Japan. I've seen projects that ignored this and had to migrate everything later. Check legal requirements FIRST."
+      }
+    },
+    {
+      "id": 29,
+      "category": "失敗談",
+      "question": {
+        "ja": "Route 53のTTLを長くしすぎた。何が起きた？",
+        "en": "Set Route 53 TTL too long. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "速くなった",
+          "en": "速くなった"
+        },
+        "B": {
+          "ja": "DNS変更が反映されるまで数日かかった",
+          "en": "DNS変更が反映されるまで数日かかった"
+        },
+        "C": {
+          "ja": "コストが下がった",
+          "en": "コストが下がった"
+        },
+        "D": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "TTL 86400（24時間）とかにすると、サーバー移行時に地獄を見る。俺は緊急サーバー移行で、TTLが長すぎて「早くしろ！」と怒られながら何もできなかった経験がある。",
+        "en": "TTL of 86400 (24 hours) means hell during server migration. I was once screamed at to 'fix it NOW!' during an emergency migration but couldn't do anything because TTL was too long."
+      }
+    },
+    {
+      "id": 30,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "WAF (Web Application Firewall) を使う理由は？",
+        "en": "Why use WAF (Web Application Firewall)?"
+      },
+      "options": {
+        "A": {
+          "ja": "サイトが速くなる",
+          "en": "サイトが速くなる"
+        },
+        "B": {
+          "ja": "SQLインジェクションやXSSを防ぐ",
+          "en": "SQLインジェクションやXSSを防ぐ"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "WAFがないと、悪意あるリクエストがそのままアプリに届く。俺の担当サイトがSQLインジェクション攻撃を受けて、WAF導入後に1日1000件以上ブロックしてるのを見て震えた。",
+        "en": "Without WAF, malicious requests hit your app directly. After implementing WAF on a site I managed, I was shocked to see it blocking 1000+ attacks daily that had been getting through."
+      }
+    },
+    {
+      "id": 31,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "開発者全員に同じIAMユーザーを共有させるのは？",
+        "en": "Having all developers share the same IAM user is?"
+      },
+      "options": {
+        "A": {
+          "ja": "効率的",
+          "en": "効率的"
+        },
+        "B": {
+          "ja": "監査不可能で危険",
+          "en": "監査不可能で危険"
+        },
+        "C": {
+          "ja": "コスト削減になる",
+          "en": "コスト削減になる"
+        },
+        "D": {
+          "ja": "AWSの推奨方法",
+          "en": "AWSの推奨方法"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "誰が何をしたか分からなくなる！問題が起きても犯人特定不可能。俺は共有アカウントで誰かが本番データを消して、調査できなかった事故を見た。一人一アカウントは鉄則だ。",
+        "en": "You can't tell who did what! When problems occur, you can't identify the culprit. I've seen shared accounts lead to deleted prod data with no way to investigate. One user per person, period."
+      }
+    },
+    {
+      "id": 32,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "インシデント発生時、最も重要なことは？",
+        "en": "During an incident, what's most important?"
+      },
+      "options": {
+        "A": {
+          "ja": "犯人探し",
+          "en": "犯人探し"
+        },
+        "B": {
+          "ja": "サービス復旧を最優先",
+          "en": "サービス復旧を最優先"
+        },
+        "C": {
+          "ja": "報告書作成",
+          "en": "報告書作成"
+        },
+        "D": {
+          "ja": "休憩を取る",
+          "en": "休憩を取る"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "まず復旧！原因調査と犯人探しは後！俺は「誰がやった！」って会議してる間にユーザーからクレームの嵐が来た現場を見た。お客さんを待たせるな。",
+        "en": "Restore service FIRST! Investigation comes later! I've seen teams debate 'who did this!' while customers flooded them with complaints. Don't make users wait."
+      }
+    },
+    {
+      "id": 33,
+      "category": "コスト事故",
+      "question": {
+        "ja": "CloudWatch Logsが予想外に高額に。原因として考えられるのは？",
+        "en": "CloudWatch Logs unexpectedly expensive. Likely cause?"
+      },
+      "options": {
+        "A": {
+          "ja": "ダッシュボードが多い",
+          "en": "ダッシュボードが多い"
+        },
+        "B": {
+          "ja": "ログの保存期間が無期限",
+          "en": "ログの保存期間が無期限"
+        },
+        "C": {
+          "ja": "アラームが多い",
+          "en": "アラームが多い"
+        },
+        "D": {
+          "ja": "メトリクスが多い",
+          "en": "メトリクスが多い"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルトは「無期限保存」だ！ログが溜まり続けて請求も膨らむ。俺は3年分のログで月$500払ってたプロジェクトを見た。保存期間を設定しろ。30日か90日で十分なことが多い。",
+        "en": "Default is 'never expire'! Logs pile up and so do bills. I saw a project paying $500/month for 3 years of logs. Set retention periods. 30 or 90 days is often enough."
+      }
+    },
+    {
+      "id": 34,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Configを有効にする理由は？",
+        "en": "Why enable AWS Config?"
+      },
+      "options": {
+        "A": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "B": {
+          "ja": "リソースの設定変更を追跡できる",
+          "en": "リソースの設定変更を追跡できる"
+        },
+        "C": {
+          "ja": "パフォーマンスが上がる",
+          "en": "パフォーマンスが上がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「誰がSecurity Groupの設定変えた！？」が分かるようになる。コンプライアンスチェックも自動化できる。俺はConfigのおかげで、ルール違反の設定変更を即座に検知できるようになった。",
+        "en": "You can track 'who changed that Security Group!?' and automate compliance checks. Config helped me instantly detect non-compliant changes that would've caused problems."
+      }
+    },
+    {
+      "id": 35,
+      "category": "失敗談",
+      "question": {
+        "ja": "Lambda関数を再帰的に呼び出す設計にした。何が起きた？",
+        "en": "Designed Lambda to call itself recursively. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "効率が上がった",
+          "en": "効率が上がった"
+        },
+        "B": {
+          "ja": "無限ループで請求爆発",
+          "en": "無限ループで請求爆発"
+        },
+        "C": {
+          "ja": "自動で止まった",
+          "en": "自動で止まった"
+        },
+        "D": {
+          "ja": "パフォーマンスが上がった",
+          "en": "パフォーマンスが上がった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "S3イベント→Lambda→S3書き込み→S3イベント→Lambda→...の無限ループで、一晩で$10,000請求されたケースがある。再帰呼び出しは慎重に設計しろ。",
+        "en": "S3 event → Lambda → S3 write → S3 event → Lambda → ... infinite loop. Someone got a $10,000 bill overnight. Design recursive calls VERY carefully."
+      }
+    },
+    {
+      "id": 36,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番環境で直接コンソールから設定変更するのは？",
+        "en": "Making config changes directly via console in production is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利で効率的",
+          "en": "便利で効率的"
+        },
+        "B": {
+          "ja": "追跡困難で危険",
+          "en": "追跡困難で危険"
+        },
+        "C": {
+          "ja": "推奨される方法",
+          "en": "推奨される方法"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "コンソールでポチポチ変更すると、何を変えたか分からなくなる。Infrastructure as Code（CloudFormation、Terraform）で管理しろ。俺は「誰がここ触った？」で数時間無駄にした経験がある。",
+        "en": "Console clicks leave no trace of what changed. Use Infrastructure as Code (CloudFormation, Terraform). I've wasted hours asking 'who touched this?' with no way to know."
+      }
+    },
+    {
+      "id": 37,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "大規模な変更をする前に必ずやるべきことは？",
+        "en": "What should you ALWAYS do before major changes?"
+      },
+      "options": {
+        "A": {
+          "ja": "上司に報告",
+          "en": "上司に報告"
+        },
+        "B": {
+          "ja": "変更計画とロールバック手順の準備",
+          "en": "変更計画とロールバック手順の準備"
+        },
+        "C": {
+          "ja": "祈る",
+          "en": "祈る"
+        },
+        "D": {
+          "ja": "何も考えずに実行",
+          "en": "何も考えずに実行"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「戻せない変更」は最悪だ。俺はロールバック手順なしでDB移行して、失敗した時に3日徹夜で復旧作業したことがある。戻し方を必ず先に考えろ。",
+        "en": "Changes you can't reverse are the worst. I once did a DB migration without rollback plans, failed, and worked 3 nights straight to recover. ALWAYS plan how to revert."
+      }
+    },
+    {
+      "id": 38,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "KMS (Key Management Service) を使う理由は？",
+        "en": "Why use KMS (Key Management Service)?"
+      },
+      "options": {
+        "A": {
+          "ja": "データが速くなる",
+          "en": "データが速くなる"
+        },
+        "B": {
+          "ja": "暗号化キーを安全に管理できる",
+          "en": "暗号化キーを安全に管理できる"
+        },
+        "C": {
+          "ja": "無料だから",
+          "en": "無料だから"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "暗号化キーを自分で管理するのは危険だ。KMSなら鍵のローテーション、アクセス制御、監査ログが自動。俺は自前で鍵管理してた会社が、鍵紛失でデータ復旧不能になったのを見た。",
+        "en": "Managing encryption keys yourself is risky. KMS handles rotation, access control, and audit logs automatically. I've seen a company lose their self-managed keys and their data became unrecoverable."
+      }
+    },
+    {
+      "id": 39,
+      "category": "コスト事故",
+      "question": {
+        "ja": "データ転送料金が想定外に高い！主な原因は？",
+        "en": "Data transfer costs unexpectedly high! Main cause?"
+      },
+      "options": {
+        "A": {
+          "ja": "S3の保存量",
+          "en": "S3の保存量"
+        },
+        "B": {
+          "ja": "インターネットへの大量データ送信",
+          "en": "インターネットへの大量データ送信"
+        },
+        "C": {
+          "ja": "EC2のCPU使用率",
+          "en": "EC2のCPU使用率"
+        },
+        "D": {
+          "ja": "Lambda実行回数",
+          "en": "Lambda実行回数"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "AWSから外へのデータ転送は高い！特に動画配信や大容量ファイルのダウンロード。俺はCloudFrontを使わずに直接S3配信して、月$2,000の転送料金を払ってたサイトを見た。",
+        "en": "Outbound data transfer is expensive! Especially video or large file downloads. I saw a site paying $2,000/month in transfer fees because they served directly from S3 without CloudFront."
+      }
+    },
+    {
+      "id": 40,
+      "category": "失敗談",
+      "question": {
+        "ja": "ALBのヘルスチェックを厳しくしすぎた。何が起きた？",
+        "en": "Made ALB health checks too strict. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "セキュリティが向上した",
+          "en": "セキュリティが向上した"
+        },
+        "B": {
+          "ja": "正常なサーバーも落ちたと判断された",
+          "en": "正常なサーバーも落ちたと判断された"
+        },
+        "C": {
+          "ja": "コストが下がった",
+          "en": "コストが下がった"
+        },
+        "D": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ヘルスチェックの間隔が短すぎ、タイムアウトが厳しすぎると、ちょっとした遅延で「異常」と判断される。俺はこれで全サーバーがヘルスチェックに落ちて、サービス停止した現場を見た。",
+        "en": "If health check intervals are too short or timeouts too strict, minor delays flag servers as 'unhealthy.' I've seen this take down an entire service when all servers 'failed' health checks."
+      }
+    },
+    {
+      "id": 41,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "「sudo rm -rf /」をEC2で実行するのは？",
+        "en": "Running 'sudo rm -rf /' on EC2 is?"
+      },
+      "options": {
+        "A": {
+          "ja": "ディスククリーンアップ",
+          "en": "ディスククリーンアップ"
+        },
+        "B": {
+          "ja": "システム全破壊",
+          "en": "システム全破壊"
+        },
+        "C": {
+          "ja": "推奨される操作",
+          "en": "推奨される操作"
+        },
+        "D": {
+          "ja": "安全な操作",
+          "en": "安全な操作"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "これは全ファイル削除コマンドだ！OS含めて全部消える。俺は新人が「容量空けよう」としてルートから消そうとしたのを止めたことがある。怖すぎる。",
+        "en": "This deletes EVERYTHING including the OS! I once stopped a junior from running this trying to 'free up space.' They had no idea what they were about to do. Terrifying."
+      }
+    },
+    {
+      "id": 42,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "本番障害の事後分析（ポストモーテム）で最も重要なことは？",
+        "en": "What's most important in a post-incident review?"
+      },
+      "options": {
+        "A": {
+          "ja": "犯人を特定して罰する",
+          "en": "犯人を特定して罰する"
+        },
+        "B": {
+          "ja": "再発防止策を考える",
+          "en": "再発防止策を考える"
+        },
+        "C": {
+          "ja": "報告書の体裁を整える",
+          "en": "報告書の体裁を整える"
+        },
+        "D": {
+          "ja": "早く終わらせる",
+          "en": "早く終わらせる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Blame-free culture（責めない文化）が大事だ。犯人探しより「同じ事故をどう防ぐか」を考えろ。俺は責めまくる会社で働いたが、誰も失敗を報告しなくなって、隠蔽だらけになった。",
+        "en": "Blame-free culture matters. Focus on 'how do we prevent this?' not 'who did it?' I worked at a place that blamed everyone, and people stopped reporting failures - everything got hidden."
+      }
+    },
+    {
+      "id": 43,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "Inspector が検出するものは？",
+        "en": "What does Inspector detect?"
+      },
+      "options": {
+        "A": {
+          "ja": "コスト異常",
+          "en": "コスト異常"
+        },
+        "B": {
+          "ja": "セキュリティの脆弱性",
+          "en": "セキュリティの脆弱性"
+        },
+        "C": {
+          "ja": "パフォーマンス問題",
+          "en": "パフォーマンス問題"
+        },
+        "D": {
+          "ja": "ストレージ容量",
+          "en": "ストレージ容量"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Inspectorは脆弱性スキャナーだ。EC2やコンテナの既知の脆弱性を検出する。俺はInspectorで古いOpenSSLの脆弱性を発見して、攻撃される前にパッチを当てられた。",
+        "en": "Inspector is a vulnerability scanner for EC2 and containers. It found an old OpenSSL vulnerability in my infrastructure, letting me patch before getting attacked."
+      }
+    },
+    {
+      "id": 44,
+      "category": "コスト事故",
+      "question": {
+        "ja": "Redshiftクラスターを起動したまま週末放置。何が起きる？",
+        "en": "Left Redshift cluster running over the weekend. What happens?"
+      },
+      "options": {
+        "A": {
+          "ja": "自動で停止する",
+          "en": "自動で停止する"
+        },
+        "B": {
+          "ja": "課金が続く",
+          "en": "課金が続く"
+        },
+        "C": {
+          "ja": "無料になる",
+          "en": "無料になる"
+        },
+        "D": {
+          "ja": "データが消える",
+          "en": "データが消える"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Redshiftは停止しても課金される（ストレージ）が、起動中はさらに高い！俺は月曜に出社したら週末だけで$1,000近く使ってたプロジェクトを見た。一時停止機能を使え。",
+        "en": "Redshift charges even when stopped (storage), but running costs more! I saw a project burn nearly $1,000 over one weekend. Use the pause feature for dev clusters."
+      }
+    },
+    {
+      "id": 45,
+      "category": "失敗談",
+      "question": {
+        "ja": "マルチAZ構成にしていなかったRDS。AZ障害で何が起きた？",
+        "en": "RDS without Multi-AZ. What happened during an AZ outage?"
+      },
+      "options": {
+        "A": {
+          "ja": "自動で復旧した",
+          "en": "自動で復旧した"
+        },
+        "B": {
+          "ja": "DBがダウンしてサービス停止",
+          "en": "DBがダウンしてサービス停止"
+        },
+        "C": {
+          "ja": "データがバックアップされた",
+          "en": "データがバックアップされた"
+        },
+        "D": {
+          "ja": "何も影響なかった",
+          "en": "何も影響なかった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "シングルAZのRDSはそのAZが落ちたら終わり。俺はus-east-1のAZ障害で、マルチAZ非対応のDBが4時間ダウンしたのを見た。本番は必ずマルチAZにしろ。",
+        "en": "Single-AZ RDS dies when that AZ goes down. I watched a non-Multi-AZ DB go down for 4 hours during a us-east-1 AZ outage. Production MUST be Multi-AZ."
+      }
+    },
+    {
+      "id": 46,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "APIキーをソースコードにハードコードするのは？",
+        "en": "Hardcoding API keys in source code is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利な方法",
+          "en": "便利な方法"
+        },
+        "B": {
+          "ja": "重大なセキュリティリスク",
+          "en": "重大なセキュリティリスク"
+        },
+        "C": {
+          "ja": "推奨される方法",
+          "en": "推奨される方法"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ソースコードが漏れたらキーも漏れる。GitHubで公開したら終わり。環境変数かSecrets Managerを使え。俺はGitの履歴にAPIキーが残っててそこから漏れたケースを見た。",
+        "en": "If code leaks, keys leak. Push to public GitHub and it's over. Use environment variables or Secrets Manager. I've seen keys leak from Git history even after being 'removed'."
+      }
+    },
+    {
+      "id": 47,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "本番DBへの直接クエリは？",
+        "en": "Running queries directly on production DB?"
+      },
+      "options": {
+        "A": {
+          "ja": "常にやるべき",
+          "en": "常にやるべき"
+        },
+        "B": {
+          "ja": "リードレプリカを使うか、細心の注意で",
+          "en": "リードレプリカを使うか、細心の注意で"
+        },
+        "C": {
+          "ja": "開発者全員に許可すべき",
+          "en": "開発者全員に許可すべき"
+        },
+        "D": {
+          "ja": "禁止する必要はない",
+          "en": "禁止する必要はない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「ちょっとSELECTするだけ」でも、重いクエリで本番が固まることがある。俺はWHERE句なしのSELECTで本番DBをロックした新人を見た。リードレプリカを使え。",
+        "en": "Even 'just a quick SELECT' can freeze production with heavy queries. I saw a junior lock prod DB with a SELECT without WHERE clause. Use read replicas."
+      }
+    },
+    {
+      "id": 48,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "Security Hub を使う理由は？",
+        "en": "Why use Security Hub?"
+      },
+      "options": {
+        "A": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "B": {
+          "ja": "セキュリティ状態を一元管理できる",
+          "en": "セキュリティ状態を一元管理できる"
+        },
+        "C": {
+          "ja": "パフォーマンスが上がる",
+          "en": "パフォーマンスが上がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "GuardDuty、Inspector、Config、IAM Access Analyzerの結果を一箇所で見られる。俺はSecurity Hubダッシュボードで、見落としてた重大な設定ミスを発見できた。",
+        "en": "See GuardDuty, Inspector, Config, IAM Access Analyzer results in one place. Security Hub's dashboard helped me find critical misconfigs I'd otherwise missed."
+      }
+    },
+    {
+      "id": 49,
+      "category": "コスト事故",
+      "question": {
+        "ja": "S3の不完全なマルチパートアップロードを放置。何が起きる？",
+        "en": "Left incomplete multipart uploads in S3. What happens?"
+      },
+      "options": {
+        "A": {
+          "ja": "自動で削除される",
+          "en": "自動で削除される"
+        },
+        "B": {
+          "ja": "ストレージ課金が続く",
+          "en": "ストレージ課金が続く"
+        },
+        "C": {
+          "ja": "無料で保持される",
+          "en": "無料で保持される"
+        },
+        "D": {
+          "ja": "データが完成する",
+          "en": "データが完成する"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "アップロード失敗したパーツが残り続けて課金される！俺は500GBの「幽霊データ」を発見して、月$15節約したことがある。ライフサイクルルールで自動削除を設定しろ。",
+        "en": "Failed upload parts keep charging! I found 500GB of 'ghost data' and saved $15/month. Set up lifecycle rules to auto-delete incomplete uploads."
+      }
+    },
+    {
+      "id": 50,
+      "category": "失敗談",
+      "question": {
+        "ja": "CloudFrontのキャッシュを長く設定しすぎた。何が起きた？",
+        "en": "Set CloudFront cache too long. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "サイトが速くなった",
+          "en": "サイトが速くなった"
+        },
+        "B": {
+          "ja": "更新したファイルが反映されない",
+          "en": "更新したファイルが反映されない"
+        },
+        "C": {
+          "ja": "コストが下がった",
+          "en": "コストが下がった"
+        },
+        "D": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「CSSを直したのに反映されない！」と焦るやつだ。キャッシュ期間中は古いファイルが配信され続ける。俺はバージョニングかインバリデーションを使って、何度も緊急対応した。",
+        "en": "The 'I fixed the CSS but nothing changed!' panic. Old files keep serving during cache period. I've done emergency invalidations and versioning fixes more times than I can count."
+      }
+    },
+    {
+      "id": 51,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番環境で未テストのコードをデプロイするのは？",
+        "en": "Deploying untested code to production is?"
+      },
+      "options": {
+        "A": {
+          "ja": "素早い対応",
+          "en": "素早い対応"
+        },
+        "B": {
+          "ja": "事故の元",
+          "en": "事故の元"
+        },
+        "C": {
+          "ja": "効率的",
+          "en": "効率的"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「緊急だから」「簡単な修正だから」でも絶対テストしろ！俺は1行の修正が原因で全サービスが落ちた事故を見た。テストは省略するな。",
+        "en": "Even for 'emergencies' or 'simple fixes,' ALWAYS test! I've seen a single line change bring down entire services. Never skip testing."
+      }
+    },
+    {
+      "id": 52,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "AWSサポートケースを上げる時のコツは？",
+        "en": "Tips for opening AWS support cases?"
+      },
+      "options": {
+        "A": {
+          "ja": "感情的に書く",
+          "en": "感情的に書く"
+        },
+        "B": {
+          "ja": "具体的な情報と再現手順を書く",
+          "en": "具体的な情報と再現手順を書く"
+        },
+        "C": {
+          "ja": "短ければ短いほど良い",
+          "en": "短ければ短いほど良い"
+        },
+        "D": {
+          "ja": "電話で怒鳴る",
+          "en": "電話で怒鳴る"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "リソースID、タイムスタンプ、エラーメッセージ、再現手順を書け！俺は「動かない」だけ書いて「詳細をください」の往復で3日無駄にした経験がある。最初から詳しく書け。",
+        "en": "Include resource IDs, timestamps, error messages, and reproduction steps! I once wrote 'it's not working' and wasted 3 days in back-and-forth asking for details. Be specific upfront."
+      }
+    },
+    {
+      "id": 53,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "IAM Access Analyzer が検出するものは？",
+        "en": "What does IAM Access Analyzer detect?"
+      },
+      "options": {
+        "A": {
+          "ja": "コスト異常",
+          "en": "コスト異常"
+        },
+        "B": {
+          "ja": "外部からアクセス可能なリソース",
+          "en": "外部からアクセス可能なリソース"
+        },
+        "C": {
+          "ja": "パフォーマンス問題",
+          "en": "パフォーマンス問題"
+        },
+        "D": {
+          "ja": "ストレージ容量",
+          "en": "ストレージ容量"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "S3バケットやIAMロールが外部アカウントからアクセス可能になってないか検出する。俺はこれで「知らない間にパブリックになってた」S3を発見したことがある。",
+        "en": "It detects S3 buckets or IAM roles accessible from external accounts. This helped me find an S3 bucket that had somehow become public without anyone noticing."
+      }
+    },
+    {
+      "id": 54,
+      "category": "コスト事故",
+      "question": {
+        "ja": "大量のLambda同時実行でDynamoDBがスロットリング。対策は？",
+        "en": "Mass Lambda concurrent executions causing DynamoDB throttling. Solution?"
+      },
+      "options": {
+        "A": {
+          "ja": "Lambdaを増やす",
+          "en": "Lambdaを増やす"
+        },
+        "B": {
+          "ja": "DynamoDBの容量増加かSQSでバッファリング",
+          "en": "DynamoDBの容量増加かSQSでバッファリング"
+        },
+        "C": {
+          "ja": "何もしない",
+          "en": "何もしない"
+        },
+        "D": {
+          "ja": "EC2に移行",
+          "en": "EC2に移行"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "LambdaがDynamoDBを叩きすぎるとスロットリングでエラーになる。SQSを間に挟んでバッファリングするか、DynamoDBの容量を上げろ。俺はこれで深夜に呼び出されたことがある。",
+        "en": "Too many Lambda calls to DynamoDB causes throttling errors. Buffer with SQS or increase DynamoDB capacity. I got paged at 3 AM because of this exact issue."
+      }
+    },
+    {
+      "id": 55,
+      "category": "失敗談",
+      "question": {
+        "ja": "EBSスナップショットを取らずにボリュームを変更。何が起きた？",
+        "en": "Modified EBS volume without taking a snapshot. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題なく完了した",
+          "en": "問題なく完了した"
+        },
+        "B": {
+          "ja": "変更失敗でデータが壊れた",
+          "en": "変更失敗でデータが壊れた"
+        },
+        "C": {
+          "ja": "自動でバックアップされた",
+          "en": "自動でバックアップされた"
+        },
+        "D": {
+          "ja": "何も変わらなかった",
+          "en": "何も変わらなかった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ボリュームタイプ変更やサイズ拡張で失敗したら終わり。俺は「どうせ成功するだろ」でスナップショット取らずに変更して、データ復旧に半日かかった経験がある。",
+        "en": "If volume type change or resize fails, you're done. I thought 'it'll probably work' and skipped the snapshot - spent half a day recovering data. Never again."
+      }
+    },
+    {
+      "id": 56,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番環境のSecurity Groupを「テスト用」に一時的に緩めるのは？",
+        "en": "Temporarily loosening production Security Group 'for testing' is?"
+      },
+      "options": {
+        "A": {
+          "ja": "効率的な方法",
+          "en": "効率的な方法"
+        },
+        "B": {
+          "ja": "セキュリティホールを作る行為",
+          "en": "セキュリティホールを作る行為"
+        },
+        "C": {
+          "ja": "推奨される手順",
+          "en": "推奨される手順"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「一時的」のつもりが忘れてそのままになる。俺は「5分だけ」で開けたポートが3ヶ月放置されてたのを見つけたことがある。テスト環境は別に作れ。",
+        "en": "'Temporary' often becomes permanent. I found a port opened 'for just 5 minutes' that stayed open for 3 months. Use a separate test environment."
+      }
+    },
+    {
+      "id": 57,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "大規模障害時のコミュニケーションで重要なことは？",
+        "en": "What's important for communication during major outages?"
+      },
+      "options": {
+        "A": {
+          "ja": "黙って作業する",
+          "en": "黙って作業する"
+        },
+        "B": {
+          "ja": "定期的にステータスを共有する",
+          "en": "定期的にステータスを共有する"
+        },
+        "C": {
+          "ja": "終わるまで連絡しない",
+          "en": "終わるまで連絡しない"
+        },
+        "D": {
+          "ja": "原因が分かるまで何も言わない",
+          "en": "原因が分かるまで何も言わない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「今何をしてるか」「次に何をするか」「いつ頃復旧見込みか」を定期報告しろ。俺は沈黙が続いて「本当に対応してるのか！？」と経営層がパニックになった現場を見た。",
+        "en": "Report 'what you're doing,' 'what's next,' and 'estimated recovery time' regularly. I've seen management panic asking 'are they even working on it!?' during long silences."
+      }
+    },
+    {
+      "id": 58,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "Macie が検出するものは？",
+        "en": "What does Macie detect?"
+      },
+      "options": {
+        "A": {
+          "ja": "ネットワーク攻撃",
+          "en": "ネットワーク攻撃"
+        },
+        "B": {
+          "ja": "S3内の機密データ",
+          "en": "S3内の機密データ"
+        },
+        "C": {
+          "ja": "EC2の脆弱性",
+          "en": "EC2の脆弱性"
+        },
+        "D": {
+          "ja": "コスト異常",
+          "en": "コスト異常"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Macieは機械学習でS3内のクレジットカード番号や個人情報を検出する。俺はMacieで開発者が誤ってアップロードした顧客データを発見して、大事故を防いだことがある。",
+        "en": "Macie uses ML to find credit card numbers and PII in S3. It once helped me find customer data a developer accidentally uploaded, preventing a major breach."
+      }
+    },
+    {
+      "id": 59,
+      "category": "コスト事故",
+      "question": {
+        "ja": "GP2からGP3にEBSボリュームを移行する理由は？",
+        "en": "Why migrate EBS volumes from GP2 to GP3?"
+      },
+      "options": {
+        "A": {
+          "ja": "GP2の方が安い",
+          "en": "GP2の方が安い"
+        },
+        "B": {
+          "ja": "GP3は同性能で20%安い",
+          "en": "GP3は同性能で20%安い"
+        },
+        "C": {
+          "ja": "GP3は遅い",
+          "en": "GP3は遅い"
+        },
+        "D": {
+          "ja": "特に理由はない",
+          "en": "特に理由はない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "GP3は同じ性能でGP2より20%安い！しかもIOPSとスループットを独立して設定できる。俺は100個のボリュームを移行して月$500節約した。やらない理由がない。",
+        "en": "GP3 is 20% cheaper than GP2 for same performance! Plus you can configure IOPS and throughput independently. I migrated 100 volumes and saved $500/month. No reason not to."
+      }
+    },
+    {
+      "id": 60,
+      "category": "失敗談",
+      "question": {
+        "ja": "S3バケット名を変更しようとした。何が起きた？",
+        "en": "Tried to rename an S3 bucket. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "簡単に変更できた",
+          "en": "簡単に変更できた"
+        },
+        "B": {
+          "ja": "S3バケット名は変更不可",
+          "en": "S3バケット名は変更不可"
+        },
+        "C": {
+          "ja": "自動で移行された",
+          "en": "自動で移行された"
+        },
+        "D": {
+          "ja": "名前が2つになった",
+          "en": "名前が2になった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "S3バケット名は作成後に変更できない！新しいバケットを作ってデータを移行するしかない。俺はこれを知らずに「名前変えるだけでしょ」と軽く見て、結局全システムの設定変更が必要になった。",
+        "en": "You can't rename S3 buckets! You must create a new bucket and migrate data. I thought 'just a rename' would be easy - ended up having to update configs across all systems."
+      }
+    },
+    {
+      "id": 61,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番DBのパスワードをSlackで共有するのは？",
+        "en": "Sharing production DB password on Slack is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利な共有方法",
+          "en": "便利な共有方法"
+        },
+        "B": {
+          "ja": "セキュリティ違反",
+          "en": "セキュリティ違反"
+        },
+        "C": {
+          "ja": "推奨される方法",
+          "en": "推奨される方法"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Slackの履歴は残る、検索できる、退職者も見てた可能性がある。俺はSlackでパスワードを検索したら50個以上ヒットしてゾッとした経験がある。Secrets Managerを使え。",
+        "en": "Slack history persists, is searchable, and former employees might have seen it. I once searched Slack for 'password' and found 50+ hits. Use Secrets Manager."
+      }
+    },
+    {
+      "id": 62,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "AWS Well-Architected Frameworkの5つの柱に含まれないのは？",
+        "en": "Which is NOT one of the 5 AWS Well-Architected pillars?"
+      },
+      "options": {
+        "A": {
+          "ja": "セキュリティ",
+          "en": "セキュリティ"
+        },
+        "B": {
+          "ja": "コスト最適化",
+          "en": "コスト最適化"
+        },
+        "C": {
+          "ja": "マーケティング",
+          "en": "マーケティング"
+        },
+        "D": {
+          "ja": "信頼性",
+          "en": "信頼性"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "5本柱は運用性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化だ。俺はWell-Architectedレビューで数百万円のコスト削減ポイントを見つけたことがある。必読だ。",
+        "en": "The 5 pillars are Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization. I found millions in savings through Well-Architected reviews. Essential reading."
+      }
+    },
+    {
+      "id": 63,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Shieldが保護するものは？",
+        "en": "What does AWS Shield protect against?"
+      },
+      "options": {
+        "A": {
+          "ja": "SQLインジェクション",
+          "en": "SQLインジェクション"
+        },
+        "B": {
+          "ja": "DDoS攻撃",
+          "en": "DDoS攻撃"
+        },
+        "C": {
+          "ja": "データ漏洩",
+          "en": "データ漏洩"
+        },
+        "D": {
+          "ja": "コスト超過",
+          "en": "コスト超過"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ShieldはDDoS攻撃からの保護サービスだ。StandardはCloudFront、ALBに無料で有効。俺が担当したサイトがDDoS攻撃を受けた時、Shield Standardのおかげで耐えられた。",
+        "en": "Shield protects against DDoS attacks. Standard is free for CloudFront and ALB. When a site I managed got DDoS'd, Shield Standard helped us survive."
+      }
+    },
+    {
+      "id": 64,
+      "category": "コスト事故",
+      "question": {
+        "ja": "開発用Auroraクラスターを常時起動。どうすべきだった？",
+        "en": "Kept dev Aurora cluster running 24/7. What should you do?"
+      },
+      "options": {
+        "A": {
+          "ja": "そのまま使う",
+          "en": "そのまま使う"
+        },
+        "B": {
+          "ja": "業務時間外は停止するか、Aurora Serverlessを使う",
+          "en": "業務時間外は停止するか、Aurora Serverlessを使う"
+        },
+        "C": {
+          "ja": "削除する",
+          "en": "削除する"
+        },
+        "D": {
+          "ja": "もっと大きくする",
+          "en": "もっと大きくする"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "開発用DBを24時間動かす必要はない！俺は夜間・週末に止めるだけで月$800節約した。Aurora Serverlessなら使った分だけの課金でさらに安い。",
+        "en": "Dev DBs don't need to run 24/7! Just stopping nights and weekends saved me $800/month. Aurora Serverless charges only for usage - even cheaper."
+      }
+    },
+    {
+      "id": 65,
+      "category": "失敗談",
+      "question": {
+        "ja": "IAMポリシーで「Resource: *」を使った。何が問題？",
+        "en": "Used 'Resource: *' in IAM policy. What's the problem?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        },
+        "B": {
+          "ja": "全リソースへのアクセスを許可してしまう",
+          "en": "全リソースへのアクセスを許可してしまう"
+        },
+        "C": {
+          "ja": "何も許可されない",
+          "en": "何も許可されない"
+        },
+        "D": {
+          "ja": "エラーになる",
+          "en": "エラーになる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「*」は全リソースだ！「このバケットだけ」のつもりが全S3バケットにアクセスできてしまう。俺はこれで開発者が本番データを見れる状態になってたのを発見した。",
+        "en": "'*' means ALL resources! Intended for 'just this bucket' but grants access to all S3. I found developers could access production data because of this."
+      }
+    },
+    {
+      "id": 66,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "SSLの有効期限切れに気づかなかった。何が起きる？",
+        "en": "Didn't notice SSL certificate expiration. What happens?"
+      },
+      "options": {
+        "A": {
+          "ja": "自動で更新される",
+          "en": "自動で更新される"
+        },
+        "B": {
+          "ja": "サイトが「安全でない」と表示される",
+          "en": "サイトが「安全でない」と表示される"
+        },
+        "C": {
+          "ja": "何も起きない",
+          "en": "何も起きない"
+        },
+        "D": {
+          "ja": "速度が上がる",
+          "en": "速度が上がる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "SSL切れるとブラウザが警告を出す！ユーザーが「このサイト危険」と思って離脱する。俺は金曜夜にSSL切れて、月曜まで「アクセスできない」というクレームの嵐だった経験がある。ACMの自動更新を使え。",
+        "en": "Expired SSL triggers browser warnings! Users think 'this site is dangerous' and leave. I had SSL expire Friday night - got flooded with 'can't access' complaints until Monday. Use ACM auto-renewal."
+      }
+    },
+    {
+      "id": 67,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "EC2 Instance Connect Endpointの利点は？",
+        "en": "Benefits of EC2 Instance Connect Endpoint?"
+      },
+      "options": {
+        "A": {
+          "ja": "インスタンスが速くなる",
+          "en": "インスタンスが速くなる"
+        },
+        "B": {
+          "ja": "パブリックIPなしでSSH接続できる",
+          "en": "パブリックIPなしでSSH接続できる"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "ストレージが増える",
+          "en": "ストレージが増える"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "プライベートサブネットのEC2にパブリックIPなしでSSHできる！踏み台サーバーも不要。俺はこれで踏み台のメンテナンスから解放された。セキュリティも向上する。",
+        "en": "SSH to private subnet EC2 without public IPs! No bastion host needed. This freed me from bastion maintenance and improved security."
+      }
+    },
+    {
+      "id": 68,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Organizations SCPの役割は？",
+        "en": "What is the role of AWS Organizations SCP?"
+      },
+      "options": {
+        "A": {
+          "ja": "コスト削減",
+          "en": "コスト削減"
+        },
+        "B": {
+          "ja": "組織全体でアクションを制限する",
+          "en": "組織全体でアクションを制限する"
+        },
+        "C": {
+          "ja": "パフォーマンス向上",
+          "en": "パフォーマンス向上"
+        },
+        "D": {
+          "ja": "バックアップ",
+          "en": "バックアップ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "SCPで「このリージョンは使用禁止」「このサービスは使用禁止」を組織全体に強制できる。俺はSCPで新人が誤って高額サービスを使うのを防いでる。ガードレールだと思え。",
+        "en": "SCP enforces 'no using this region' or 'no using this service' across the organization. I use SCP to prevent juniors from accidentally using expensive services. Think of it as guardrails."
+      }
+    },
+    {
+      "id": 69,
+      "category": "コスト事故",
+      "question": {
+        "ja": "Savings Plansを買ったが、使用率が50%以下。原因は？",
+        "en": "Bought Savings Plans but utilization is below 50%. Why?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSのバグ",
+          "en": "AWSのバグ"
+        },
+        "B": {
+          "ja": "必要以上に購入した",
+          "en": "必要以上に購入した"
+        },
+        "C": {
+          "ja": "価格が上がった",
+          "en": "価格が上がった"
+        },
+        "D": {
+          "ja": "自動調整されている",
+          "en": "自動調整されている"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Savings Plansは使用量を超えて買うと無駄になる！俺は「とりあえず多めに」と買って、半分が無駄になってるプロジェクトを見た。購入前にCost Explorerで使用状況を確認しろ。",
+        "en": "Savings Plans beyond your usage are wasted! I saw a project that bought 'extra just in case' - half was unused. Check Cost Explorer for actual usage before purchasing."
+      }
+    },
+    {
+      "id": 70,
+      "category": "失敗談",
+      "question": {
+        "ja": "CloudWatchアラームのしきい値を低くしすぎた。何が起きた？",
+        "en": "Set CloudWatch alarm thresholds too low. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題を早期発見できた",
+          "en": "問題を早期発見できた"
+        },
+        "B": {
+          "ja": "アラートが多すぎて無視されるようになった",
+          "en": "アラートが多すぎて無視されるようになった"
+        },
+        "C": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        },
+        "D": {
+          "ja": "コストが下がった",
+          "en": "コストが下がった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "アラート疲れ（Alert Fatigue）だ！毎日100件もアラートが来ると、本当に重要なやつを見逃す。俺は「またか」と無視したアラートが本物の障害で、大失敗した経験がある。",
+        "en": "Alert fatigue! When you get 100 alerts daily, you miss the important ones. I once dismissed an alert as 'another false positive' - it was a real outage. Massive failure."
+      }
+    },
+    {
+      "id": 71,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "EC2のキーペアを紛失した。どうなる？",
+        "en": "Lost EC2 key pair. What happens?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSに連絡すればもらえる",
+          "en": "AWSに連絡すればもらえる"
+        },
+        "B": {
+          "ja": "そのキーでのSSH接続は不可能に",
+          "en": "そのキーでのSSH接続は不可能に"
+        },
+        "C": {
+          "ja": "自動で再生成される",
+          "en": "自動で再生成される"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "秘密鍵はAWSも持ってない！紛失したら終わり。Systems Manager Session Managerを使うか、新しいキーでAMIを作り直すしかない。俺はこれで深夜作業になったことがある。",
+        "en": "AWS doesn't keep private keys! If lost, you're done. Use Session Manager or rebuild from AMI with new keys. I ended up working through the night because of this."
+      }
+    },
+    {
+      "id": 72,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "本番デプロイに最適な時間帯は？",
+        "en": "Best time for production deployments?"
+      },
+      "options": {
+        "A": {
+          "ja": "金曜日の夕方",
+          "en": "金曜日の夕方"
+        },
+        "B": {
+          "ja": "週の前半、業務時間内",
+          "en": "週の前半、業務時間内"
+        },
+        "C": {
+          "ja": "深夜",
+          "en": "深夜"
+        },
+        "D": {
+          "ja": "いつでも同じ",
+          "en": "いつでも同じ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "金曜デプロイは自殺行為！問題が起きたら週末返上。俺は「金曜だけど簡単だから」で夜通し作業になった経験が何度もある。週の前半、サポートが受けられる時間にやれ。",
+        "en": "Friday deploys are suicide! Problems mean weekend work. I've had 'just a simple Friday deploy' turn into all-nighters multiple times. Early week, during business hours."
+      }
+    },
+    {
+      "id": 73,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS WAFで「SQL injection」ルールを有効にする理由は？",
+        "en": "Why enable 'SQL injection' rule in AWS WAF?"
+      },
+      "options": {
+        "A": {
+          "ja": "サイトが速くなる",
+          "en": "サイトが速くなる"
+        },
+        "B": {
+          "ja": "悪意あるSQLクエリをブロックする",
+          "en": "悪意あるSQLクエリをブロックする"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "SQLインジェクションでDB丸ごと盗まれることがある。WAFのマネージドルールなら設定一発。俺は「うちは大丈夫」と思ってたサイトがSQL攻撃されてるログを見て震えた。",
+        "en": "SQL injection can steal your entire DB. WAF managed rules are one-click setup. I was shocked to see SQL attack attempts in logs of a site that thought 'we're safe.'"
+      }
+    },
+    {
+      "id": 74,
+      "category": "コスト事故",
+      "question": {
+        "ja": "DynamoDBのオンデマンド課金を選んだが高額に。対策は？",
+        "en": "DynamoDB on-demand billing is expensive. Solution?"
+      },
+      "options": {
+        "A": {
+          "ja": "そのまま使う",
+          "en": "そのまま使う"
+        },
+        "B": {
+          "ja": "使用パターンが安定したらプロビジョンドに移行",
+          "en": "使用パターンが安定したらプロビジョンドに移行"
+        },
+        "C": {
+          "ja": "削除する",
+          "en": "削除する"
+        },
+        "D": {
+          "ja": "テーブルを増やす",
+          "en": "テーブルを増やす"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "オンデマンドは予測不能な負荷には便利だが、安定したらプロビジョンドが安い。俺はアクセスパターンが安定したテーブルを移行して40%節約した。",
+        "en": "On-demand is great for unpredictable loads, but provisioned is cheaper for stable patterns. I saved 40% by switching tables with predictable access patterns."
+      }
+    },
+    {
+      "id": 75,
+      "category": "失敗談",
+      "question": {
+        "ja": "API Gatewayのレート制限を設定し忘れた。何が起きた？",
+        "en": "Forgot to set API Gateway rate limits. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "APIが速くなった",
+          "en": "APIが速くなった"
+        },
+        "B": {
+          "ja": "DDoS攻撃で大量のリクエストが来て課金爆発",
+          "en": "DDoS攻撃で大量のリクエストが来て課金爆発"
+        },
+        "C": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        },
+        "D": {
+          "ja": "セキュリティが向上した",
+          "en": "セキュリティが向上した"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "レート制限がないと無限にリクエストを受け付ける。俺はボットに攻撃されて一晩で$500のAPI Gateway請求が来たことがある。スロットリング設定は必須だ。",
+        "en": "Without rate limits, you accept unlimited requests. I got hit by bots and had a $500 API Gateway bill overnight. Throttling settings are mandatory."
+      }
+    },
+    {
+      "id": 76,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番のLambda関数を直接コンソールで編集するのは？",
+        "en": "Editing production Lambda directly in console is?"
+      },
+      "options": {
+        "A": {
+          "ja": "便利な方法",
+          "en": "便利な方法"
+        },
+        "B": {
+          "ja": "変更履歴が追えず危険",
+          "en": "変更履歴が追えず危険"
+        },
+        "C": {
+          "ja": "推奨される方法",
+          "en": "推奨される方法"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "コンソールで直接編集すると、何を変えたか分からなくなる。俺は「誰がこのLambda触った？」で大騒ぎになった現場を見た。CI/CDパイプラインでデプロイしろ。",
+        "en": "Direct console edits leave no trace of changes. I've seen 'who touched this Lambda?' cause chaos. Deploy through CI/CD pipelines."
+      }
+    },
+    {
+      "id": 77,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "システム構成図を更新するタイミングは？",
+        "en": "When should you update system architecture diagrams?"
+      },
+      "options": {
+        "A": {
+          "ja": "年に一回",
+          "en": "年に一回"
+        },
+        "B": {
+          "ja": "構成が変わったらすぐ",
+          "en": "構成が変わったらすぐ"
+        },
+        "C": {
+          "ja": "監査の直前",
+          "en": "監査の直前"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ドキュメントは嘘をつく。古い構成図を信じて障害対応したら、実際と違ってて地獄を見た。俺は変更するたびに図を更新するルールを作って、何度も救われた。",
+        "en": "Documentation lies. I once did incident response based on outdated diagrams - actual setup was completely different. I now update diagrams with every change. Saved my skin many times."
+      }
+    },
+    {
+      "id": 78,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "Secrets Managerのローテーション機能の利点は？",
+        "en": "Benefits of Secrets Manager rotation?"
+      },
+      "options": {
+        "A": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "B": {
+          "ja": "自動でパスワードを定期変更できる",
+          "en": "自動でパスワードを定期変更できる"
+        },
+        "C": {
+          "ja": "速度が上がる",
+          "en": "速度が上がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "手動でパスワード変更は忘れる！自動ローテーションなら30日ごとに自動変更される。俺は3年同じDBパスワードを使ってた会社を見た。漏れてても気づかなかったらどうする？",
+        "en": "Manual password rotation gets forgotten! Auto rotation changes passwords every 30 days automatically. I saw a company use the same DB password for 3 years. What if it leaked unnoticed?"
+      }
+    },
+    {
+      "id": 79,
+      "category": "コスト事故",
+      "question": {
+        "ja": "Kinesis Data Streamsのシャード数を多く設定しすぎた。問題は？",
+        "en": "Set too many Kinesis Data Streams shards. Problem?"
+      },
+      "options": {
+        "A": {
+          "ja": "データが速くなる",
+          "en": "データが速くなる"
+        },
+        "B": {
+          "ja": "使用量に対してコストが高すぎる",
+          "en": "使用量に対してコストが高すぎる"
+        },
+        "C": {
+          "ja": "データが消える",
+          "en": "データが消える"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Kinesisはシャード単位で課金される！必要以上のシャードは無駄金。俺は10倍のシャードを設定してた開発環境を見つけて、月$300節約した。実際の流量を見て調整しろ。",
+        "en": "Kinesis charges per shard! Excess shards are wasted money. I found a dev environment with 10x needed shards - saved $300/month. Adjust based on actual throughput."
+      }
+    },
+    {
+      "id": 80,
+      "category": "失敗談",
+      "question": {
+        "ja": "EventBridgeルールのターゲットを間違えた。何が起きた？",
+        "en": "Set wrong target in EventBridge rule. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        },
+        "B": {
+          "ja": "意図しないLambdaが大量実行された",
+          "en": "意図しないLambdaが大量実行された"
+        },
+        "C": {
+          "ja": "自動で修正された",
+          "en": "自動で修正された"
+        },
+        "D": {
+          "ja": "ログだけ出た",
+          "en": "ログだけ出た"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "間違ったLambdaに毎分イベントが飛んで、大量実行とDynamoDBへの謎の書き込みが発生。俺は夜中に「なんかおかしい」と気づいてルールを無効化した。ターゲットは3回確認しろ。",
+        "en": "Wrong Lambda got events every minute - mass executions and mystery DynamoDB writes. I noticed 'something's off' at midnight and disabled the rule. Triple-check targets."
+      }
+    },
+    {
+      "id": 81,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "本番RDSをスナップショットから復元して、既存を上書き？",
+        "en": "Restore production RDS from snapshot and overwrite existing?"
+      },
+      "options": {
+        "A": {
+          "ja": "簡単にできる",
+          "en": "簡単にできる"
+        },
+        "B": {
+          "ja": "RDSの復元は新規インスタンス作成のみ",
+          "en": "RDSの復元は新規インスタンス作成 only"
+        },
+        "C": {
+          "ja": "自動で上書きされる",
+          "en": "自動で上書きされる"
+        },
+        "D": {
+          "ja": "データがマージされる",
+          "en": "データがマージされる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "RDSの復元は必ず新しいインスタンスになる！エンドポイントが変わるから、アプリの接続先変更が必要。俺はこれを知らずに「すぐ復元できる」と思ってて、DNS切り替えに手間取った。",
+        "en": "RDS restore ALWAYS creates a new instance! Endpoint changes, so apps need config updates. I thought 'quick restore' but struggled with DNS switching because I didn't know this."
+      }
+    },
+    {
+      "id": 82,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "障害対応の記録で重要なのは？",
+        "en": "What's important to record during incident response?"
+      },
+      "options": {
+        "A": {
+          "ja": "感想",
+          "en": "感想"
+        },
+        "B": {
+          "ja": "タイムライン（いつ何をしたか）",
+          "en": "タイムライン（いつ何をしたか）"
+        },
+        "C": {
+          "ja": "犯人の名前",
+          "en": "犯人の名前"
+        },
+        "D": {
+          "ja": "愚痴",
+          "en": "愚痴"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「14:05 アラート発生」「14:10 調査開始」「14:25 原因特定」のように時系列で記録しろ。俺はタイムラインがないポストモーテムで「何時に何したっけ？」と全員混乱したのを見た。",
+        "en": "Record '14:05 alert triggered,' '14:10 investigation started,' '14:25 root cause identified.' I've seen post-mortems without timelines devolve into 'wait, when did we do that?'"
+      }
+    },
+    {
+      "id": 83,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "S3 Object Lockを使う理由は？",
+        "en": "Why use S3 Object Lock?"
+      },
+      "options": {
+        "A": {
+          "ja": "アクセスが速くなる",
+          "en": "アクセスが速くなる"
+        },
+        "B": {
+          "ja": "データを削除・変更から保護する",
+          "en": "データを削除・変更から保護する"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ランサムウェア対策や法規制対応に必須。設定期間中はAWSサポートでも消せない。俺はObject Lockで監査ログを保護して、改ざん疑惑を晴らせた経験がある。",
+        "en": "Essential for ransomware protection and compliance. Even AWS support can't delete during retention. Object Lock helped me prove audit logs weren't tampered with during an investigation."
+      }
+    },
+    {
+      "id": 84,
+      "category": "コスト事故",
+      "question": {
+        "ja": "S3 Intelligent-Tieringが効かない場合は？",
+        "en": "When doesn't S3 Intelligent-Tiering work well?"
+      },
+      "options": {
+        "A": {
+          "ja": "大量のファイルがある時",
+          "en": "大量のファイルがある時"
+        },
+        "B": {
+          "ja": "小さいファイルが多い時（128KB未満）",
+          "en": "小さいファイルが多い時（128 KB未満）"
+        },
+        "C": {
+          "ja": "アクセスが多い時",
+          "en": "アクセスが多い時"
+        },
+        "D": {
+          "ja": "常に効果的",
+          "en": "常に効果的"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "128KB未満のオブジェクトはIntelligent-Tieringの対象外で、監視料金だけ取られる！俺はログファイルにIntelligent-Tiering使って、監視料金の方が高くついた経験がある。",
+        "en": "Objects under 128KB aren't tiered - you just pay monitoring fees! I used Intelligent-Tiering for small log files and monitoring costs exceeded savings."
+      }
+    },
+    {
+      "id": 85,
+      "category": "失敗談",
+      "question": {
+        "ja": "VPCピアリングを設定したが通信できない。よくある原因は？",
+        "en": "VPC peering set up but can't communicate. Common cause?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSの障害",
+          "en": "AWSの障害"
+        },
+        "B": {
+          "ja": "ルートテーブルの設定漏れ",
+          "en": "ルートテーブルの設定漏れ"
+        },
+        "C": {
+          "ja": "インスタンスが小さい",
+          "en": "インスタンスが小さい"
+        },
+        "D": {
+          "ja": "時間帯の問題",
+          "en": "時間帯の問題"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ピアリング接続しただけじゃダメ！両方のVPCのルートテーブルに相手のCIDRへのルートを追加する必要がある。俺は「ピアリングしたのに通信できない」で2時間ハマった経験がある。",
+        "en": "Just peering isn't enough! You need to add routes to the peer CIDR in both VPCs' route tables. I spent 2 hours stuck on 'peering done but can't connect' before figuring this out."
+      }
+    },
+    {
+      "id": 86,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "CloudFormationスタックを「なんとなく」削除するのは？",
+        "en": "Deleting CloudFormation stack 'just because' is?"
+      },
+      "options": {
+        "A": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        },
+        "B": {
+          "ja": "リソースも消える可能性がある",
+          "en": "リソースも消える可能性がある"
+        },
+        "C": {
+          "ja": "何も起きない",
+          "en": "何も起きない"
+        },
+        "D": {
+          "ja": "推奨される",
+          "en": "推奨される"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "スタック削除＝リソース削除だ！DBもS3も消える。俺は「要らないスタックでしょ」で本番を消した人を見た。DeletionPolicyなしだと全部消える。",
+        "en": "Stack delete = resource delete! DB, S3, everything goes. I saw someone delete production with 'this stack looks unused.' Without DeletionPolicy, it's all gone."
+      }
+    },
+    {
+      "id": 87,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "Blue/Greenデプロイメントの利点は？",
+        "en": "Benefits of Blue/Green deployment?"
+      },
+      "options": {
+        "A": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "B": {
+          "ja": "問題時にすぐ旧バージョンに戻せる",
+          "en": "問題時にすぐ旧バージョンに戻せる"
+        },
+        "C": {
+          "ja": "速度が上がる",
+          "en": "速度が上がる"
+        },
+        "D": {
+          "ja": "リソースが減る",
+          "en": "リソースが減る"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "新環境（Green）に問題があれば、ルーティングを旧環境（Blue）に戻すだけ。俺はBlue/Greenのおかげで、デプロイ失敗から5分で復旧できた。ダウンタイムなしで戻せる安心感は最高だ。",
+        "en": "If new environment (Green) has issues, just switch routing back to old (Blue). Blue/Green helped me recover from a failed deploy in 5 minutes. Zero-downtime rollback is priceless."
+      }
+    },
+    {
+      "id": 88,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "Systems Manager Parameter Storeのセキュアストリング型の用途は？",
+        "en": "What is SSM Parameter Store SecureString for?"
+      },
+      "options": {
+        "A": {
+          "ja": "設定を高速に取得",
+          "en": "設定を高速に取得"
+        },
+        "B": {
+          "ja": "パスワードなどを暗号化保存",
+          "en": "パスワードなどを暗号化保存"
+        },
+        "C": {
+          "ja": "ファイルを保存",
+          "en": "ファイルを保存"
+        },
+        "D": {
+          "ja": "ログを保存",
+          "en": "ログを保存"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "SecureStringはKMSで暗号化される。Secrets Managerより安いが、ローテーション機能はない。俺は設定値はParameter Store、DBパスワードはSecrets Managerと使い分けてる。",
+        "en": "SecureString is KMS encrypted. Cheaper than Secrets Manager but no rotation. I use Parameter Store for configs and Secrets Manager for DB passwords."
+      }
+    },
+    {
+      "id": 89,
+      "category": "コスト事故",
+      "question": {
+        "ja": "ENI（Elastic Network Interface）の課金に注意すべき状況は？",
+        "en": "When to watch out for ENI charges?"
+      },
+      "options": {
+        "A": {
+          "ja": "EC2使用中",
+          "en": "EC2使用中"
+        },
+        "B": {
+          "ja": "Lambdaを大量にVPC接続している時",
+          "en": "Lambdaを大量にVPC接続している時"
+        },
+        "C": {
+          "ja": "S3使用中",
+          "en": "S3使用中"
+        },
+        "D": {
+          "ja": "課金されない",
+          "en": "課金されない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "VPC LambdaはENIを使う。大量のLambdaをVPCに接続すると、ENI課金が増える。俺はこれで月$200の予想外課金を見つけた。必要ない限りLambdaはVPC外で動かせ。",
+        "en": "VPC Lambda uses ENIs. Mass VPC-connected Lambdas rack up ENI charges. I found $200/month in unexpected ENI fees. Run Lambda outside VPC unless necessary."
+      }
+    },
+    {
+      "id": 90,
+      "category": "失敗談",
+      "question": {
+        "ja": "Step Functionsのステートマシンが無限ループ。原因は？",
+        "en": "Step Functions state machine in infinite loop. Cause?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSの障害",
+          "en": "AWSの障害"
+        },
+        "B": {
+          "ja": "終了条件の設定ミス",
+          "en": "終了条件の設定ミス"
+        },
+        "C": {
+          "ja": "インスタンスが小さい",
+          "en": "インスタンスが小さい"
+        },
+        "D": {
+          "ja": "時間帯の問題",
+          "en": "時間帯の問題"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Choice状態の条件が常にループに戻る設定だった。俺は1時間で1万回の実行を見て慌てて停止した。終了条件は複数人でレビューしろ。",
+        "en": "Choice state condition always looped back. I saw 10,000 executions in an hour before frantically stopping it. Have multiple people review termination conditions."
+      }
+    },
+    {
+      "id": 91,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "「とりあえず動くから」で本番に仮設定を残すのは？",
+        "en": "Leaving temporary configs in production 'because it works' is?"
+      },
+      "options": {
+        "A": {
+          "ja": "効率的",
+          "en": "効率的"
+        },
+        "B": {
+          "ja": "技術的負債の蓄積",
+          "en": "技術的負債の蓄積"
+        },
+        "C": {
+          "ja": "推奨される",
+          "en": "推奨される"
+        },
+        "D": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「後で直す」は絶対直さない。俺は5年前の「仮設定」が今も本番で動いてて、誰も触れなくなってるシステムを見た。今直せ、後じゃない。",
+        "en": "'Fix it later' means never. I've seen 5-year-old 'temporary' configs still in production, untouchable because no one understands them anymore. Fix it now, not later."
+      }
+    },
+    {
+      "id": 92,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "Trusted Advisorの「コスト最適化」チェックで確認できるのは？",
+        "en": "What can Trusted Advisor 'Cost Optimization' check identify?"
+      },
+      "options": {
+        "A": {
+          "ja": "セキュリティ脆弱性",
+          "en": "セキュリティ脆弱性"
+        },
+        "B": {
+          "ja": "未使用のEC2やEBS",
+          "en": "未使用のEC2やEBS"
+        },
+        "C": {
+          "ja": "パフォーマンス問題",
+          "en": "パフォーマンス問題"
+        },
+        "D": {
+          "ja": "コード品質",
+          "en": "コード品質"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Trusted Advisorは「使ってないのに課金されてるリソース」を教えてくれる。俺はこれで月$1,000以上の無駄を発見したことがある。定期的にチェックしろ。",
+        "en": "Trusted Advisor finds 'charging but not using' resources. I've found over $1,000/month in waste this way. Check it regularly."
+      }
+    },
+    {
+      "id": 93,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "CloudFront Signed URLを使う理由は？",
+        "en": "Why use CloudFront Signed URLs?"
+      },
+      "options": {
+        "A": {
+          "ja": "配信が速くなる",
+          "en": "配信が速くなる"
+        },
+        "B": {
+          "ja": "有料コンテンツや期限付きアクセスを制御",
+          "en": "有料コンテンツや期限付きアクセスを制御"
+        },
+        "C": {
+          "ja": "コストが下がる",
+          "en": "コストが下がる"
+        },
+        "D": {
+          "ja": "必要ない",
+          "en": "必要ない"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Signed URLなら「1時間だけ有効」「このユーザーだけ」のようなアクセス制御ができる。俺は有料動画サービスでこれ使ってないせいで、URLが共有されて損失出てた現場を見た。",
+        "en": "Signed URLs enable 'valid for 1 hour' or 'this user only' access control. I saw a paid video service lose money because URLs without signing got shared everywhere."
+      }
+    },
+    {
+      "id": 94,
+      "category": "コスト事故",
+      "question": {
+        "ja": "Transit Gatewayの課金で注意すべきは？",
+        "en": "What to watch with Transit Gateway billing?"
+      },
+      "options": {
+        "A": {
+          "ja": "使用しなければ無料",
+          "en": "使用しなければ無料"
+        },
+        "B": {
+          "ja": "接続数とデータ処理量の両方で課金",
+          "en": "接続数とデータ処理量の両方で課金"
+        },
+        "C": {
+          "ja": "固定料金のみ",
+          "en": "固定料金 only"
+        },
+        "D": {
+          "ja": "EC2料金に含まれる",
+          "en": "EC2料金に含まれる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Transit Gatewayはアタッチメント数とデータ処理量で課金される。VPCを沢山接続して大量のデータを流すと高額に。俺は「便利だから」と接続しまくって月$500の予想外請求を食らった。",
+        "en": "Transit Gateway charges for attachments AND data processed. Many VPCs with heavy traffic gets expensive. I connected 'for convenience' and got an unexpected $500/month bill."
+      }
+    },
+    {
+      "id": 95,
+      "category": "失敗談",
+      "question": {
+        "ja": "ALBのターゲットグループにインスタンスを登録し忘れた。何が起きた？",
+        "en": "Forgot to register instances in ALB target group. What happened?"
+      },
+      "options": {
+        "A": {
+          "ja": "自動で登録された",
+          "en": "自動で登録された"
+        },
+        "B": {
+          "ja": "503エラーでサービス停止",
+          "en": "503エラーでサービス停止"
+        },
+        "C": {
+          "ja": "別のターゲットに振られた",
+          "en": "別のターゲットに振られた"
+        },
+        "D": {
+          "ja": "何も起きなかった",
+          "en": "何も起きなかった"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ターゲットがないとALBは503を返す。俺はデプロイ後に「なんでサイト見れないの？」と聞かれて、ターゲットグループが空だったことがある。デプロイ後の確認は必須。",
+        "en": "No targets means ALB returns 503. After a deploy, someone asked 'why can't I see the site?' - target group was empty. Post-deploy verification is mandatory."
+      }
+    },
+    {
+      "id": 96,
+      "category": "やっちゃダメ",
+      "question": {
+        "ja": "ログにクレジットカード番号を出力するのは？",
+        "en": "Logging credit card numbers is?"
+      },
+      "options": {
+        "A": {
+          "ja": "デバッグに便利",
+          "en": "デバッグに便利"
+        },
+        "B": {
+          "ja": "PCI-DSSの重大な違反",
+          "en": "PCI-DSSの重大な違反"
+        },
+        "C": {
+          "ja": "問題ない",
+          "en": "問題ない"
+        },
+        "D": {
+          "ja": "推奨される",
+          "en": "推奨される"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "クレカ番号のログ出力はPCI-DSS違反で、罰則もある。俺はログに個人情報が入ってて監査で大問題になった現場を見た。センシティブデータはログに絶対出すな。",
+        "en": "Logging card numbers violates PCI-DSS with potential penalties. I saw an audit nightmare when PII was found in logs. NEVER log sensitive data."
+      }
+    },
+    {
+      "id": 97,
+      "category": "現場の知恵",
+      "question": {
+        "ja": "「動いているシステムは触るな」は正しい？",
+        "en": "Is 'don't touch working systems' correct?"
+      },
+      "options": {
+        "A": {
+          "ja": "完全に正しい",
+          "en": "完全に正しい"
+        },
+        "B": {
+          "ja": "セキュリティパッチは例外",
+          "en": "セキュリティパッチは例外"
+        },
+        "C": {
+          "ja": "常に正しい",
+          "en": "常に正しい"
+        },
+        "D": {
+          "ja": "完全に間違い",
+          "en": "完全に間違い"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "動いてても、セキュリティパッチは適用しろ！俺は「動いてるから触りたくない」で2年パッチを当ててなくて、脆弱性を突かれたシステムを見た。セキュリティは例外なしだ。",
+        "en": "Even working systems need security patches! I saw a system unpatched for 2 years because 'it's working, don't touch it' - got compromised via known vulnerability. Security has no exceptions."
+      }
+    },
+    {
+      "id": 98,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "PrivateLinkの利点は？",
+        "en": "Benefits of PrivateLink?"
+      },
+      "options": {
+        "A": {
+          "ja": "インターネット経由で速くなる",
+          "en": "インターネット経由で速くなる"
+        },
+        "B": {
+          "ja": "トラフィックがインターネットを通らない",
+          "en": "トラフィックがインターネットを通らない"
+        },
+        "C": {
+          "ja": "無料になる",
+          "en": "無料になる"
+        },
+        "D": {
+          "ja": "設定が不要",
+          "en": "設定が不要"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "PrivateLinkを使うと、AWSサービスへのアクセスがAWSネットワーク内で完結する。俺はこれでデータがインターネットを通らないようにして、セキュリティ要件を満たせた。",
+        "en": "PrivateLink keeps AWS service access within AWS network. I used this to ensure data never touches the internet, satisfying strict security requirements."
+      }
+    },
+    {
+      "id": 99,
+      "category": "総合",
+      "question": {
+        "ja": "AWS認定試験に合格するために最も重要なことは？",
+        "en": "Most important thing for passing AWS certification?"
+      },
+      "options": {
+        "A": {
+          "ja": "暗記だけする",
+          "en": "暗記だけする"
+        },
+        "B": {
+          "ja": "実際に手を動かして経験を積む",
+          "en": "実際に手を動かして経験を積む"
+        },
+        "C": {
+          "ja": "試験問題だけ覚える",
+          "en": "試験問題だけ覚える"
+        },
+        "D": {
+          "ja": "運に任せる",
+          "en": "運に任せる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "実際にAWSを触った経験が一番効く。俺は座学だけで受けて落ちたが、実際にシステム構築してから再受験したら楽勝だった。Free Tierで実際に触れ。",
+        "en": "Hands-on experience is what matters most. I failed with book study alone, but passed easily after building real systems. Use Free Tier and actually build things."
+      }
+    },
+    {
+      "id": 100,
+      "category": "心得",
+      "question": {
+        "ja": "ITインフラで最も大切な心構えは？",
+        "en": "Most important mindset for IT infrastructure?"
+      },
+      "options": {
+        "A": {
+          "ja": "自分は絶対失敗しない",
+          "en": "自分は絶対失敗しない"
+        },
+        "B": {
+          "ja": "失敗は起きる前提で備える",
+          "en": "失敗は起きる前提で備える"
+        },
+        "C": {
+          "ja": "運が良ければ大丈夫",
+          "en": "運が良ければ大丈夫"
+        },
+        "D": {
+          "ja": "他人任せにする",
+          "en": "他人任せにする"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「失敗しない」なんてありえない。障害は必ず起きる。大事なのは「起きた時にどう対応するか」だ。俺は20年以上この業界にいるが、備えてた奴が生き残る。バックアップ、監視、ロールバック計画。これが命綱だ。",
+        "en": "'Never fails' is impossible. Outages WILL happen. What matters is 'how do we respond?' In 20+ years, I've seen prepared teams survive while others crumbled. Backups, monitoring, rollback plans - these are your lifelines."
+      }
+    }
+  ]
+}

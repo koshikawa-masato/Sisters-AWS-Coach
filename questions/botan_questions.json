@@ -1,0 +1,1306 @@
+{
+  "character": "Botan",
+  "specialty": "超初心者向け・たとえ話で理解",
+  "questions": [
+    {
+      "id": 1,
+      "category": "超基礎",
+      "question": {"ja": "AWSって何の略？", "en": "What does AWS stand for?"},
+      "options": {
+        "A": {"ja": "Amazon Web Services", "en": "Amazon Web Services"},
+        "B": {"ja": "Advanced Web System", "en": "Advanced Web System"},
+        "C": {"ja": "Amazon Wireless Service", "en": "Amazon Wireless Service"},
+        "D": {"ja": "All World Server", "en": "All World Server"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Amazon Web Servicesの略！あのAmazonが作ったクラウドサービスで世界シェアNo.1だよ〜", "en": "Amazon Web Services! Made by THE Amazon, #1 cloud in the world!"}
+    },
+    {
+      "id": 2,
+      "category": "たとえ話",
+      "question": {"ja": "S3を身近なものにたとえると？", "en": "What is S3 most like?"},
+      "options": {
+        "A": {"ja": "パソコン", "en": "A computer"},
+        "B": {"ja": "無限に入るクラウド上の倉庫", "en": "An infinite cloud storage warehouse"},
+        "C": {"ja": "電話", "en": "A phone"},
+        "D": {"ja": "プリンター", "en": "A printer"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "S3は無限の倉庫！写真でも動画でも何でもポイポイ入れられて、絶対なくならない！", "en": "S3 is like infinite storage! Throw in anything - photos, videos - and it never gets lost!"}
+    },
+    {
+      "id": 3,
+      "category": "たとえ話",
+      "question": {"ja": "EC2を身近なものにたとえると？", "en": "What is EC2 most like?"},
+      "options": {
+        "A": {"ja": "レンタルできるパソコン", "en": "A rental computer"},
+        "B": {"ja": "USBメモリ", "en": "A USB drive"},
+        "C": {"ja": "Wi-Fiルーター", "en": "A Wi-Fi router"},
+        "D": {"ja": "スマートウォッチ", "en": "A smartwatch"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "EC2はレンタルパソコン！使いたい時だけ借りて、いらなくなったら返せばOK！", "en": "EC2 is a rental computer! Borrow when needed, return when done!"}
+    },
+    {
+      "id": 4,
+      "category": "超基礎",
+      "question": {"ja": "クラウドの一番のメリットは？", "en": "What's the BEST thing about cloud?"},
+      "options": {
+        "A": {"ja": "最初にめっちゃお金がかかる", "en": "Huge upfront costs"},
+        "B": {"ja": "使った分だけ払えばいい", "en": "Pay only for what you use"},
+        "C": {"ja": "自分でサーバー買う必要がある", "en": "You need to buy your own servers"},
+        "D": {"ja": "変更に1ヶ月かかる", "en": "Changes take a month"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "使った分だけでOK！Netflixみたいなサブスク感覚！初期費用ゼロで始められるよ！", "en": "Pay only for what you use! Like Netflix subscription! Zero upfront cost!"}
+    },
+    {
+      "id": 5,
+      "category": "たとえ話",
+      "question": {"ja": "「リージョン」って何？", "en": "What is a Region?"},
+      "options": {
+        "A": {"ja": "料金プラン", "en": "A pricing plan"},
+        "B": {"ja": "世界各地にあるAWSのデータセンターの場所", "en": "AWS data center locations around the world"},
+        "C": {"ja": "ニックネーム", "en": "A nickname"},
+        "D": {"ja": "パスワードの種類", "en": "A type of password"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "リージョンは世界中のAWS拠点！東京、アメリカ、ヨーロッパとか。近い場所を選ぶと速いよ〜", "en": "Regions are AWS locations worldwide! Tokyo, US, Europe. Pick nearby for speed!"}
+    },
+    {
+      "id": 6,
+      "category": "超基礎",
+      "question": {"ja": "AWSを使い始めるのに必要なものは？", "en": "What do you need to start using AWS?"},
+      "options": {
+        "A": {"ja": "特別な資格", "en": "Special certifications"},
+        "B": {"ja": "メールアドレスとクレジットカード", "en": "Email and credit card"},
+        "C": {"ja": "大企業の許可", "en": "Permission from a big company"},
+        "D": {"ja": "プログラミングの知識", "en": "Programming knowledge"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "メアドとクレカだけ！誰でも5分で始められるの。しかも無料枠もあるよ！", "en": "Just email and credit card! Anyone can start in 5 minutes. Plus there's free tier!"}
+    },
+    {
+      "id": 7,
+      "category": "たとえ話",
+      "question": {"ja": "RDSを身近なものにたとえると？", "en": "What is RDS most like?"},
+      "options": {
+        "A": {"ja": "お店で買うノート", "en": "A notebook from a store"},
+        "B": {"ja": "誰かが管理してくれるデータベース", "en": "A database managed by someone else"},
+        "C": {"ja": "ゲーム機", "en": "A game console"},
+        "D": {"ja": "カメラ", "en": "A camera"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "RDSは「お任せデータベース」！面倒なバックアップとかメンテをAWSがやってくれる！", "en": "RDS is a managed database! AWS handles backups and maintenance for you!"}
+    },
+    {
+      "id": 8,
+      "category": "超基礎",
+      "question": {"ja": "AWSの「無料利用枠」って何？", "en": "What is AWS Free Tier?"},
+      "options": {
+        "A": {"ja": "絶対に課金されないプラン", "en": "A plan that never charges you"},
+        "B": {"ja": "一定量まで無料で試せるサービス", "en": "Services you can try free up to a limit"},
+        "C": {"ja": "社員だけのプラン", "en": "A plan only for employees"},
+        "D": {"ja": "昔のサービス", "en": "Old services"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "無料利用枠は「お試し」！12ヶ月間、一定量まで無料で使えるサービスがいっぱいあるよ！", "en": "Free Tier is like a trial! Many services are free up to certain limits for 12 months!"}
+    },
+    {
+      "id": 9,
+      "category": "たとえ話",
+      "question": {"ja": "Lambdaを身近なものにたとえると？", "en": "What is Lambda most like?"},
+      "options": {
+        "A": {"ja": "24時間動くサーバー", "en": "A 24/7 running server"},
+        "B": {"ja": "呼ばれた時だけ働くバイト", "en": "A part-timer who works only when called"},
+        "C": {"ja": "倉庫", "en": "A warehouse"},
+        "D": {"ja": "電話回線", "en": "A phone line"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "Lambdaは「呼ばれた時だけ働くバイト」！使った秒数だけ払えばいいの。待機時間は無料！", "en": "Lambda is like an on-call worker! Pay only for seconds used. Idle time is free!"}
+    },
+    {
+      "id": 10,
+      "category": "超基礎",
+      "question": {"ja": "「アベイラビリティーゾーン（AZ）」って何？", "en": "What is an Availability Zone?"},
+      "options": {
+        "A": {"ja": "利用可能な時間帯", "en": "Available time slots"},
+        "B": {"ja": "リージョン内にある独立したデータセンター", "en": "Independent data centers within a region"},
+        "C": {"ja": "割引プラン", "en": "A discount plan"},
+        "D": {"ja": "ユーザー名", "en": "A username"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "AZはリージョンの中にある独立したデータセンター！1つ壊れても他が動くから安心だよ！", "en": "AZ is an independent data center within a region! If one fails, others keep running!"}
+    },
+    {
+      "id": 11,
+      "category": "たとえ話",
+      "question": {"ja": "CloudFrontを身近なものにたとえると？", "en": "What is CloudFront most like?"},
+      "options": {
+        "A": {"ja": "世界中にあるコンビニの配送センター", "en": "Convenience store distribution centers worldwide"},
+        "B": {"ja": "銀行", "en": "A bank"},
+        "C": {"ja": "学校", "en": "A school"},
+        "D": {"ja": "病院", "en": "A hospital"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "CloudFrontは世界中の配送センター！ユーザーの近くからコンテンツを届けるから超速い！", "en": "CloudFront is like delivery centers worldwide! Delivers content from nearby = super fast!"}
+    },
+    {
+      "id": 12,
+      "category": "超基礎",
+      "question": {"ja": "AWSコンソールって何？", "en": "What is the AWS Console?"},
+      "options": {
+        "A": {"ja": "ゲーム機", "en": "A game console"},
+        "B": {"ja": "AWSを操作するWebページ", "en": "A web page to control AWS"},
+        "C": {"ja": "電話サポート", "en": "Phone support"},
+        "D": {"ja": "請求書", "en": "An invoice"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "AWSコンソールはAWSを操作するWebページ！ブラウザからポチポチするだけでサーバー作れる！", "en": "AWS Console is a web page to control AWS! Click around in your browser to create servers!"}
+    },
+    {
+      "id": 13,
+      "category": "たとえ話",
+      "question": {"ja": "IAMを身近なものにたとえると？", "en": "What is IAM most like?"},
+      "options": {
+        "A": {"ja": "会社の入館カードシステム", "en": "A company building access card system"},
+        "B": {"ja": "お財布", "en": "A wallet"},
+        "C": {"ja": "カレンダー", "en": "A calendar"},
+        "D": {"ja": "電卓", "en": "A calculator"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "IAMは入館カードシステム！誰が何にアクセスできるかを管理するの。セキュリティの基本だよ！", "en": "IAM is like a building access card system! Controls who can access what. Security basics!"}
+    },
+    {
+      "id": 14,
+      "category": "超基礎",
+      "question": {"ja": "オンプレミスって何？", "en": "What does on-premises mean?"},
+      "options": {
+        "A": {"ja": "クラウドのこと", "en": "The cloud"},
+        "B": {"ja": "自社でサーバーを持つこと", "en": "Owning your own servers"},
+        "C": {"ja": "無料プラン", "en": "A free plan"},
+        "D": {"ja": "モバイルアプリ", "en": "A mobile app"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "オンプレミスは自社でサーバーを持つこと！クラウドの反対語だね。昔はみんなこれだった！", "en": "On-premises means owning your own servers! Opposite of cloud. Everyone used to do this!"}
+    },
+    {
+      "id": 15,
+      "category": "たとえ話",
+      "question": {"ja": "Route 53を身近なものにたとえると？", "en": "What is Route 53 most like?"},
+      "options": {
+        "A": {"ja": "電話帳", "en": "A phone book"},
+        "B": {"ja": "地図", "en": "A map"},
+        "C": {"ja": "時計", "en": "A clock"},
+        "D": {"ja": "カメラ", "en": "A camera"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Route 53は電話帳！「example.com」って名前から実際のサーバーの住所を教えてくれるの！", "en": "Route 53 is like a phone book! Translates 'example.com' to actual server addresses!"}
+    },
+    {
+      "id": 16,
+      "category": "超基礎",
+      "question": {"ja": "スケールアップとスケールアウトの違いは？", "en": "What's the difference between scale up and scale out?"},
+      "options": {
+        "A": {"ja": "同じ意味", "en": "Same thing"},
+        "B": {"ja": "アップ=マシンを強く、アウト=マシンを増やす", "en": "Up=make machine stronger, Out=add more machines"},
+        "C": {"ja": "アップ=値上げ、アウト=値下げ", "en": "Up=price increase, Out=price decrease"},
+        "D": {"ja": "アップ=起動、アウト=停止", "en": "Up=start, Out=stop"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "スケールアップは1台を強くする！スケールアウトは台数を増やす！どっちも「パワーアップ」だよ！", "en": "Scale up = make one machine stronger! Scale out = add more machines! Both = more power!"}
+    },
+    {
+      "id": 17,
+      "category": "たとえ話",
+      "question": {"ja": "VPCを身近なものにたとえると？", "en": "What is VPC most like?"},
+      "options": {
+        "A": {"ja": "自分専用のプライベートネットワーク空間", "en": "Your own private network space"},
+        "B": {"ja": "公園", "en": "A park"},
+        "C": {"ja": "レストラン", "en": "A restaurant"},
+        "D": {"ja": "映画館", "en": "A movie theater"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "VPCは自分だけのプライベート空間！他の人から見えない自分専用のネットワークが作れるよ！", "en": "VPC is your private space! Create your own network invisible to others!"}
+    },
+    {
+      "id": 18,
+      "category": "超基礎",
+      "question": {"ja": "AWSで「インスタンス」といえば？", "en": "What is an 'instance' in AWS?"},
+      "options": {
+        "A": {"ja": "仮想サーバー1台のこと", "en": "One virtual server"},
+        "B": {"ja": "料金プラン", "en": "A pricing plan"},
+        "C": {"ja": "サポート窓口", "en": "A support desk"},
+        "D": {"ja": "ドキュメント", "en": "Documentation"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "インスタンス=仮想サーバー1台！「EC2インスタンスを起動する」=「サーバーを1台立ち上げる」って意味！", "en": "Instance = one virtual server! 'Launch an EC2 instance' = 'Start up a server'!"}
+    },
+    {
+      "id": 19,
+      "category": "たとえ話",
+      "question": {"ja": "ELBを身近なものにたとえると？", "en": "What is ELB most like?"},
+      "options": {
+        "A": {"ja": "交通整理の警察官", "en": "A traffic cop"},
+        "B": {"ja": "銀行", "en": "A bank"},
+        "C": {"ja": "学校", "en": "A school"},
+        "D": {"ja": "病院", "en": "A hospital"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "ELBは交通整理の警察官！たくさん来るアクセスを複数のサーバーに振り分けてくれる！", "en": "ELB is like a traffic cop! Distributes incoming traffic across multiple servers!"}
+    },
+    {
+      "id": 20,
+      "category": "超基礎",
+      "question": {"ja": "AWSの料金はいつ発生する？", "en": "When do AWS charges occur?"},
+      "options": {
+        "A": {"ja": "アカウント作成時", "en": "When creating an account"},
+        "B": {"ja": "リソースを使った時", "en": "When using resources"},
+        "C": {"ja": "毎月固定", "en": "Fixed monthly"},
+        "D": {"ja": "年に1回", "en": "Once a year"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "使った時だけ！アカウント作るのは無料。サーバー動かしたりデータ保存した分だけ払うの！", "en": "Only when you use resources! Account creation is free. Pay only for servers and storage used!"}
+    },
+    {
+      "id": 21,
+      "category": "たとえ話",
+      "question": {"ja": "Auto Scalingを身近なものにたとえると？", "en": "What is Auto Scaling most like?"},
+      "options": {
+        "A": {"ja": "忙しい時だけバイトを増やすお店", "en": "A shop that hires more staff when busy"},
+        "B": {"ja": "固定シフトのお店", "en": "A shop with fixed shifts"},
+        "C": {"ja": "24時間営業のお店", "en": "A 24-hour shop"},
+        "D": {"ja": "休業中のお店", "en": "A closed shop"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Auto Scalingは忙しい時だけバイト増やすお店！アクセス多い時は自動でサーバー増える！", "en": "Auto Scaling is like hiring more staff when busy! Automatically adds servers during high traffic!"}
+    },
+    {
+      "id": 22,
+      "category": "超基礎",
+      "question": {"ja": "「マネージドサービス」って何？", "en": "What is a managed service?"},
+      "options": {
+        "A": {"ja": "自分で全部管理するサービス", "en": "A service you manage yourself"},
+        "B": {"ja": "AWSが運用管理してくれるサービス", "en": "A service AWS manages for you"},
+        "C": {"ja": "無料サービス", "en": "A free service"},
+        "D": {"ja": "古いサービス", "en": "An old service"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "マネージド=AWSがお世話してくれる！バックアップとかアップデートとか面倒なことをやってくれる！", "en": "Managed = AWS takes care of it! Backups, updates, all the boring stuff handled for you!"}
+    },
+    {
+      "id": 23,
+      "category": "たとえ話",
+      "question": {"ja": "SNSを身近なものにたとえると？", "en": "What is SNS most like?"},
+      "options": {
+        "A": {"ja": "TwitterやInstagram", "en": "Twitter or Instagram"},
+        "B": {"ja": "お知らせを届ける郵便局", "en": "A post office that delivers notifications"},
+        "C": {"ja": "ゲーム", "en": "A game"},
+        "D": {"ja": "カレンダー", "en": "A calendar"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "AWSのSNSはSNSじゃなくて通知サービス！メールやSMSでお知らせを送る郵便局みたいなもの！", "en": "AWS SNS isn't social media - it's notifications! Like a post office sending emails and SMS!"}
+    },
+    {
+      "id": 24,
+      "category": "超基礎",
+      "question": {"ja": "AWSのサービス数は大体いくつ？", "en": "About how many AWS services are there?"},
+      "options": {
+        "A": {"ja": "10個くらい", "en": "About 10"},
+        "B": {"ja": "50個くらい", "en": "About 50"},
+        "C": {"ja": "200個以上", "en": "Over 200"},
+        "D": {"ja": "5個", "en": "5"}
+      },
+      "correct": "C",
+      "explanation": {"ja": "200個以上！！多すぎて覚えられないけど、よく使うのは20個くらいだから大丈夫！", "en": "Over 200!! Too many to memorize, but commonly used ones are about 20, so you're fine!"}
+    },
+    {
+      "id": 25,
+      "category": "たとえ話",
+      "question": {"ja": "SQSを身近なものにたとえると？", "en": "What is SQS most like?"},
+      "options": {
+        "A": {"ja": "行列に並ぶ待合室", "en": "A waiting room with a queue"},
+        "B": {"ja": "電話", "en": "A phone"},
+        "C": {"ja": "テレビ", "en": "A TV"},
+        "D": {"ja": "冷蔵庫", "en": "A refrigerator"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "SQSは待合室！処理待ちのメッセージが順番に並んで、1つずつ処理される仕組みだよ！", "en": "SQS is like a waiting room! Messages line up and get processed one by one!"}
+    },
+    {
+      "id": 26,
+      "category": "超基礎",
+      "question": {"ja": "「サーバーレス」って本当にサーバーがない？", "en": "Does 'serverless' mean no servers?"},
+      "options": {
+        "A": {"ja": "本当にサーバーがない", "en": "Really no servers"},
+        "B": {"ja": "サーバーはあるけど管理しなくていい", "en": "Servers exist but you don't manage them"},
+        "C": {"ja": "無料という意味", "en": "It means free"},
+        "D": {"ja": "オフラインという意味", "en": "It means offline"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "サーバーはあるけど見えないだけ！AWSが裏で管理してるから、私たちは気にしなくていいの！", "en": "Servers exist but you don't see them! AWS manages them behind the scenes - you don't worry!"}
+    },
+    {
+      "id": 27,
+      "category": "たとえ話",
+      "question": {"ja": "DynamoDBを身近なものにたとえると？", "en": "What is DynamoDB most like?"},
+      "options": {
+        "A": {"ja": "超高速で大量のメモを管理できるノート", "en": "A super-fast notebook for tons of notes"},
+        "B": {"ja": "ゆっくりな図書館", "en": "A slow library"},
+        "C": {"ja": "電話", "en": "A phone"},
+        "D": {"ja": "テレビ", "en": "A TV"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "DynamoDBは超高速ノート！どんなに大量のデータでも一瞬で読み書きできるスゴイやつ！", "en": "DynamoDB is a super-fast notebook! Reads and writes tons of data instantly!"}
+    },
+    {
+      "id": 28,
+      "category": "超基礎",
+      "question": {"ja": "AWSで東京リージョンのコードは？", "en": "What is the code for Tokyo region?"},
+      "options": {
+        "A": {"ja": "ap-northeast-1", "en": "ap-northeast-1"},
+        "B": {"ja": "us-east-1", "en": "us-east-1"},
+        "C": {"ja": "eu-west-1", "en": "eu-west-1"},
+        "D": {"ja": "tokyo-1", "en": "tokyo-1"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "ap-northeast-1！apはアジアパシフィック、northeastは北東。日本は「アジアの北東」だからね！", "en": "ap-northeast-1! ap = Asia Pacific, northeast = Japan is in northeast Asia!"}
+    },
+    {
+      "id": 29,
+      "category": "たとえ話",
+      "question": {"ja": "EBSを身近なものにたとえると？", "en": "What is EBS most like?"},
+      "options": {
+        "A": {"ja": "EC2にくっつける外付けハードディスク", "en": "An external hard drive for EC2"},
+        "B": {"ja": "キーボード", "en": "A keyboard"},
+        "C": {"ja": "モニター", "en": "A monitor"},
+        "D": {"ja": "マウス", "en": "A mouse"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "EBSは外付けHDD！EC2にくっつけて使うストレージ。取り外して別のEC2につけることもできる！", "en": "EBS is like an external hard drive! Attach to EC2, or detach and attach to another!"}
+    },
+    {
+      "id": 30,
+      "category": "超基礎",
+      "question": {"ja": "AMIって何？", "en": "What is an AMI?"},
+      "options": {
+        "A": {"ja": "EC2のテンプレート（設計図）", "en": "An EC2 template (blueprint)"},
+        "B": {"ja": "料金プラン", "en": "A pricing plan"},
+        "C": {"ja": "サポート窓口", "en": "A support desk"},
+        "D": {"ja": "ネットワーク", "en": "A network"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "AMIはEC2の設計図！OSとかソフトが入った状態を保存して、同じサーバーを何台でも作れる！", "en": "AMI is an EC2 template! Save OS and software setup, then create identical servers anytime!"}
+    },
+    {
+      "id": 31,
+      "category": "たとえ話",
+      "question": {"ja": "CloudWatchを身近なものにたとえると？", "en": "What is CloudWatch most like?"},
+      "options": {
+        "A": {"ja": "体調を測る健康診断", "en": "A health checkup measuring vitals"},
+        "B": {"ja": "ゲーム", "en": "A game"},
+        "C": {"ja": "料理", "en": "Cooking"},
+        "D": {"ja": "掃除", "en": "Cleaning"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "CloudWatchは健康診断！CPUやメモリの状態を監視して、異常があったらアラームで教えてくれる！", "en": "CloudWatch is like a health checkup! Monitors CPU, memory, and alerts you if something's wrong!"}
+    },
+    {
+      "id": 32,
+      "category": "超基礎",
+      "question": {"ja": "AWSの主な競合は？", "en": "Who are AWS's main competitors?"},
+      "options": {
+        "A": {"ja": "Microsoft Azure, Google Cloud", "en": "Microsoft Azure, Google Cloud"},
+        "B": {"ja": "Netflix, Spotify", "en": "Netflix, Spotify"},
+        "C": {"ja": "Apple, Samsung", "en": "Apple, Samsung"},
+        "D": {"ja": "Toyota, Honda", "en": "Toyota, Honda"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "AzureとGoogle Cloud！でもAWSがシェア1位。この3つで世界のクラウド市場の大半を占めてる！", "en": "Azure and Google Cloud! But AWS is #1. These 3 dominate the global cloud market!"}
+    },
+    {
+      "id": 33,
+      "category": "たとえ話",
+      "question": {"ja": "Elastic Beanstalkを身近なものにたとえると？", "en": "What is Elastic Beanstalk most like?"},
+      "options": {
+        "A": {"ja": "全部おまかせのお弁当セット", "en": "An all-inclusive bento set"},
+        "B": {"ja": "材料だけ渡される料理", "en": "Cooking with just ingredients"},
+        "C": {"ja": "空のお皿", "en": "An empty plate"},
+        "D": {"ja": "メニューだけ", "en": "Just a menu"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Elastic Beanstalkはお弁当セット！コードを渡すだけで、サーバーとか全部AWSが用意してくれる！", "en": "Elastic Beanstalk is like a bento set! Just give your code, AWS sets up everything else!"}
+    },
+    {
+      "id": 34,
+      "category": "超基礎",
+      "question": {"ja": "「高可用性」って何？", "en": "What is high availability?"},
+      "options": {
+        "A": {"ja": "値段が高いこと", "en": "High price"},
+        "B": {"ja": "ほとんど止まらないこと", "en": "Almost never going down"},
+        "C": {"ja": "速度が速いこと", "en": "High speed"},
+        "D": {"ja": "容量が大きいこと", "en": "Large capacity"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "高可用性=ほとんど止まらない！99.99%動いてるとか。1年で50分くらいしか止まらないって意味！", "en": "High availability = almost never down! 99.99% uptime means only ~50 minutes downtime per year!"}
+    },
+    {
+      "id": 35,
+      "category": "たとえ話",
+      "question": {"ja": "Security Groupを身近なものにたとえると？", "en": "What is a Security Group most like?"},
+      "options": {
+        "A": {"ja": "家のドアの鍵", "en": "A house door lock"},
+        "B": {"ja": "カーテン", "en": "Curtains"},
+        "C": {"ja": "照明", "en": "Lighting"},
+        "D": {"ja": "エアコン", "en": "Air conditioning"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Security Groupはドアの鍵！「この人は入っていい」「この人はダメ」を決める。ファイアウォールだよ！", "en": "Security Group is like a door lock! Decides who can enter and who can't. It's a firewall!"}
+    },
+    {
+      "id": 36,
+      "category": "超基礎",
+      "question": {"ja": "「従量課金」って何？", "en": "What is pay-as-you-go?"},
+      "options": {
+        "A": {"ja": "毎月固定料金", "en": "Fixed monthly fee"},
+        "B": {"ja": "使った分だけ払う", "en": "Pay only for what you use"},
+        "C": {"ja": "年間契約", "en": "Annual contract"},
+        "D": {"ja": "無料", "en": "Free"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "従量課金=使った分だけ払う！電気代みたいな感じ。使わなければ0円！", "en": "Pay-as-you-go = pay only for what you use! Like electricity bills. No use = no charge!"}
+    },
+    {
+      "id": 37,
+      "category": "たとえ話",
+      "question": {"ja": "Glacierを身近なものにたとえると？", "en": "What is Glacier most like?"},
+      "options": {
+        "A": {"ja": "めったに開けない物置", "en": "A storage shed you rarely open"},
+        "B": {"ja": "毎日使う冷蔵庫", "en": "A daily-use refrigerator"},
+        "C": {"ja": "リビング", "en": "A living room"},
+        "D": {"ja": "玄関", "en": "An entrance"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Glacierは物置！普段使わないデータを超安く保存。取り出すのに時間かかるけど安い！", "en": "Glacier is like a storage shed! Super cheap for rarely used data. Takes time to retrieve but cheap!"}
+    },
+    {
+      "id": 38,
+      "category": "超基礎",
+      "question": {"ja": "「レイテンシ」って何？", "en": "What is latency?"},
+      "options": {
+        "A": {"ja": "料金", "en": "Price"},
+        "B": {"ja": "遅延時間（反応速度）", "en": "Delay time (response speed)"},
+        "C": {"ja": "容量", "en": "Capacity"},
+        "D": {"ja": "色", "en": "Color"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "レイテンシは遅延時間！クリックしてから反応するまでの時間。短いほどサクサク動く！", "en": "Latency is delay time! Time from click to response. Lower = snappier!"}
+    },
+    {
+      "id": 39,
+      "category": "たとえ話",
+      "question": {"ja": "CodeDeployを身近なものにたとえると？", "en": "What is CodeDeploy most like?"},
+      "options": {
+        "A": {"ja": "新しいアプリを自動でインストールしてくれる人", "en": "Someone who auto-installs new apps"},
+        "B": {"ja": "プログラマー", "en": "A programmer"},
+        "C": {"ja": "デザイナー", "en": "A designer"},
+        "D": {"ja": "営業", "en": "A salesperson"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "CodeDeployは自動インストール担当！新しいコードをサーバーに配布してくれるの。楽ちん！", "en": "CodeDeploy auto-installs! Automatically deploys new code to servers. So easy!"}
+    },
+    {
+      "id": 40,
+      "category": "超基礎",
+      "question": {"ja": "AWSでデータはどこに保存される？", "en": "Where is data stored in AWS?"},
+      "options": {
+        "A": {"ja": "自分のパソコン", "en": "Your own computer"},
+        "B": {"ja": "選んだリージョンのデータセンター", "en": "Data centers in your chosen region"},
+        "C": {"ja": "宇宙", "en": "Space"},
+        "D": {"ja": "隣の家", "en": "Your neighbor's house"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "選んだリージョンのデータセンター！東京リージョン選べば日本国内に保存されるよ！", "en": "In data centers of your chosen region! Pick Tokyo region = stored in Japan!"}
+    },
+    {
+      "id": 41,
+      "category": "たとえ話",
+      "question": {"ja": "ElastiCacheを身近なものにたとえると？", "en": "What is ElastiCache most like?"},
+      "options": {
+        "A": {"ja": "よく使うものを手元に置いておく引き出し", "en": "A drawer for frequently used items"},
+        "B": {"ja": "遠くの倉庫", "en": "A distant warehouse"},
+        "C": {"ja": "ゴミ箱", "en": "A trash can"},
+        "D": {"ja": "窓", "en": "A window"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "ElastiCacheは手元の引き出し！よく使うデータを近くに置いておくと超速くなる！", "en": "ElastiCache is like a drawer nearby! Keep frequently used data close = super fast access!"}
+    },
+    {
+      "id": 42,
+      "category": "超基礎",
+      "question": {"ja": "「スループット」って何？", "en": "What is throughput?"},
+      "options": {
+        "A": {"ja": "1秒間に処理できるデータ量", "en": "Amount of data processed per second"},
+        "B": {"ja": "料金", "en": "Price"},
+        "C": {"ja": "サポート", "en": "Support"},
+        "D": {"ja": "名前", "en": "Name"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "スループットは処理能力！1秒間にどれだけデータを処理できるか。大きいほど高性能！", "en": "Throughput is processing power! How much data per second. Higher = better performance!"}
+    },
+    {
+      "id": 43,
+      "category": "たとえ話",
+      "question": {"ja": "KMSを身近なものにたとえると？", "en": "What is KMS most like?"},
+      "options": {
+        "A": {"ja": "金庫の鍵を管理する金庫番", "en": "A vault keeper managing safe keys"},
+        "B": {"ja": "ドア", "en": "A door"},
+        "C": {"ja": "窓", "en": "A window"},
+        "D": {"ja": "屋根", "en": "A roof"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "KMSは金庫番！暗号化の鍵を安全に管理してくれる。データを守る大事なサービス！", "en": "KMS is like a key keeper! Safely manages encryption keys. Essential for protecting data!"}
+    },
+    {
+      "id": 44,
+      "category": "超基礎",
+      "question": {"ja": "「冗長化」って何？", "en": "What is redundancy?"},
+      "options": {
+        "A": {"ja": "無駄をなくすこと", "en": "Eliminating waste"},
+        "B": {"ja": "予備を用意しておくこと", "en": "Having backups ready"},
+        "C": {"ja": "高くすること", "en": "Making it expensive"},
+        "D": {"ja": "遅くすること", "en": "Making it slow"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "冗長化=予備を用意！1つ壊れても別のが動く。「無駄」じゃなくて「保険」だよ！", "en": "Redundancy = having backups! If one fails, another works. Not 'waste' but 'insurance'!"}
+    },
+    {
+      "id": 45,
+      "category": "たとえ話",
+      "question": {"ja": "CloudFormationを身近なものにたとえると？", "en": "What is CloudFormation most like?"},
+      "options": {
+        "A": {"ja": "設計図からビルを自動で建てる機械", "en": "A machine that auto-builds from blueprints"},
+        "B": {"ja": "手作業で建てる大工", "en": "A carpenter building by hand"},
+        "C": {"ja": "解体業者", "en": "A demolition crew"},
+        "D": {"ja": "不動産屋", "en": "A real estate agent"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "CloudFormationは自動建築機！設計図（テンプレート）を渡すと、インフラを自動で作ってくれる！", "en": "CloudFormation auto-builds! Give it a blueprint (template), it creates infrastructure automatically!"}
+    },
+    {
+      "id": 46,
+      "category": "超基礎",
+      "question": {"ja": "AWS Well-Architectedフレームワークの柱はいくつ？", "en": "How many pillars in AWS Well-Architected Framework?"},
+      "options": {
+        "A": {"ja": "3つ", "en": "3"},
+        "B": {"ja": "5つ", "en": "5"},
+        "C": {"ja": "6つ", "en": "6"},
+        "D": {"ja": "10つ", "en": "10"}
+      },
+      "correct": "C",
+      "explanation": {"ja": "6つ！運用、セキュリティ、信頼性、パフォーマンス、コスト最適化、サステナビリティ！", "en": "6 pillars! Operations, Security, Reliability, Performance, Cost Optimization, Sustainability!"}
+    },
+    {
+      "id": 47,
+      "category": "たとえ話",
+      "question": {"ja": "API Gatewayを身近なものにたとえると？", "en": "What is API Gateway most like?"},
+      "options": {
+        "A": {"ja": "レストランの受付", "en": "A restaurant reception"},
+        "B": {"ja": "厨房", "en": "A kitchen"},
+        "C": {"ja": "食材倉庫", "en": "A food storage"},
+        "D": {"ja": "ゴミ箱", "en": "A trash can"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "API Gatewayはレストランの受付！お客さん（リクエスト）を受け付けて、厨房（バックエンド）に伝える！", "en": "API Gateway is like restaurant reception! Takes customer requests and sends to kitchen (backend)!"}
+    },
+    {
+      "id": 48,
+      "category": "超基礎",
+      "question": {"ja": "「デプロイ」って何？", "en": "What does deploy mean?"},
+      "options": {
+        "A": {"ja": "削除すること", "en": "Deleting"},
+        "B": {"ja": "本番環境に配置すること", "en": "Putting into production"},
+        "C": {"ja": "購入すること", "en": "Purchasing"},
+        "D": {"ja": "設計すること", "en": "Designing"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "デプロイは本番に出すこと！作ったアプリやコードを実際に動く環境に配置することだよ！", "en": "Deploy means putting into production! Placing your app or code into a live environment!"}
+    },
+    {
+      "id": 49,
+      "category": "たとえ話",
+      "question": {"ja": "Cognitoを身近なものにたとえると？", "en": "What is Cognito most like?"},
+      "options": {
+        "A": {"ja": "会員証を発行する受付", "en": "A reception issuing membership cards"},
+        "B": {"ja": "倉庫", "en": "A warehouse"},
+        "C": {"ja": "工場", "en": "A factory"},
+        "D": {"ja": "駐車場", "en": "A parking lot"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Cognitoは会員証発行所！ログイン機能を簡単に作れる。GoogleやFacebookログインも対応！", "en": "Cognito issues membership cards! Easily create login features. Works with Google/Facebook login too!"}
+    },
+    {
+      "id": 50,
+      "category": "超基礎",
+      "question": {"ja": "「IaaS」「PaaS」「SaaS」で、EC2はどれ？", "en": "Is EC2 IaaS, PaaS, or SaaS?"},
+      "options": {
+        "A": {"ja": "IaaS", "en": "IaaS"},
+        "B": {"ja": "PaaS", "en": "PaaS"},
+        "C": {"ja": "SaaS", "en": "SaaS"},
+        "D": {"ja": "どれでもない", "en": "None of the above"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "EC2はIaaS（Infrastructure as a Service）！サーバーという「インフラ」を提供してくれる！", "en": "EC2 is IaaS (Infrastructure as a Service)! Provides servers - the 'infrastructure'!"}
+    },
+    {
+      "id": 51,
+      "category": "たとえ話",
+      "question": {"ja": "Step Functionsを身近なものにたとえると？", "en": "What is Step Functions most like?"},
+      "options": {
+        "A": {"ja": "料理のレシピを順番に実行してくれる人", "en": "Someone who follows a recipe step by step"},
+        "B": {"ja": "食材", "en": "Ingredients"},
+        "C": {"ja": "お皿", "en": "A plate"},
+        "D": {"ja": "冷蔵庫", "en": "A refrigerator"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Step Functionsはレシピ実行係！「まずこれやって、次にあれやって」を自動でやってくれる！", "en": "Step Functions follows recipes! 'Do this first, then that' - executes steps automatically!"}
+    },
+    {
+      "id": 52,
+      "category": "超基礎",
+      "question": {"ja": "AWSリソースに付けられる「タグ」って何？", "en": "What are AWS tags?"},
+      "options": {
+        "A": {"ja": "値札のようなラベル", "en": "Labels like price tags"},
+        "B": {"ja": "パスワード", "en": "Passwords"},
+        "C": {"ja": "IPアドレス", "en": "IP addresses"},
+        "D": {"ja": "サイズ", "en": "Sizes"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "タグは値札！「このサーバーは開発用」「このS3は経理部」みたいにラベルを付けて管理できる！", "en": "Tags are like labels! Mark resources like 'this server is for dev' or 'this S3 is for accounting'!"}
+    },
+    {
+      "id": 53,
+      "category": "たとえ話",
+      "question": {"ja": "Kinesis を身近なものにたとえると？", "en": "What is Kinesis most like?"},
+      "options": {
+        "A": {"ja": "リアルタイムでニュースを流すテレビ", "en": "A TV streaming live news"},
+        "B": {"ja": "録画したビデオ", "en": "A recorded video"},
+        "C": {"ja": "写真アルバム", "en": "A photo album"},
+        "D": {"ja": "本棚", "en": "A bookshelf"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Kinesisはリアルタイムテレビ！大量のデータをリアルタイムで処理できる。IoTとか向き！", "en": "Kinesis is like live TV! Processes huge amounts of data in real-time. Great for IoT!"}
+    },
+    {
+      "id": 54,
+      "category": "超基礎",
+      "question": {"ja": "「エッジロケーション」って何？", "en": "What is an edge location?"},
+      "options": {
+        "A": {"ja": "CloudFrontのキャッシュを置く場所", "en": "A place for CloudFront cache"},
+        "B": {"ja": "本社", "en": "Headquarters"},
+        "C": {"ja": "工場", "en": "A factory"},
+        "D": {"ja": "銀行", "en": "A bank"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "エッジロケーションはCloudFrontの配送拠点！世界中にあって、ユーザーの近くからコンテンツを届ける！", "en": "Edge locations are CloudFront delivery points! Worldwide, serving content from near users!"}
+    },
+    {
+      "id": 55,
+      "category": "たとえ話",
+      "question": {"ja": "Athenaを身近なものにたとえると？", "en": "What is Athena most like?"},
+      "options": {
+        "A": {"ja": "S3のデータに質問できる探偵", "en": "A detective who can query S3 data"},
+        "B": {"ja": "データを保存する倉庫", "en": "A warehouse storing data"},
+        "C": {"ja": "データを運ぶトラック", "en": "A truck transporting data"},
+        "D": {"ja": "データを消すゴミ箱", "en": "A trash can deleting data"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "AthenaはS3専用探偵！S3に保存したデータにSQLで質問できる。サーバー不要！", "en": "Athena is an S3 detective! Query S3 data with SQL. No servers needed!"}
+    },
+    {
+      "id": 56,
+      "category": "超基礎",
+      "question": {"ja": "AWSの請求書はいつ届く？", "en": "When do AWS bills arrive?"},
+      "options": {
+        "A": {"ja": "毎日", "en": "Daily"},
+        "B": {"ja": "毎月初め（前月分）", "en": "Beginning of each month (for previous month)"},
+        "C": {"ja": "毎年", "en": "Yearly"},
+        "D": {"ja": "届かない", "en": "Never"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "毎月初めに前月分が届く！3日頃に確定。Cost Explorerで途中経過も見れるよ！", "en": "Beginning of each month for previous month! Around the 3rd. Check progress in Cost Explorer!"}
+    },
+    {
+      "id": 57,
+      "category": "たとえ話",
+      "question": {"ja": "Secrets Managerを身近なものにたとえると？", "en": "What is Secrets Manager most like?"},
+      "options": {
+        "A": {"ja": "パスワードを安全に保管する金庫", "en": "A safe for storing passwords securely"},
+        "B": {"ja": "メモ帳", "en": "A notepad"},
+        "C": {"ja": "カレンダー", "en": "A calendar"},
+        "D": {"ja": "時計", "en": "A clock"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Secrets Managerはパスワード金庫！APIキーとかパスワードを安全に保管して、自動ローテーションも！", "en": "Secrets Manager is a password vault! Safely stores API keys, passwords, with auto-rotation!"}
+    },
+    {
+      "id": 58,
+      "category": "超基礎",
+      "question": {"ja": "AWSアカウントは何個作れる？", "en": "How many AWS accounts can you create?"},
+      "options": {
+        "A": {"ja": "1人1個まで", "en": "One per person"},
+        "B": {"ja": "制限なし（複数作れる）", "en": "No limit (can create multiple)"},
+        "C": {"ja": "会社で1個まで", "en": "One per company"},
+        "D": {"ja": "有料プランのみ", "en": "Paid plans only"}
+      },
+      "correct": "B",
+      "explanation": {"ja": "制限なし！本番用、開発用、テスト用と分けて作る会社も多いよ！", "en": "No limit! Many companies create separate accounts for production, development, testing!"}
+    },
+    {
+      "id": 59,
+      "category": "たとえ話",
+      "question": {"ja": "EventBridgeを身近なものにたとえると？", "en": "What is EventBridge most like?"},
+      "options": {
+        "A": {"ja": "「〇〇が起きたら△△する」を設定できるスマートホーム", "en": "A smart home with 'if this then that' rules"},
+        "B": {"ja": "電話", "en": "A phone"},
+        "C": {"ja": "テレビ", "en": "A TV"},
+        "D": {"ja": "冷蔵庫", "en": "A refrigerator"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "EventBridgeはスマートホーム！「ファイルがアップロードされたらLambda起動」みたいなルールが作れる！", "en": "EventBridge is like smart home! Create rules like 'When file uploads, trigger Lambda'!"}
+    },
+    {
+      "id": 60,
+      "category": "超基礎",
+      "question": {"ja": "「マルチAZ」って何？", "en": "What is Multi-AZ?"},
+      "options": {
+        "A": {"ja": "複数のアベイラビリティーゾーンを使うこと", "en": "Using multiple Availability Zones"},
+        "B": {"ja": "複数のアカウント", "en": "Multiple accounts"},
+        "C": {"ja": "複数の料金プラン", "en": "Multiple pricing plans"},
+        "D": {"ja": "複数のパスワード", "en": "Multiple passwords"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "マルチAZは複数のAZを使うこと！1つのAZが壊れても他が動くから安心！高可用性の基本！", "en": "Multi-AZ uses multiple AZs! If one fails, others keep running. Basic high availability!"}
+    },
+    {
+      "id": 61,
+      "category": "たとえ話",
+      "question": {"ja": "ECSを身近なものにたとえると？", "en": "What is ECS most like?"},
+      "options": {
+        "A": {"ja": "コンテナ（箱）を管理してくれる倉庫管理人", "en": "A warehouse manager handling containers"},
+        "B": {"ja": "箱だけ", "en": "Just boxes"},
+        "C": {"ja": "トラック", "en": "A truck"},
+        "D": {"ja": "道路", "en": "A road"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "ECSはコンテナ管理人！Dockerコンテナを起動したり止めたり、何個動かすか管理してくれる！", "en": "ECS is a container manager! Starts, stops Docker containers, manages how many are running!"}
+    },
+    {
+      "id": 62,
+      "category": "超基礎",
+      "question": {"ja": "「IAMユーザー」と「ルートユーザー」の違いは？", "en": "Difference between IAM user and root user?"},
+      "options": {
+        "A": {"ja": "ルートは神様、IAMは権限を絞れる一般ユーザー", "en": "Root is god, IAM is a regular user with limited permissions"},
+        "B": {"ja": "同じ", "en": "Same"},
+        "C": {"ja": "IAMの方が偉い", "en": "IAM is more powerful"},
+        "D": {"ja": "ルートは無料、IAMは有料", "en": "Root is free, IAM is paid"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "ルートは何でもできる神様！IAMユーザーは必要な権限だけ与えられる。普段使いはIAMで！", "en": "Root is god - can do anything! IAM users get only needed permissions. Use IAM for daily work!"}
+    },
+    {
+      "id": 63,
+      "category": "たとえ話",
+      "question": {"ja": "Fargateを身近なものにたとえると？", "en": "What is Fargate most like?"},
+      "options": {
+        "A": {"ja": "サーバーを気にせずコンテナだけ動かせる魔法", "en": "Magic that runs containers without worrying about servers"},
+        "B": {"ja": "サーバーを自分で管理", "en": "Managing servers yourself"},
+        "C": {"ja": "データベース", "en": "A database"},
+        "D": {"ja": "ストレージ", "en": "Storage"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Fargateは魔法！コンテナを動かすサーバーの管理が不要。コンテナだけ考えればOK！", "en": "Fargate is magic! No server management for containers. Just focus on your containers!"}
+    },
+    {
+      "id": 64,
+      "category": "超基礎",
+      "question": {"ja": "AWSサポートに問い合わせる方法は？", "en": "How to contact AWS support?"},
+      "options": {
+        "A": {"ja": "AWSコンソールからケースを作成", "en": "Create a case from AWS Console"},
+        "B": {"ja": "電話帳で調べる", "en": "Look up in phone book"},
+        "C": {"ja": "手紙を送る", "en": "Send a letter"},
+        "D": {"ja": "店舗に行く", "en": "Visit a store"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "コンソールからサポートケース作成！プランによって対応時間が違う。Enterpriseなら15分以内も！", "en": "Create support case from console! Response time varies by plan. Enterprise can be 15 min!"}
+    },
+    {
+      "id": 65,
+      "category": "たとえ話",
+      "question": {"ja": "GuardDutyを身近なものにたとえると？", "en": "What is GuardDuty most like?"},
+      "options": {
+        "A": {"ja": "24時間監視してくれる警備員", "en": "A 24/7 security guard"},
+        "B": {"ja": "掃除ロボット", "en": "A cleaning robot"},
+        "C": {"ja": "料理ロボット", "en": "A cooking robot"},
+        "D": {"ja": "配達ロボット", "en": "A delivery robot"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "GuardDutyは警備員！怪しいアクセスや攻撃を24時間監視して検知してくれるセキュリティサービス！", "en": "GuardDuty is a security guard! Monitors 24/7 for suspicious access and attacks!"}
+    },
+    {
+      "id": 66,
+      "category": "超基礎",
+      "question": {"ja": "「VPC」は何の略？", "en": "What does VPC stand for?"},
+      "options": {
+        "A": {"ja": "Virtual Private Cloud", "en": "Virtual Private Cloud"},
+        "B": {"ja": "Very Private Computer", "en": "Very Private Computer"},
+        "C": {"ja": "Virtual Public Cloud", "en": "Virtual Public Cloud"},
+        "D": {"ja": "Video Play Cloud", "en": "Video Play Cloud"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Virtual Private Cloud！仮想的なプライベートクラウド空間。自分だけのネットワークが作れる！", "en": "Virtual Private Cloud! Create your own private network space in the cloud!"}
+    },
+    {
+      "id": 67,
+      "category": "たとえ話",
+      "question": {"ja": "Glueを身近なものにたとえると？", "en": "What is Glue most like?"},
+      "options": {
+        "A": {"ja": "バラバラのデータをくっつけて整理する接着剤", "en": "Glue that sticks scattered data together"},
+        "B": {"ja": "ハサミ", "en": "Scissors"},
+        "C": {"ja": "消しゴム", "en": "An eraser"},
+        "D": {"ja": "定規", "en": "A ruler"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Glueは接着剤！いろんな場所にあるデータを集めて変換して整理するETLサービス！", "en": "Glue is glue! Collects data from various places, transforms and organizes it. ETL service!"}
+    },
+    {
+      "id": 68,
+      "category": "超基礎",
+      "question": {"ja": "S3のバケット名のルールは？", "en": "What are S3 bucket naming rules?"},
+      "options": {
+        "A": {"ja": "世界中でユニーク（同じ名前は使えない）", "en": "Globally unique (no duplicate names)"},
+        "B": {"ja": "何でもOK", "en": "Anything goes"},
+        "C": {"ja": "数字だけ", "en": "Numbers only"},
+        "D": {"ja": "日本語OK", "en": "Japanese OK"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "世界中でユニーク！誰かが使ってる名前は使えない。小文字とハイフンで作ろう！", "en": "Globally unique! Can't use names others have. Use lowercase and hyphens!"}
+    },
+    {
+      "id": 69,
+      "category": "たとえ話",
+      "question": {"ja": "QuickSightを身近なものにたとえると？", "en": "What is QuickSight most like?"},
+      "options": {
+        "A": {"ja": "データをグラフにしてくれるデザイナー", "en": "A designer who turns data into graphs"},
+        "B": {"ja": "データを保存する倉庫", "en": "A warehouse storing data"},
+        "C": {"ja": "データを消す機械", "en": "A machine that deletes data"},
+        "D": {"ja": "データを暗号化する機械", "en": "A machine that encrypts data"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "QuickSightはデータデザイナー！数字の羅列をきれいなグラフやダッシュボードにしてくれる！", "en": "QuickSight is a data designer! Turns boring numbers into beautiful graphs and dashboards!"}
+    },
+    {
+      "id": 70,
+      "category": "超基礎",
+      "question": {"ja": "「オブジェクトストレージ」と「ブロックストレージ」の違いは？", "en": "Difference between object and block storage?"},
+      "options": {
+        "A": {"ja": "オブジェクト=ファイル単位(S3)、ブロック=ディスク単位(EBS)", "en": "Object=file-based (S3), Block=disk-based (EBS)"},
+        "B": {"ja": "同じ", "en": "Same"},
+        "C": {"ja": "ブロックの方が安い", "en": "Block is cheaper"},
+        "D": {"ja": "オブジェクトはサーバーに付ける", "en": "Object attaches to servers"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "オブジェクト(S3)はファイルをそのまま保存！ブロック(EBS)はサーバーのディスクとして使う！", "en": "Object (S3) stores files as-is! Block (EBS) is used as server disk!"}
+    },
+    {
+      "id": 71,
+      "category": "たとえ話",
+      "question": {"ja": "WAFを身近なものにたとえると？", "en": "What is WAF most like?"},
+      "options": {
+        "A": {"ja": "Webサイトを守る門番", "en": "A gatekeeper protecting websites"},
+        "B": {"ja": "掃除機", "en": "A vacuum cleaner"},
+        "C": {"ja": "洗濯機", "en": "A washing machine"},
+        "D": {"ja": "電子レンジ", "en": "A microwave"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "WAFはWebの門番！怪しいアクセス（SQLインジェクションとか）をブロックしてサイトを守る！", "en": "WAF is a web gatekeeper! Blocks suspicious access like SQL injection to protect your site!"}
+    },
+    {
+      "id": 72,
+      "category": "超基礎",
+      "question": {"ja": "EC2インスタンスを止めると課金はどうなる？", "en": "What happens to charges when you stop an EC2 instance?"},
+      "options": {
+        "A": {"ja": "EC2料金は止まるがEBS料金は続く", "en": "EC2 charges stop but EBS charges continue"},
+        "B": {"ja": "全部止まる", "en": "All stop"},
+        "C": {"ja": "全部続く", "en": "All continue"},
+        "D": {"ja": "倍になる", "en": "Double"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "EC2の時間課金は止まる！でもEBS（ディスク）は存在してるから課金続くよ。消すのは別！", "en": "EC2 hourly charge stops! But EBS (disk) still exists, so it's still charged. Delete = different!"}
+    },
+    {
+      "id": 73,
+      "category": "たとえ話",
+      "question": {"ja": "Lightsailを身近なものにたとえると？", "en": "What is Lightsail most like?"},
+      "options": {
+        "A": {"ja": "初心者向けの簡単セットメニュー", "en": "A beginner-friendly set menu"},
+        "B": {"ja": "プロ向けの複雑なコース", "en": "A complex course for pros"},
+        "C": {"ja": "材料だけ", "en": "Just ingredients"},
+        "D": {"ja": "空のお店", "en": "An empty shop"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Lightsailは簡単セットメニュー！月額固定で、サーバー+ストレージ+ネットワークがセットで使える！", "en": "Lightsail is an easy set menu! Fixed monthly price with server + storage + network included!"}
+    },
+    {
+      "id": 74,
+      "category": "超基礎",
+      "question": {"ja": "「IP アドレス」って何？", "en": "What is an IP address?"},
+      "options": {
+        "A": {"ja": "インターネット上の住所", "en": "An address on the internet"},
+        "B": {"ja": "パスワード", "en": "A password"},
+        "C": {"ja": "ユーザー名", "en": "A username"},
+        "D": {"ja": "電話番号", "en": "A phone number"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "IPアドレスはネット上の住所！192.168.1.1みたいな数字で、どこにあるか特定できる！", "en": "IP address is an internet address! Numbers like 192.168.1.1 that identify location!"}
+    },
+    {
+      "id": 75,
+      "category": "たとえ話",
+      "question": {"ja": "Transit Gatewayを身近なものにたとえると？", "en": "What is Transit Gateway most like?"},
+      "options": {
+        "A": {"ja": "複数の道路をつなぐインターチェンジ", "en": "An interchange connecting multiple roads"},
+        "B": {"ja": "一本道", "en": "A single road"},
+        "C": {"ja": "行き止まり", "en": "A dead end"},
+        "D": {"ja": "駐車場", "en": "A parking lot"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Transit Gatewayはインターチェンジ！複数のVPCやオンプレを中央でつなげる交通の要所！", "en": "Transit Gateway is like an interchange! Connects multiple VPCs and on-prem at one central hub!"}
+    },
+    {
+      "id": 76,
+      "category": "超基礎",
+      "question": {"ja": "「サブネット」って何？", "en": "What is a subnet?"},
+      "options": {
+        "A": {"ja": "VPCの中をさらに分けた区画", "en": "A section within a VPC"},
+        "B": {"ja": "海底ケーブル", "en": "An undersea cable"},
+        "C": {"ja": "サンドイッチ", "en": "A sandwich"},
+        "D": {"ja": "潜水艦", "en": "A submarine"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "サブネットはVPCの中の区画！「ここはWebサーバー用」「ここはDB用」と分けられる！", "en": "Subnet is a section within VPC! Divide like 'here for web servers' 'here for databases'!"}
+    },
+    {
+      "id": 77,
+      "category": "たとえ話",
+      "question": {"ja": "Direct Connectを身近なものにたとえると？", "en": "What is Direct Connect most like?"},
+      "options": {
+        "A": {"ja": "会社とAWSをつなぐ専用の高速道路", "en": "A private highway connecting company to AWS"},
+        "B": {"ja": "一般道", "en": "A regular road"},
+        "C": {"ja": "歩道", "en": "A sidewalk"},
+        "D": {"ja": "空路", "en": "An airway"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Direct Connectは専用高速道路！インターネットを通らない専用線で安定して速い！", "en": "Direct Connect is a private highway! Dedicated line without internet = stable and fast!"}
+    },
+    {
+      "id": 78,
+      "category": "超基礎",
+      "question": {"ja": "「SSH」って何？", "en": "What is SSH?"},
+      "options": {
+        "A": {"ja": "サーバーに安全にリモート接続する方法", "en": "A way to securely connect to servers remotely"},
+        "B": {"ja": "ストレージの種類", "en": "A type of storage"},
+        "C": {"ja": "データベース", "en": "A database"},
+        "D": {"ja": "プログラミング言語", "en": "A programming language"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "SSHは安全なリモート接続！暗号化されてるから、パスワードとか盗まれにくい！EC2接続に使う！", "en": "SSH is secure remote connection! Encrypted so passwords are hard to steal. Used for EC2!"}
+    },
+    {
+      "id": 79,
+      "category": "たとえ話",
+      "question": {"ja": "CloudTrailを身近なものにたとえると？", "en": "What is CloudTrail most like?"},
+      "options": {
+        "A": {"ja": "誰が何をしたか記録する監視カメラ", "en": "A security camera recording who did what"},
+        "B": {"ja": "ゴミ箱", "en": "A trash can"},
+        "C": {"ja": "電話", "en": "A phone"},
+        "D": {"ja": "テレビ", "en": "A TV"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "CloudTrailは監視カメラ！「誰がいつ何をした」を全部記録。セキュリティ監査に必須！", "en": "CloudTrail is a security camera! Records 'who did what when'. Essential for security audits!"}
+    },
+    {
+      "id": 80,
+      "category": "超基礎",
+      "question": {"ja": "EC2の「t2.micro」「t3.large」の違いは？", "en": "What's the difference between t2.micro and t3.large?"},
+      "options": {
+        "A": {"ja": "インスタンスタイプ（性能とサイズ）", "en": "Instance type (performance and size)"},
+        "B": {"ja": "リージョン", "en": "Region"},
+        "C": {"ja": "OS", "en": "OS"},
+        "D": {"ja": "色", "en": "Color"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "インスタンスタイプは性能の違い！microは小さい、largeは大きい。用途に合わせて選ぶ！", "en": "Instance types differ in performance! micro is small, large is bigger. Choose based on needs!"}
+    },
+    {
+      "id": 81,
+      "category": "たとえ話",
+      "question": {"ja": "Configを身近なものにたとえると？", "en": "What is AWS Config most like?"},
+      "options": {
+        "A": {"ja": "設定変更を記録する家計簿", "en": "A ledger recording config changes"},
+        "B": {"ja": "料理レシピ", "en": "A recipe"},
+        "C": {"ja": "ゲーム", "en": "A game"},
+        "D": {"ja": "音楽", "en": "Music"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "AWS Configは家計簿！リソースの設定変更を全部記録。「いつ誰が何を変えた」がわかる！", "en": "AWS Config is like a ledger! Records all resource changes. Know 'who changed what when'!"}
+    },
+    {
+      "id": 82,
+      "category": "超基礎",
+      "question": {"ja": "「HTTPS」と「HTTP」の違いは？", "en": "Difference between HTTPS and HTTP?"},
+      "options": {
+        "A": {"ja": "HTTPSは暗号化されてて安全", "en": "HTTPS is encrypted and secure"},
+        "B": {"ja": "同じ", "en": "Same"},
+        "C": {"ja": "HTTPの方が安全", "en": "HTTP is more secure"},
+        "D": {"ja": "速度の違い", "en": "Speed difference"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "HTTPSは暗号化！Sはセキュアの意味。パスワードとか入力するサイトは絶対HTTPSを使おう！", "en": "HTTPS is encrypted! S means Secure. Always use HTTPS for sites with passwords!"}
+    },
+    {
+      "id": 83,
+      "category": "たとえ話",
+      "question": {"ja": "Organizationsを身近なものにたとえると？", "en": "What is AWS Organizations most like?"},
+      "options": {
+        "A": {"ja": "複数のAWSアカウントをまとめる親会社", "en": "A parent company managing multiple AWS accounts"},
+        "B": {"ja": "1つの会社", "en": "A single company"},
+        "C": {"ja": "個人", "en": "An individual"},
+        "D": {"ja": "フリーランス", "en": "A freelancer"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Organizationsは親会社！複数のAWSアカウントをまとめて管理。請求を一本化したりポリシーを統一！", "en": "Organizations is like a parent company! Manage multiple AWS accounts, unify billing and policies!"}
+    },
+    {
+      "id": 84,
+      "category": "超基礎",
+      "question": {"ja": "「ARN」って何？", "en": "What is an ARN?"},
+      "options": {
+        "A": {"ja": "AWSリソースの一意な名前（Amazon Resource Name）", "en": "A unique name for AWS resources (Amazon Resource Name)"},
+        "B": {"ja": "料金プラン", "en": "A pricing plan"},
+        "C": {"ja": "サポート窓口", "en": "A support desk"},
+        "D": {"ja": "プログラミング言語", "en": "A programming language"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "ARNはAWSリソースの名札！世界中で1つだけの名前で、どのリソースか特定できる！", "en": "ARN is a unique name for AWS resources! One-of-a-kind identifier worldwide!"}
+    },
+    {
+      "id": 85,
+      "category": "たとえ話",
+      "question": {"ja": "Inspectorを身近なものにたとえると？", "en": "What is Inspector most like?"},
+      "options": {
+        "A": {"ja": "セキュリティの健康診断", "en": "A security health checkup"},
+        "B": {"ja": "掃除", "en": "Cleaning"},
+        "C": {"ja": "料理", "en": "Cooking"},
+        "D": {"ja": "洗濯", "en": "Laundry"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Inspectorはセキュリティ健康診断！EC2やコンテナの脆弱性をスキャンして教えてくれる！", "en": "Inspector is a security checkup! Scans EC2 and containers for vulnerabilities!"}
+    },
+    {
+      "id": 86,
+      "category": "超基礎",
+      "question": {"ja": "AWSでWindowsは使える？", "en": "Can you use Windows on AWS?"},
+      "options": {
+        "A": {"ja": "はい、EC2でWindows Server使える", "en": "Yes, EC2 can use Windows Server"},
+        "B": {"ja": "いいえ、Linuxだけ", "en": "No, Linux only"},
+        "C": {"ja": "Macだけ", "en": "Mac only"},
+        "D": {"ja": "使えない", "en": "Cannot use"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Windows使える！EC2でWindows Serverを選べる。ライセンス込みの料金で簡単！", "en": "Yes! Choose Windows Server for EC2. License included in the price. Easy!"}
+    },
+    {
+      "id": 87,
+      "category": "たとえ話",
+      "question": {"ja": "Rekognitionを身近なものにたとえると？", "en": "What is Rekognition most like?"},
+      "options": {
+        "A": {"ja": "画像の中身を理解できるAI", "en": "AI that understands image contents"},
+        "B": {"ja": "カメラ", "en": "A camera"},
+        "C": {"ja": "プリンター", "en": "A printer"},
+        "D": {"ja": "スキャナー", "en": "A scanner"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Rekognitionは画像AI！写真の中の顔、物、文字を認識できる。スマホの顔認証みたいな感じ！", "en": "Rekognition is image AI! Recognizes faces, objects, text in photos. Like phone face unlock!"}
+    },
+    {
+      "id": 88,
+      "category": "超基礎",
+      "question": {"ja": "「SDK」って何？", "en": "What is an SDK?"},
+      "options": {
+        "A": {"ja": "プログラムからAWSを操作するためのツール", "en": "Tools to control AWS from programs"},
+        "B": {"ja": "画面", "en": "A screen"},
+        "C": {"ja": "キーボード", "en": "A keyboard"},
+        "D": {"ja": "マウス", "en": "A mouse"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "SDKはプログラムからAWSを操作するツール！Python、JavaScriptなど色んな言語に対応！", "en": "SDK is tools to control AWS from code! Available for Python, JavaScript, and more!"}
+    },
+    {
+      "id": 89,
+      "category": "たとえ話",
+      "question": {"ja": "Pollyを身近なものにたとえると？", "en": "What is Polly most like?"},
+      "options": {
+        "A": {"ja": "文字を読み上げてくれるアナウンサー", "en": "An announcer who reads text aloud"},
+        "B": {"ja": "マイク", "en": "A microphone"},
+        "C": {"ja": "スピーカー", "en": "A speaker"},
+        "D": {"ja": "イヤホン", "en": "Earphones"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Pollyはアナウンサー！テキストを自然な声で読み上げてくれる。多言語対応！", "en": "Polly is an announcer! Reads text aloud in natural voice. Supports many languages!"}
+    },
+    {
+      "id": 90,
+      "category": "超基礎",
+      "question": {"ja": "「CLI」って何？", "en": "What is CLI?"},
+      "options": {
+        "A": {"ja": "コマンドラインからAWSを操作するツール", "en": "A tool to control AWS from command line"},
+        "B": {"ja": "画面をクリックする操作", "en": "Clicking on screen"},
+        "C": {"ja": "電話", "en": "A phone"},
+        "D": {"ja": "メール", "en": "Email"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "CLIはコマンドライン操作！黒い画面でコマンドを打ってAWSを操作。自動化に便利！", "en": "CLI is command line control! Type commands in terminal to control AWS. Great for automation!"}
+    },
+    {
+      "id": 91,
+      "category": "たとえ話",
+      "question": {"ja": "Translateを身近なものにたとえると？", "en": "What is Translate most like?"},
+      "options": {
+        "A": {"ja": "自動翻訳してくれる通訳", "en": "An interpreter who auto-translates"},
+        "B": {"ja": "辞書", "en": "A dictionary"},
+        "C": {"ja": "教科書", "en": "A textbook"},
+        "D": {"ja": "ノート", "en": "A notebook"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Translateは通訳！テキストを自動で翻訳。Google翻訳みたいなことがAPIでできる！", "en": "Translate is an interpreter! Auto-translates text. Like Google Translate via API!"}
+    },
+    {
+      "id": 92,
+      "category": "超基礎",
+      "question": {"ja": "AWSの「コンプライアンス」って何？", "en": "What is AWS compliance?"},
+      "options": {
+        "A": {"ja": "法律や規制に従っていること", "en": "Following laws and regulations"},
+        "B": {"ja": "料金プラン", "en": "A pricing plan"},
+        "C": {"ja": "サポート", "en": "Support"},
+        "D": {"ja": "速度", "en": "Speed"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "コンプライアンスは法令遵守！AWSは色んな業界の規制（PCI、HIPAA等）に対応してる！", "en": "Compliance means following regulations! AWS meets various industry standards (PCI, HIPAA, etc.)!"}
+    },
+    {
+      "id": 93,
+      "category": "たとえ話",
+      "question": {"ja": "Comprehendを身近なものにたとえると？", "en": "What is Comprehend most like?"},
+      "options": {
+        "A": {"ja": "文章の意味を理解できる読解AI", "en": "AI that understands text meaning"},
+        "B": {"ja": "ペン", "en": "A pen"},
+        "C": {"ja": "紙", "en": "Paper"},
+        "D": {"ja": "消しゴム", "en": "An eraser"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Comprehendは読解AI！文章から感情（ポジティブ/ネガティブ）や重要語句を抽出！", "en": "Comprehend is reading AI! Extracts sentiment (positive/negative) and key phrases from text!"}
+    },
+    {
+      "id": 94,
+      "category": "超基礎",
+      "question": {"ja": "Trusted Advisorって何？", "en": "What is Trusted Advisor?"},
+      "options": {
+        "A": {"ja": "AWSの使い方をチェックしてアドバイスしてくれる", "en": "Checks your AWS usage and gives advice"},
+        "B": {"ja": "サポート担当者の名前", "en": "A support person's name"},
+        "C": {"ja": "料金プラン", "en": "A pricing plan"},
+        "D": {"ja": "ストレージ", "en": "Storage"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Trusted Advisorはアドバイザー！コスト、セキュリティ、パフォーマンスをチェックして改善点を教えてくれる！", "en": "Trusted Advisor gives advice! Checks cost, security, performance and suggests improvements!"}
+    },
+    {
+      "id": 95,
+      "category": "たとえ話",
+      "question": {"ja": "Lexを身近なものにたとえると？", "en": "What is Lex most like?"},
+      "options": {
+        "A": {"ja": "会話できるチャットボットを作る道具", "en": "A tool to create conversational chatbots"},
+        "B": {"ja": "電話", "en": "A phone"},
+        "C": {"ja": "テレビ", "en": "A TV"},
+        "D": {"ja": "ラジオ", "en": "A radio"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Lexはチャットボットビルダー！Alexaと同じ技術で会話できるボットが作れる！", "en": "Lex is a chatbot builder! Create conversational bots using same tech as Alexa!"}
+    },
+    {
+      "id": 96,
+      "category": "超基礎",
+      "question": {"ja": "「JSON」って何？", "en": "What is JSON?"},
+      "options": {
+        "A": {"ja": "データをやり取りする形式", "en": "A format for exchanging data"},
+        "B": {"ja": "プログラミング言語", "en": "A programming language"},
+        "C": {"ja": "OS", "en": "An OS"},
+        "D": {"ja": "ブラウザ", "en": "A browser"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "JSONはデータ形式！{ \"name\": \"AWS\" } みたいな書き方。IAMポリシーとかに使われてる！", "en": "JSON is a data format! Like { \"name\": \"AWS\" }. Used for IAM policies and more!"}
+    },
+    {
+      "id": 97,
+      "category": "たとえ話",
+      "question": {"ja": "SageMakerを身近なものにたとえると？", "en": "What is SageMaker most like?"},
+      "options": {
+        "A": {"ja": "機械学習モデルを作る工場", "en": "A factory for building ML models"},
+        "B": {"ja": "データを保存する倉庫", "en": "A warehouse storing data"},
+        "C": {"ja": "データを運ぶトラック", "en": "A truck transporting data"},
+        "D": {"ja": "データを消すゴミ箱", "en": "A trash can deleting data"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "SageMakerはML工場！機械学習モデルの構築・学習・デプロイが全部できる！", "en": "SageMaker is an ML factory! Build, train, and deploy machine learning models all in one!"}
+    },
+    {
+      "id": 98,
+      "category": "超基礎",
+      "question": {"ja": "AWSを使うメリットを一言で言うと？", "en": "What's the main benefit of AWS in one word?"},
+      "options": {
+        "A": {"ja": "スピードと柔軟性", "en": "Speed and flexibility"},
+        "B": {"ja": "高い", "en": "Expensive"},
+        "C": {"ja": "難しい", "en": "Difficult"},
+        "D": {"ja": "遅い", "en": "Slow"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "スピードと柔軟性！数分でサーバー作れて、いらなくなったらすぐ消せる。昔は数週間かかった！", "en": "Speed and flexibility! Create servers in minutes, delete when done. Used to take weeks!"}
+    },
+    {
+      "id": 99,
+      "category": "たとえ話",
+      "question": {"ja": "Control Towerを身近なものにたとえると？", "en": "What is Control Tower most like?"},
+      "options": {
+        "A": {"ja": "複数アカウントを管理する管制塔", "en": "A control tower managing multiple accounts"},
+        "B": {"ja": "1つのビル", "en": "A single building"},
+        "C": {"ja": "駐車場", "en": "A parking lot"},
+        "D": {"ja": "公園", "en": "A park"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "Control Towerは管制塔！複数のAWSアカウントをベストプラクティスで自動セットアップ・管理！", "en": "Control Tower is an air traffic control! Auto-setup and manage multiple AWS accounts with best practices!"}
+    },
+    {
+      "id": 100,
+      "category": "超基礎",
+      "question": {"ja": "AWSを始める第一歩は？", "en": "What's the first step to start with AWS?"},
+      "options": {
+        "A": {"ja": "無料アカウントを作成する", "en": "Create a free account"},
+        "B": {"ja": "資格を取る", "en": "Get certified"},
+        "C": {"ja": "高額なコースに申し込む", "en": "Sign up for expensive courses"},
+        "D": {"ja": "本社に行く", "en": "Visit headquarters"}
+      },
+      "correct": "A",
+      "explanation": {"ja": "まずは無料アカウント作成！無料利用枠で色々試せる。怖がらずにまず触ってみよう！", "en": "Create a free account first! Try things with free tier. Don't be scared, just start playing!"}
+    }
+  ]
+}

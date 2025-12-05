@@ -1,3 +1,3 @@
-from .kimi_provider import KimiLLM
+from .bedrock_provider import BedrockLLM
 
-__all__ = ["KimiLLM"]
+__all__ = ["BedrockLLM"]

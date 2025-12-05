@@ -26,8 +26,8 @@ UI_TEXT = {
         "quiz_complete": "クイズ完了！",
         "restart": "もう一度",
         "characters": {
-            "Botan": "🌸 ボタン - カジュアルに楽しく",
-            "Kasho": "🎵 カショウ - しっかり正確に",
+            "Botan": "🌸 牡丹 - カジュアルに楽しく",
+            "Kasho": "🎵 Kasho - しっかり正確に",
             "Yuri": "💻 ユリ - 技術を深掘り",
             "Ojisan": "👨 オジサン - 実務経験から"
         }

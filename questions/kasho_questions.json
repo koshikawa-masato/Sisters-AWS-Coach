@@ -1,0 +1,3106 @@
+{
+  "character": "Kasho",
+  "specialty": "お金・コスト・ビジネス特化",
+  "questions": [
+    {
+      "id": 1,
+      "category": "EC2料金",
+      "question": {
+        "ja": "EC2の料金を最大90%削減できるが、2分前通知で中断される可能性があるインスタンスは？",
+        "en": "Which EC2 instance type can save up to 90% but may be interrupted with 2-minute notice?"
+      },
+      "options": {
+        "A": {
+          "ja": "オンデマンド",
+          "en": "On-Demand"
+        },
+        "B": {
+          "ja": "リザーブド",
+          "en": "Reserved"
+        },
+        "C": {
+          "ja": "スポット",
+          "en": "Spot"
+        },
+        "D": {
+          "ja": "Dedicated Host",
+          "en": "Dedicated Host"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "スポットインスタンスは最大90%割引ですが、AWSがキャパシティを必要とすると中断されます。バッチ処理や中断可能なワークロードに最適です。",
+        "en": "Spot Instances offer up to 90% discount but can be interrupted when AWS needs capacity. Ideal for batch jobs and interruptible workloads."
+      }
+    },
+    {
+      "id": 2,
+      "category": "S3料金",
+      "question": {
+        "ja": "S3の料金に含まれないものは？",
+        "en": "Which is NOT included in S3 pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "保存容量",
+          "en": "Storage"
+        },
+        "B": {
+          "ja": "データ転送（アウト）/ Data transfer out",
+          "en": "データ転送（アウト）/ Data transfer out"
+        },
+        "C": {
+          "ja": "リクエスト数",
+          "en": "Number of requests"
+        },
+        "D": {
+          "ja": "アカウント作成費",
+          "en": "Account creation fee"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "AWSアカウント作成は無料です。S3は保存容量、リクエスト数、データ転送量で課金されます。入金方向（イン）は無料、出金方向（アウト）は有料です。",
+        "en": "AWS account creation is free. S3 charges for storage, requests, and data transfer. Data IN is free, data OUT costs money."
+      }
+    },
+    {
+      "id": 3,
+      "category": "予算管理",
+      "question": {
+        "ja": "「今月のAWS料金が1万円超えたら通知して」を実現するサービスは？",
+        "en": "Which service alerts you when AWS costs exceed a threshold?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Config",
+          "en": "AWS Config"
+        },
+        "B": {
+          "ja": "AWS Budgets",
+          "en": "AWS Budgets"
+        },
+        "C": {
+          "ja": "Amazon Inspector",
+          "en": "Amazon Inspector"
+        },
+        "D": {
+          "ja": "AWS Trusted Advisor",
+          "en": "AWS Trusted Advisor"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "AWS Budgetsでカスタム予算とアラートを設定できます。「月10,000円超えたらメール」のような設定が可能。コスト管理の基本中の基本です。",
+        "en": "AWS Budgets lets you set custom budgets and alerts. Essential for cost management - set alerts like 'email me when monthly costs exceed $100'."
+      }
+    },
+    {
+      "id": 4,
+      "category": "サポートプラン",
+      "question": {
+        "ja": "専任のTAM（テクニカルアカウントマネージャー）が付くサポートプランは？",
+        "en": "Which support plan includes a dedicated Technical Account Manager?"
+      },
+      "options": {
+        "A": {
+          "ja": "Basic（無料）",
+          "en": "Basic（無料）"
+        },
+        "B": {
+          "ja": "Developer（$29/月〜）",
+          "en": "Developer（$29/月〜）"
+        },
+        "C": {
+          "ja": "Business（$100/月〜）",
+          "en": "Business（$100/月〜）"
+        },
+        "D": {
+          "ja": "Enterprise（$15,000/月〜）",
+          "en": "Enterprise（$15,000/月〜）"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "TAMはEnterpriseプラン限定です。月額$15,000〜と高額ですが、大規模システムでは専任サポートの価値があります。",
+        "en": "TAM is Enterprise-only. At $15,000+/month it's expensive, but dedicated support is valuable for large-scale systems."
+      }
+    },
+    {
+      "id": 5,
+      "category": "無料枠",
+      "question": {
+        "ja": "AWS無料利用枠で、12ヶ月間無料で使えるEC2の時間は月何時間？",
+        "en": "How many hours of EC2 are free per month in the 12-month AWS Free Tier?"
+      },
+      "options": {
+        "A": {
+          "ja": "100時間",
+          "en": "100 hours"
+        },
+        "B": {
+          "ja": "750時間",
+          "en": "750 hours"
+        },
+        "C": {
+          "ja": "1000時間",
+          "en": "1000 hours"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "月750時間まで無料（t2.micro/t3.micro）。24時間×31日=744時間なので、1台なら24時間稼働でも無料枠内です。",
+        "en": "750 hours/month free (t2.micro/t3.micro). 24h × 31 days = 744 hours, so one instance running 24/7 fits in the free tier."
+      }
+    },
+    {
+      "id": 6,
+      "category": "EC2料金",
+      "question": {
+        "ja": "1年または3年の契約で最大72%割引になるEC2購入オプションは？",
+        "en": "Which EC2 purchasing option offers up to 72% discount with 1 or 3 year commitment?"
+      },
+      "options": {
+        "A": {
+          "ja": "スポットインスタンス",
+          "en": "スポットインスタンス"
+        },
+        "B": {
+          "ja": "リザーブドインスタンス",
+          "en": "リザーブドインスタンス"
+        },
+        "C": {
+          "ja": "オンデマンド",
+          "en": "オンデマンド"
+        },
+        "D": {
+          "ja": "Dedicated Host",
+          "en": "Dedicated Host"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "リザーブドインスタンスは1年または3年契約で最大72%割引。24時間365日稼働する本番サーバーに最適です。前払いが多いほど割引率が上がります。",
+        "en": "Reserved Instances offer up to 72% discount with 1 or 3 year terms. Ideal for 24/7 production servers. More upfront payment = bigger discount."
+      }
+    },
+    {
+      "id": 7,
+      "category": "コスト分析",
+      "question": {
+        "ja": "過去のAWS利用料金を可視化し、将来のコストを予測できるツールは？",
+        "en": "Which tool visualizes past AWS costs and forecasts future spending?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Budgets",
+          "en": "AWS Budgets"
+        },
+        "B": {
+          "ja": "Cost Explorer",
+          "en": "Cost Explorer"
+        },
+        "C": {
+          "ja": "AWS Config",
+          "en": "AWS Config"
+        },
+        "D": {
+          "ja": "CloudWatch",
+          "en": "CloudWatch"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Cost Explorerは過去13ヶ月の利用状況をグラフ化し、今後3ヶ月の予測も表示。サービス別・タグ別の分析も可能です。",
+        "en": "Cost Explorer visualizes 13 months of history and forecasts 3 months ahead. Analyze by service, tag, or other dimensions."
+      }
+    },
+    {
+      "id": 8,
+      "category": "データ転送",
+      "question": {
+        "ja": "AWSでデータ転送料金が「無料」なのはどの方向？",
+        "en": "Which direction of data transfer is FREE in AWS?"
+      },
+      "options": {
+        "A": {
+          "ja": "インターネット→AWS（イン）",
+          "en": "インターネット→AWS（イン）"
+        },
+        "B": {
+          "ja": "AWS→インターネット（アウト）",
+          "en": "AWS→インターネット（アウト）"
+        },
+        "C": {
+          "ja": "リージョン間転送",
+          "en": "リージョン間転送"
+        },
+        "D": {
+          "ja": "すべて有料",
+          "en": "すべて有料"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "インターネットからAWSへのデータ転送（イン）は無料。AWSから外への転送（アウト）は課金されます。「入れるのはタダ、出すのは有料」と覚えましょう。",
+        "en": "Data transfer INTO AWS is free. Data transfer OUT is charged. Remember: 'Free to come in, pay to leave.'"
+      }
+    },
+    {
+      "id": 9,
+      "category": "S3ストレージクラス",
+      "question": {
+        "ja": "S3で最も安価なストレージクラスは？（ただし取り出しに時間がかかる）",
+        "en": "Which is the cheapest S3 storage class? (but retrieval takes time)"
+      },
+      "options": {
+        "A": {
+          "ja": "S3 Standard",
+          "en": "S3 Standard"
+        },
+        "B": {
+          "ja": "S3 Intelligent-Tiering",
+          "en": "S3 Intelligent-Tiering"
+        },
+        "C": {
+          "ja": "S3 Glacier Deep Archive",
+          "en": "S3 Glacier Deep Archive"
+        },
+        "D": {
+          "ja": "S3 One Zone-IA",
+          "en": "S3 One Zone-IA"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Glacier Deep Archiveは最安（$0.00099/GB/月〜）ですが、取り出しに12〜48時間かかります。7-10年保存の規制対応データに最適。",
+        "en": "Glacier Deep Archive is cheapest ($0.00099/GB/month) but retrieval takes 12-48 hours. Perfect for regulatory data stored 7-10 years."
+      }
+    },
+    {
+      "id": 10,
+      "category": "Lambda料金",
+      "question": {
+        "ja": "Lambda関数の料金計算に使われる単位は？",
+        "en": "What unit is used for Lambda pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "時間課金（1時間単位）",
+          "en": "時間課金（1時間単位）"
+        },
+        "B": {
+          "ja": "リクエスト数 + GB秒",
+          "en": "リクエスト数 + GB秒"
+        },
+        "C": {
+          "ja": "データ転送量のみ",
+          "en": "データ転送量のみ"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Lambdaはリクエスト数（100万回あたり$0.20）とGB秒（メモリ×実行時間）で課金。月100万リクエスト＆40万GB秒まで無料枠あり。",
+        "en": "Lambda charges per request ($0.20/million) plus GB-seconds (memory × duration). Free tier: 1M requests & 400K GB-seconds/month."
+      }
+    },
+    {
+      "id": 11,
+      "category": "RDS料金",
+      "question": {
+        "ja": "RDSのコストを削減するために、開発環境のDBを夜間停止したい。最大何時間停止できる？",
+        "en": "To reduce RDS costs, you want to stop dev databases at night. Maximum stop duration?"
+      },
+      "options": {
+        "A": {
+          "ja": "8時間",
+          "en": "8時間"
+        },
+        "B": {
+          "ja": "24時間",
+          "en": "24時間"
+        },
+        "C": {
+          "ja": "7日間",
+          "en": "7日間"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "無制限"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "RDSインスタンスは最大7日間停止可能。7日経つと自動的に起動されます。開発環境のコスト削減に有効ですが、本番では使わないでください。",
+        "en": "RDS instances can be stopped for up to 7 days. After 7 days, they auto-start. Great for dev cost savings, but don't use in production."
+      }
+    },
+    {
+      "id": 12,
+      "category": "Savings Plans",
+      "question": {
+        "ja": "Savings Plansでコミットするのは何？",
+        "en": "What do you commit to with Savings Plans?"
+      },
+      "options": {
+        "A": {
+          "ja": "特定のインスタンスタイプ",
+          "en": "特定のインスタンスタイプ"
+        },
+        "B": {
+          "ja": "1時間あたりの利用金額（$/hr）",
+          "en": "1時間あたりの利用金額（$/hr）"
+        },
+        "C": {
+          "ja": "特定のリージョン",
+          "en": "特定のリージョン"
+        },
+        "D": {
+          "ja": "特定のAZ",
+          "en": "特定のAZ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Savings Plansは「1時間あたり$X使います」という金額コミット。RIより柔軟で、インスタンスファミリーやリージョン変更も可能です。",
+        "en": "Savings Plans commit to $/hour spend, not specific instances. More flexible than RIs - change instance family or region freely."
+      }
+    },
+    {
+      "id": 13,
+      "category": "サポートプラン",
+      "question": {
+        "ja": "24時間365日の電話サポートが受けられる最低プランは？",
+        "en": "What's the minimum plan for 24/7 phone support?"
+      },
+      "options": {
+        "A": {
+          "ja": "Basic",
+          "en": "Basic"
+        },
+        "B": {
+          "ja": "Developer",
+          "en": "Developer"
+        },
+        "C": {
+          "ja": "Business",
+          "en": "Business"
+        },
+        "D": {
+          "ja": "Enterprise",
+          "en": "Enterprise"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Business以上で24/7電話サポート。Developer はメールのみ（営業時間内）、Basicはサポートなし。本番環境ならBusiness以上を推奨。",
+        "en": "Business+ gets 24/7 phone support. Developer is email only (business hours). Basic has no support. Recommend Business+ for production."
+      }
+    },
+    {
+      "id": 14,
+      "category": "請求",
+      "question": {
+        "ja": "複数のAWSアカウントの請求を一本化し、ボリューム割引を受けられるサービスは？",
+        "en": "Which service consolidates billing across multiple AWS accounts for volume discounts?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Budgets",
+          "en": "AWS Budgets"
+        },
+        "B": {
+          "ja": "AWS Organizations",
+          "en": "AWS Organizations"
+        },
+        "C": {
+          "ja": "Cost Explorer",
+          "en": "Cost Explorer"
+        },
+        "D": {
+          "ja": "AWS Config",
+          "en": "AWS Config"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "AWS Organizationsの一括請求（Consolidated Billing）で、全アカウントの利用量を合算してボリューム割引を最大化できます。",
+        "en": "AWS Organizations Consolidated Billing combines all account usage for maximum volume discounts."
+      }
+    },
+    {
+      "id": 15,
+      "category": "無料枠",
+      "question": {
+        "ja": "DynamoDBの無料枠（Always Free）で使えるストレージ容量は？",
+        "en": "How much storage is included in DynamoDB's Always Free tier?"
+      },
+      "options": {
+        "A": {
+          "ja": "5GB",
+          "en": "5GB"
+        },
+        "B": {
+          "ja": "25GB",
+          "en": "25GB"
+        },
+        "C": {
+          "ja": "50GB",
+          "en": "50GB"
+        },
+        "D": {
+          "ja": "100GB",
+          "en": "100GB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "DynamoDBは25GBまで永久無料。さらに月25ユニットのRCU/WCUも無料。小規模アプリなら十分です。",
+        "en": "DynamoDB offers 25GB free forever, plus 25 RCU/WCU units monthly. Sufficient for small applications."
+      }
+    },
+    {
+      "id": 16,
+      "category": "EC2料金",
+      "question": {
+        "ja": "EC2オンデマンドの課金単位は？",
+        "en": "What is the billing increment for EC2 On-Demand?"
+      },
+      "options": {
+        "A": {
+          "ja": "1時間単位",
+          "en": "1時間単位"
+        },
+        "B": {
+          "ja": "1分単位",
+          "en": "1分単位"
+        },
+        "C": {
+          "ja": "秒単位（最低60秒）",
+          "en": "秒単位（最低60秒）"
+        },
+        "D": {
+          "ja": "1日単位",
+          "en": "1日単位"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "LinuxとWindowsのEC2は秒単位課金（最低60秒）。5分使えば5分だけ課金。以前の時間単位より大幅にお得になりました。",
+        "en": "Linux and Windows EC2 bill per-second (60 second minimum). Use 5 minutes, pay for 5 minutes. Much better than hourly billing."
+      }
+    },
+    {
+      "id": 17,
+      "category": "コスト最適化",
+      "question": {
+        "ja": "使われていないEBSボリュームやElastic IPを検出してコスト削減を提案するサービスは？",
+        "en": "Which service detects unused EBS volumes and Elastic IPs to suggest cost savings?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Config",
+          "en": "AWS Config"
+        },
+        "B": {
+          "ja": "AWS Trusted Advisor",
+          "en": "AWS Trusted Advisor"
+        },
+        "C": {
+          "ja": "Amazon Inspector",
+          "en": "Amazon Inspector"
+        },
+        "D": {
+          "ja": "AWS Systems Manager",
+          "en": "AWS Systems Manager"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Trusted Advisorのコスト最適化チェックで、未使用リソースを検出。無料のBasicプランでもいくつかのチェックが使えます。",
+        "en": "Trusted Advisor's cost optimization checks detect unused resources. Some checks available even in free Basic plan."
+      }
+    },
+    {
+      "id": 18,
+      "category": "EBS料金",
+      "question": {
+        "ja": "EBSボリュームはいつ課金される？",
+        "en": "When are you charged for EBS volumes?"
+      },
+      "options": {
+        "A": {
+          "ja": "EC2が稼働中のみ",
+          "en": "EC2が稼働中のみ"
+        },
+        "B": {
+          "ja": "プロビジョニングした容量に対して常に",
+          "en": "プロビジョニングした容量に対して常に"
+        },
+        "C": {
+          "ja": "実際に使用した容量のみ",
+          "en": "実際に使用した容量のみ"
+        },
+        "D": {
+          "ja": "読み書き操作時のみ",
+          "en": "読み書き操作時のみ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "EBSはプロビジョニングした容量に対して課金。100GB確保して10GBしか使ってなくても100GB分課金。EC2停止中も課金されます！",
+        "en": "EBS charges for provisioned capacity. Reserve 100GB, use 10GB, pay for 100GB. Charged even when EC2 is stopped!"
+      }
+    },
+    {
+      "id": 19,
+      "category": "スポットインスタンス",
+      "question": {
+        "ja": "スポットインスタンスが中断される前に受け取る通知の方法は？",
+        "en": "How are you notified before a Spot Instance is interrupted?"
+      },
+      "options": {
+        "A": {
+          "ja": "メールのみ",
+          "en": "メールのみ"
+        },
+        "B": {
+          "ja": "インスタンスメタデータ + EventBridge",
+          "en": "インスタンスメタデータ + EventBridge"
+        },
+        "C": {
+          "ja": "SMS",
+          "en": "SMS"
+        },
+        "D": {
+          "ja": "通知なし",
+          "en": "通知なし"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "2分前にインスタンスメタデータとEventBridgeで通知。アプリでメタデータをポーリングするか、EventBridgeでLambdaを起動して対応できます。",
+        "en": "2-minute warning via instance metadata and EventBridge. Poll metadata from your app or trigger Lambda via EventBridge."
+      }
+    },
+    {
+      "id": 20,
+      "category": "NAT Gateway",
+      "question": {
+        "ja": "NAT Gatewayの料金体系は？",
+        "en": "How is NAT Gateway priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "時間課金のみ",
+          "en": "時間課金のみ"
+        },
+        "C": {
+          "ja": "時間課金 + データ処理量",
+          "en": "時間課金 + データ処理量"
+        },
+        "D": {
+          "ja": "データ処理量のみ",
+          "en": "データ処理量のみ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "NAT Gatewayは時間課金（約$0.045/時間）+ データ処理量（$0.045/GB）。月に数万円になることも。代替案としてNATインスタンスも検討を。",
+        "en": "NAT Gateway charges hourly ($0.045/hr) + data processed ($0.045/GB). Can be hundreds monthly. Consider NAT instances as alternative."
+      }
+    },
+    {
+      "id": 21,
+      "category": "S3ストレージクラス",
+      "question": {
+        "ja": "アクセス頻度が予測できないデータに最適なS3ストレージクラスは？",
+        "en": "Best S3 storage class for data with unpredictable access patterns?"
+      },
+      "options": {
+        "A": {
+          "ja": "S3 Standard",
+          "en": "S3 Standard"
+        },
+        "B": {
+          "ja": "S3 Intelligent-Tiering",
+          "en": "S3 Intelligent-Tiering"
+        },
+        "C": {
+          "ja": "S3 Glacier",
+          "en": "S3 Glacier"
+        },
+        "D": {
+          "ja": "S3 One Zone-IA",
+          "en": "S3 One Zone-IA"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Intelligent-Tieringはアクセスパターンを監視し、30日アクセスなければIAに、90日なければArchiveに自動移動。管理不要でコスト最適化。",
+        "en": "Intelligent-Tiering monitors access patterns and auto-moves to IA after 30 days, Archive after 90 days. Zero management, optimized costs."
+      }
+    },
+    {
+      "id": 22,
+      "category": "リザーブドインスタンス",
+      "question": {
+        "ja": "リザーブドインスタンスで最も割引率が高い支払いオプションは？",
+        "en": "Which Reserved Instance payment option offers the highest discount?"
+      },
+      "options": {
+        "A": {
+          "ja": "前払いなし",
+          "en": "前払いなし"
+        },
+        "B": {
+          "ja": "一部前払い",
+          "en": "一部前払い"
+        },
+        "C": {
+          "ja": "全額前払い",
+          "en": "全額前払い"
+        },
+        "D": {
+          "ja": "すべて同じ",
+          "en": "すべて同じ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "全額前払い（All Upfront）が最大割引。3年全額前払いで最大72%オフ。キャッシュフローに余裕があれば全額前払いがお得です。",
+        "en": "All Upfront offers maximum discount - up to 72% off with 3-year term. Best value if you have the cash flow."
+      }
+    },
+    {
+      "id": 23,
+      "category": "CloudFront",
+      "question": {
+        "ja": "CloudFrontを使うとS3からの直接配信と比べてコストはどうなる？",
+        "en": "How does CloudFront affect costs compared to direct S3 delivery?"
+      },
+      "options": {
+        "A": {
+          "ja": "常に高くなる",
+          "en": "常に高くなる"
+        },
+        "B": {
+          "ja": "常に安くなる",
+          "en": "常に安くなる"
+        },
+        "C": {
+          "ja": "アクセス量によっては安くなる",
+          "en": "アクセス量によっては安くなる"
+        },
+        "D": {
+          "ja": "変わらない",
+          "en": "変わらない"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "CloudFrontはエッジキャッシュでS3アクセスを減らし、データ転送料金も安い。大量配信時はCloudFront経由の方が安くなることも。",
+        "en": "CloudFront caches at edge (fewer S3 requests) and has lower data transfer rates. High-volume delivery often cheaper via CloudFront."
+      }
+    },
+    {
+      "id": 24,
+      "category": "無料枠",
+      "question": {
+        "ja": "Lambda関数の無料枠は毎月何回のリクエストまで？",
+        "en": "How many Lambda requests are free per month?"
+      },
+      "options": {
+        "A": {
+          "ja": "10万回",
+          "en": "10万回"
+        },
+        "B": {
+          "ja": "100万回",
+          "en": "100万回"
+        },
+        "C": {
+          "ja": "1000万回",
+          "en": "1000万回"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "無制限"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "毎月100万リクエストまで無料（永久）。さらに40万GB秒も無料。小規模なサーバーレスアプリなら無料枠内で運用可能です。",
+        "en": "1 million requests free per month (forever) plus 400K GB-seconds. Small serverless apps can run entirely within free tier."
+      }
+    },
+    {
+      "id": 25,
+      "category": "請求アラート",
+      "question": {
+        "ja": "請求アラートをCloudWatchで設定するには、まず何を有効にする必要がある？",
+        "en": "What must be enabled before setting up billing alerts in CloudWatch?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Config",
+          "en": "AWS Config"
+        },
+        "B": {
+          "ja": "請求アラートの受信（Billing preferences）",
+          "en": "請求アラートの受信（Billing preferences）"
+        },
+        "C": {
+          "ja": "AWS Organizations",
+          "en": "AWS Organizations"
+        },
+        "D": {
+          "ja": "Trusted Advisor",
+          "en": "Trusted Advisor"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Billing and Cost Management > Billing preferences で「請求アラートを受け取る」を有効化。その後CloudWatchでアラーム作成可能に。",
+        "en": "Enable 'Receive billing alerts' in Billing preferences first. Then you can create CloudWatch billing alarms."
+      }
+    },
+    {
+      "id": 26,
+      "category": "RDS料金",
+      "question": {
+        "ja": "RDSでMulti-AZ構成にすると料金はどうなる？",
+        "en": "How does Multi-AZ deployment affect RDS pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "同じ",
+          "en": "同じ"
+        },
+        "B": {
+          "ja": "約2倍",
+          "en": "約2倍"
+        },
+        "C": {
+          "ja": "約1.5倍",
+          "en": "約1.5倍"
+        },
+        "D": {
+          "ja": "無料",
+          "en": "無料"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Multi-AZは別AZにスタンバイレプリカを維持するため、約2倍の料金。ただし本番環境では高可用性のために必須と考えてください。",
+        "en": "Multi-AZ doubles cost due to standby replica in another AZ. But consider it essential for production high availability."
+      }
+    },
+    {
+      "id": 27,
+      "category": "データ転送",
+      "question": {
+        "ja": "同じリージョン内のAZ間データ転送料金は？",
+        "en": "Data transfer cost between AZs in the same region?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "$0.01/GB",
+          "en": "$0.01/GB"
+        },
+        "C": {
+          "ja": "$0.02/GB",
+          "en": "$0.02/GB"
+        },
+        "D": {
+          "ja": "$0.09/GB",
+          "en": "$0.09/GB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "同リージョンのAZ間は$0.01/GB（イン・アウト両方）。小さく見えますが大量データだと積み重なります。設計時に考慮を。",
+        "en": "Cross-AZ in same region costs $0.01/GB (both in and out). Seems small but adds up with large data volumes. Consider in design."
+      }
+    },
+    {
+      "id": 28,
+      "category": "Elastic IP",
+      "question": {
+        "ja": "Elastic IPが課金されるのはどんな時？",
+        "en": "When are you charged for an Elastic IP?"
+      },
+      "options": {
+        "A": {
+          "ja": "使用中のみ",
+          "en": "使用中のみ"
+        },
+        "B": {
+          "ja": "未使用時のみ",
+          "en": "未使用時のみ"
+        },
+        "C": {
+          "ja": "常に課金",
+          "en": "常に課金"
+        },
+        "D": {
+          "ja": "無料",
+          "en": "無料"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "稼働中のEC2にアタッチされていれば無料。未使用（アタッチなし or EC2停止中）だと$0.005/時間課金。使わないなら解放しましょう。",
+        "en": "Free when attached to running EC2. Charged $0.005/hour when unused (not attached or EC2 stopped). Release if not needed."
+      }
+    },
+    {
+      "id": 29,
+      "category": "Savings Plans",
+      "question": {
+        "ja": "Compute Savings Plansの適用対象は？",
+        "en": "What does Compute Savings Plans cover?"
+      },
+      "options": {
+        "A": {
+          "ja": "EC2のみ",
+          "en": "EC2のみ"
+        },
+        "B": {
+          "ja": "EC2とFargate",
+          "en": "EC2とFargate"
+        },
+        "C": {
+          "ja": "EC2、Fargate、Lambda",
+          "en": "EC2、Fargate、Lambda"
+        },
+        "D": {
+          "ja": "すべてのAWSサービス",
+          "en": "すべてのAWSサービス"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Compute Savings PlansはEC2、Fargate、Lambdaに適用可能。最も柔軟なSavings Planで、サーバーレス移行時も無駄になりません。",
+        "en": "Compute Savings Plans apply to EC2, Fargate, and Lambda. Most flexible option - won't be wasted if you move to serverless."
+      }
+    },
+    {
+      "id": 30,
+      "category": "コスト配分タグ",
+      "question": {
+        "ja": "部署ごとのAWS利用料金を分析するために使う機能は？",
+        "en": "Which feature helps analyze AWS costs by department?"
+      },
+      "options": {
+        "A": {
+          "ja": "セキュリティグループ",
+          "en": "セキュリティグループ"
+        },
+        "B": {
+          "ja": "コスト配分タグ",
+          "en": "コスト配分タグ"
+        },
+        "C": {
+          "ja": "IAMポリシー",
+          "en": "IAMポリシー"
+        },
+        "D": {
+          "ja": "VPC",
+          "en": "VPC"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "コスト配分タグ（Cost Allocation Tags）でリソースにタグ付けし、Cost Explorerで分析。「Department: Marketing」のようにタグ付けして集計できます。",
+        "en": "Cost Allocation Tags let you tag resources and analyze in Cost Explorer. Tag like 'Department: Marketing' to track costs."
+      }
+    },
+    {
+      "id": 31,
+      "category": "サポートプラン",
+      "question": {
+        "ja": "Trusted Advisorの全チェック（コスト最適化、セキュリティ等）を使えるプランは？",
+        "en": "Which plan unlocks all Trusted Advisor checks (cost, security, etc.)?"
+      },
+      "options": {
+        "A": {
+          "ja": "Basic（無料）",
+          "en": "Basic（無料）"
+        },
+        "B": {
+          "ja": "Developer",
+          "en": "Developer"
+        },
+        "C": {
+          "ja": "Business以上",
+          "en": "Business以上"
+        },
+        "D": {
+          "ja": "Enterprise限定",
+          "en": "Enterprise限定"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Business以上で全チェック利用可能。Basic/Developerは一部のセキュリティチェックのみ。コスト最適化の価値を考えるとBusiness推奨。",
+        "en": "Business+ unlocks all checks. Basic/Developer only get limited security checks. Business is worth it for cost optimization insights."
+      }
+    },
+    {
+      "id": 32,
+      "category": "S3料金",
+      "question": {
+        "ja": "S3の料金で「リクエスト料金」が高くなるのはどの操作？",
+        "en": "Which S3 operation has higher request pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "GET（読み取り）",
+          "en": "GET（読み取り）"
+        },
+        "B": {
+          "ja": "PUT（書き込み）",
+          "en": "PUT（書き込み）"
+        },
+        "C": {
+          "ja": "DELETE",
+          "en": "DELETE"
+        },
+        "D": {
+          "ja": "すべて同じ",
+          "en": "すべて同じ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "PUT/POST/COPYは$0.005/1000リクエスト、GETは$0.0004/1000リクエスト。書き込みは読み取りの約10倍。大量アップロード時は注意。",
+        "en": "PUT/POST/COPY costs $0.005/1000 requests, GET costs $0.0004/1000. Writes are ~10x reads. Watch out for bulk uploads."
+      }
+    },
+    {
+      "id": 33,
+      "category": "Aurora",
+      "question": {
+        "ja": "Amazon Aurora Serverless v2の課金モデルは？",
+        "en": "How is Aurora Serverless v2 priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "インスタンス時間",
+          "en": "インスタンス時間"
+        },
+        "B": {
+          "ja": "ACU（Aurora Capacity Unit）",
+          "en": "ACU（Aurora Capacity Unit）"
+        },
+        "C": {
+          "ja": "ストレージのみ",
+          "en": "ストレージのみ"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ACU単位で秒課金。負荷に応じて0.5〜128ACUで自動スケール。使った分だけ払うモデルで、トラフィック変動が大きいワークロードに最適。",
+        "en": "Charges per ACU-second. Auto-scales 0.5-128 ACUs based on load. Pay-for-what-you-use model, ideal for variable traffic."
+      }
+    },
+    {
+      "id": 34,
+      "category": "無料枠",
+      "question": {
+        "ja": "S3の無料枠（12ヶ月）でのストレージ容量は？",
+        "en": "How much S3 storage is free in the 12-month Free Tier?"
+      },
+      "options": {
+        "A": {
+          "ja": "1GB",
+          "en": "1GB"
+        },
+        "B": {
+          "ja": "5GB",
+          "en": "5GB"
+        },
+        "C": {
+          "ja": "25GB",
+          "en": "25GB"
+        },
+        "D": {
+          "ja": "100GB",
+          "en": "100GB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "12ヶ月間、S3 Standardで5GBまで無料。加えてGET 20,000回、PUT 2,000回も無料。ただし12ヶ月経過後は通常課金に。",
+        "en": "5GB of S3 Standard free for 12 months, plus 20K GET and 2K PUT requests. After 12 months, normal pricing applies."
+      }
+    },
+    {
+      "id": 35,
+      "category": "EC2料金",
+      "question": {
+        "ja": "Dedicated Hostsを選ぶ主な理由は？",
+        "en": "Main reason to choose Dedicated Hosts?"
+      },
+      "options": {
+        "A": {
+          "ja": "コスト削減",
+          "en": "コスト削減"
+        },
+        "B": {
+          "ja": "ライセンス要件（BYOL）",
+          "en": "ライセンス要件（BYOL）"
+        },
+        "C": {
+          "ja": "パフォーマンス向上",
+          "en": "パフォーマンス向上"
+        },
+        "D": {
+          "ja": "セキュリティ",
+          "en": "セキュリティ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Dedicated HostsはソケットやコアベースのBYOLライセンス（Oracle、SQL Server等）で必要。専有ホストでライセンス違反を回避できます。",
+        "en": "Dedicated Hosts are needed for socket/core-based BYOL licenses (Oracle, SQL Server, etc.). Avoid license violations with dedicated hardware."
+      }
+    },
+    {
+      "id": 36,
+      "category": "コスト最適化",
+      "question": {
+        "ja": "夜間や週末に開発環境のEC2を自動停止してコスト削減するサービスは？",
+        "en": "Which service auto-stops dev EC2 instances at night/weekends to save costs?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Lambda + EventBridge",
+          "en": "AWS Lambda + EventBridge"
+        },
+        "B": {
+          "ja": "AWS Instance Scheduler",
+          "en": "AWS Instance Scheduler"
+        },
+        "C": {
+          "ja": "Auto Scaling",
+          "en": "Auto Scaling"
+        },
+        "D": {
+          "ja": "AとB両方",
+          "en": "AとB両方"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "AWS Instance Scheduler（CloudFormationソリューション）またはLambda + EventBridgeで実装可能。開発環境なら週40時間稼働で70%削減も。",
+        "en": "Use AWS Instance Scheduler (CloudFormation solution) or Lambda + EventBridge. Dev environments can save 70%+ by running only 40 hours/week."
+      }
+    },
+    {
+      "id": 37,
+      "category": "ELB料金",
+      "question": {
+        "ja": "Application Load Balancer（ALB）の料金体系は？",
+        "en": "How is Application Load Balancer (ALB) priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "時間課金のみ",
+          "en": "時間課金のみ"
+        },
+        "B": {
+          "ja": "時間課金 + LCU（Load Balancer Capacity Unit）",
+          "en": "時間課金 + LCU（Load Balancer Capacity Unit）"
+        },
+        "C": {
+          "ja": "データ転送量のみ",
+          "en": "データ転送量のみ"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ALBは時間課金（約$0.0225/時間）+ LCU課金。LCUは接続数、帯域幅、リクエスト数などで算出。最低月額$16程度から。",
+        "en": "ALB charges hourly (~$0.0225/hr) + LCUs. LCU based on connections, bandwidth, requests. Minimum ~$16/month."
+      }
+    },
+    {
+      "id": 38,
+      "category": "リージョン",
+      "question": {
+        "ja": "同じサービスでもリージョンによって料金が違うのはなぜ？",
+        "en": "Why do prices vary by region for the same service?"
+      },
+      "options": {
+        "A": {
+          "ja": "為替レート",
+          "en": "為替レート"
+        },
+        "B": {
+          "ja": "電力・不動産・人件費の違い",
+          "en": "電力・不動産・人件費の違い"
+        },
+        "C": {
+          "ja": "需要と供給",
+          "en": "需要と供給"
+        },
+        "D": {
+          "ja": "すべて該当",
+          "en": "すべて該当"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "リージョンごとにインフラコスト（電力、不動産）、人件費、需給バランスが異なります。東京は米国東部より約10-20%高いことが多いです。",
+        "en": "Infrastructure costs (power, real estate), labor, and supply/demand vary by region. Tokyo often 10-20% more than US East."
+      }
+    },
+    {
+      "id": 39,
+      "category": "予約",
+      "question": {
+        "ja": "リザーブドインスタンスをマーケットプレイスで売却できるのはどの種類？",
+        "en": "Which type of Reserved Instance can be sold on the Marketplace?"
+      },
+      "options": {
+        "A": {
+          "ja": "Standard RI",
+          "en": "Standard RI"
+        },
+        "B": {
+          "ja": "Convertible RI",
+          "en": "Convertible RI"
+        },
+        "C": {
+          "ja": "両方",
+          "en": "両方"
+        },
+        "D": {
+          "ja": "どちらも不可",
+          "en": "どちらも不可"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "Standard RIのみマーケットプレイスで売却可能。不要になったRIを売って損失を最小化できます。Convertible RIは柔軟だが売却不可。",
+        "en": "Only Standard RIs can be sold on Marketplace. Sell unused RIs to minimize losses. Convertible RIs are flexible but can't be sold."
+      }
+    },
+    {
+      "id": 40,
+      "category": "Fargate",
+      "question": {
+        "ja": "FargateはEC2と比較して一般的に？",
+        "en": "Fargate compared to EC2 is generally?"
+      },
+      "options": {
+        "A": {
+          "ja": "常に安い",
+          "en": "常に安い"
+        },
+        "B": {
+          "ja": "高いが管理不要",
+          "en": "高いが管理不要"
+        },
+        "C": {
+          "ja": "同じ料金",
+          "en": "同じ料金"
+        },
+        "D": {
+          "ja": "常に高い",
+          "en": "常に高い"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Fargateは同スペックのEC2より20-30%高い傾向。ただしインフラ管理不要、セキュリティパッチ不要の価値を考慮すると妥当な場合も。",
+        "en": "Fargate typically costs 20-30% more than equivalent EC2. But no infrastructure management or patching may justify the premium."
+      }
+    },
+    {
+      "id": 41,
+      "category": "S3ストレージクラス",
+      "question": {
+        "ja": "S3 Glacier Instant Retrievalの特徴は？",
+        "en": "What's special about S3 Glacier Instant Retrieval?"
+      },
+      "options": {
+        "A": {
+          "ja": "最安価",
+          "en": "最安価"
+        },
+        "B": {
+          "ja": "ミリ秒でアクセス可能",
+          "en": "ミリ秒でアクセス可能"
+        },
+        "C": {
+          "ja": "1年以上の最低保存期間",
+          "en": "1年以上の最低保存期間"
+        },
+        "D": {
+          "ja": "AとBとC",
+          "en": "AとBとC"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Glacier Instant Retrievalはミリ秒でアクセス可能（S3 Standardと同等の速度）。IA より安いがアクセス頻度が低いデータに最適。最低保存期間は90日。",
+        "en": "Glacier Instant Retrieval offers millisecond access (same as S3 Standard speed). Cheaper than IA for rarely accessed data. 90-day minimum."
+      }
+    },
+    {
+      "id": 42,
+      "category": "コスト分析",
+      "question": {
+        "ja": "AWS Cost and Usage Report (CUR) の特徴は？",
+        "en": "What's special about AWS Cost and Usage Report (CUR)?"
+      },
+      "options": {
+        "A": {
+          "ja": "最も詳細なコストデータ",
+          "en": "最も詳細なコストデータ"
+        },
+        "B": {
+          "ja": "S3に自動出力",
+          "en": "S3に自動出力"
+        },
+        "C": {
+          "ja": "時間単位/リソース単位の詳細",
+          "en": "時間単位/リソース単位の詳細"
+        },
+        "D": {
+          "ja": "すべて該当",
+          "en": "すべて該当"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "CURは最も詳細なコストデータ。S3に自動出力され、Athena/QuickSightで分析可能。RI/Savings Plans適用状況も詳細に確認できます。",
+        "en": "CUR is the most detailed cost data. Auto-exports to S3, analyze with Athena/QuickSight. Shows RI/Savings Plans application details."
+      }
+    },
+    {
+      "id": 43,
+      "category": "RDS",
+      "question": {
+        "ja": "RDS for MySQLとAurora MySQLのコスト比較は？",
+        "en": "Cost comparison: RDS for MySQL vs Aurora MySQL?"
+      },
+      "options": {
+        "A": {
+          "ja": "常にRDSが安い",
+          "en": "常にRDSが安い"
+        },
+        "B": {
+          "ja": "常にAuroraが安い",
+          "en": "常にAuroraが安い"
+        },
+        "C": {
+          "ja": "Auroraは高いが性能が最大5倍",
+          "en": "Auroraは高いが性能が最大5倍"
+        },
+        "D": {
+          "ja": "同じ",
+          "en": "同じ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Auroraは同スペックRDSより約20%高い。ただし性能は最大5倍、ストレージ自動拡張、フェイルオーバー高速化などの付加価値あり。",
+        "en": "Aurora costs ~20% more than equivalent RDS. But offers up to 5x performance, auto-scaling storage, faster failover."
+      }
+    },
+    {
+      "id": 44,
+      "category": "無料枠",
+      "question": {
+        "ja": "無料枠の「12ヶ月無料」と「常に無料」の違いは？",
+        "en": "Difference between '12 months free' and 'always free' in Free Tier?"
+      },
+      "options": {
+        "A": {
+          "ja": "同じ",
+          "en": "同じ"
+        },
+        "B": {
+          "ja": "12ヶ月無料はアカウント作成から1年、常に無料は永久",
+          "en": "12ヶ月無料はアカウント作成から1年、常に無料は永久"
+        },
+        "C": {
+          "ja": "サービスによって異なる",
+          "en": "サービスによって異なる"
+        },
+        "D": {
+          "ja": "リージョンによる",
+          "en": "リージョンによる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "12ヶ月無料はアカウント作成から1年限定（EC2、S3等）。常に無料は永久に無料（Lambda 100万リクエスト、DynamoDB 25GB等）。",
+        "en": "'12 months free' is 1 year from account creation (EC2, S3). 'Always free' is forever (Lambda 1M requests, DynamoDB 25GB)."
+      }
+    },
+    {
+      "id": 45,
+      "category": "EC2",
+      "question": {
+        "ja": "EC2のCompute Optimizer が推奨するのは？",
+        "en": "What does EC2 Compute Optimizer recommend?"
+      },
+      "options": {
+        "A": {
+          "ja": "セキュリティ設定",
+          "en": "セキュリティ設定"
+        },
+        "B": {
+          "ja": "最適なインスタンスタイプ",
+          "en": "最適なインスタンスタイプ"
+        },
+        "C": {
+          "ja": "バックアップ設定",
+          "en": "バックアップ設定"
+        },
+        "D": {
+          "ja": "ネットワーク設定",
+          "en": "ネットワーク設定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Compute Optimizerは過去の利用状況を分析し、最適なインスタンスタイプを推奨。過剰スペックの検出やダウンサイジング提案でコスト削減。",
+        "en": "Compute Optimizer analyzes usage history and recommends optimal instance types. Detects over-provisioning, suggests downsizing."
+      }
+    },
+    {
+      "id": 46,
+      "category": "VPC",
+      "question": {
+        "ja": "VPCピアリング経由のデータ転送料金は？",
+        "en": "Data transfer cost via VPC Peering?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "同リージョンは$0.01/GB、異なるリージョンはより高い",
+          "en": "同リージョンは$0.01/GB、異なるリージョンはより高い"
+        },
+        "C": {
+          "ja": "常に$0.09/GB",
+          "en": "常に$0.09/GB"
+        },
+        "D": {
+          "ja": "VPC料金に含まれる",
+          "en": "VPC料金に含まれる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "同リージョンのVPCピアリングは$0.01/GB（AZ間と同じ）。異なるリージョン間はリージョン間転送料金が適用され、より高額になります。",
+        "en": "Same-region VPC peering is $0.01/GB (same as cross-AZ). Cross-region peering uses inter-region rates, which are higher."
+      }
+    },
+    {
+      "id": 47,
+      "category": "請求",
+      "question": {
+        "ja": "AWS請求書の支払い通貨を日本円にすることは？",
+        "en": "Can you pay AWS bills in Japanese Yen?"
+      },
+      "options": {
+        "A": {
+          "ja": "可能（為替レートはAWS設定）",
+          "en": "可能（為替レートはAWS設定）"
+        },
+        "B": {
+          "ja": "不可（USDのみ）",
+          "en": "不可（USDのみ）"
+        },
+        "C": {
+          "ja": "リセラー経由のみ",
+          "en": "リセラー経由のみ"
+        },
+        "D": {
+          "ja": "エンタープライズ契約のみ",
+          "en": "エンタープライズ契約のみ"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "Billing preferences で支払い通貨をJPYに変更可能。為替レートはAWSが設定（市場レートとは異なる場合あり）。クレジットカード会社の為替と比較を。",
+        "en": "Change payment currency to JPY in Billing preferences. AWS sets exchange rate (may differ from market). Compare with credit card rates."
+      }
+    },
+    {
+      "id": 48,
+      "category": "DynamoDB",
+      "question": {
+        "ja": "DynamoDBのオンデマンドキャパシティとプロビジョンドキャパシティ、どちらが安い？",
+        "en": "DynamoDB On-Demand vs Provisioned Capacity - which is cheaper?"
+      },
+      "options": {
+        "A": {
+          "ja": "常にオンデマンド",
+          "en": "常にオンデマンド"
+        },
+        "B": {
+          "ja": "常にプロビジョンド",
+          "en": "常にプロビジョンド"
+        },
+        "C": {
+          "ja": "トラフィックパターンによる",
+          "en": "トラフィックパターンによる"
+        },
+        "D": {
+          "ja": "同じ",
+          "en": "同じ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "予測可能な一定トラフィック→プロビジョンドが安い。スパイクがある or 予測困難→オンデマンドが安全。プロビジョンドは使わない分も課金されます。",
+        "en": "Predictable traffic → Provisioned is cheaper. Spiky/unpredictable → On-Demand is safer. Provisioned charges for unused capacity."
+      }
+    },
+    {
+      "id": 49,
+      "category": "スポット",
+      "question": {
+        "ja": "スポットインスタンスの価格はどのように決まる？",
+        "en": "How are Spot Instance prices determined?"
+      },
+      "options": {
+        "A": {
+          "ja": "入札制（自分で価格を決める）",
+          "en": "入札制（自分で価格を決める）"
+        },
+        "B": {
+          "ja": "AWS が需給に基づいて設定",
+          "en": "AWS が需給に基づいて設定"
+        },
+        "C": {
+          "ja": "オンデマンドの固定%",
+          "en": "オンデマンドの固定%"
+        },
+        "D": {
+          "ja": "時間帯で固定",
+          "en": "時間帯で固定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "現在は入札制ではなく、AWSが需給に基づいてスポット価格を設定。価格変動はあるが、急激な変動は少なくなりました。価格履歴で傾向を確認可能。",
+        "en": "No longer auction-based. AWS sets Spot prices based on supply/demand. Price fluctuations are now more gradual. Check price history for trends."
+      }
+    },
+    {
+      "id": 50,
+      "category": "CloudWatch",
+      "question": {
+        "ja": "CloudWatch Logsの料金で最もコストがかかりやすいのは？",
+        "en": "What's typically the biggest cost driver in CloudWatch Logs?"
+      },
+      "options": {
+        "A": {
+          "ja": "データ取り込み（Ingestion）",
+          "en": "データ取り込み（Ingestion）"
+        },
+        "B": {
+          "ja": "ストレージ",
+          "en": "ストレージ"
+        },
+        "C": {
+          "ja": "分析（Logs Insights）",
+          "en": "分析（Logs Insights）"
+        },
+        "D": {
+          "ja": "アラーム",
+          "en": "アラーム"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "データ取り込みが$0.50/GB〜と最も高い。大量ログを送ると請求が跳ね上がります。ログレベル調整やサンプリングでコスト削減を。",
+        "en": "Data ingestion at $0.50/GB+ is the biggest cost. High log volumes spike bills. Reduce with log level tuning or sampling."
+      }
+    },
+    {
+      "id": 51,
+      "category": "S3",
+      "question": {
+        "ja": "S3ライフサイクルポリシーでコスト削減するアプローチは？",
+        "en": "How does S3 lifecycle policy reduce costs?"
+      },
+      "options": {
+        "A": {
+          "ja": "古いオブジェクトを自動削除",
+          "en": "古いオブジェクトを自動削除"
+        },
+        "B": {
+          "ja": "より安いストレージクラスに自動移動",
+          "en": "より安いストレージクラスに自動移動"
+        },
+        "C": {
+          "ja": "AとB両方",
+          "en": "AとB両方"
+        },
+        "D": {
+          "ja": "データを圧縮",
+          "en": "データを圧縮"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "ライフサイクルポリシーで「30日後にIA移動、90日後にGlacier移動、365日後に削除」のような自動化が可能。設定一度で継続的にコスト削減。",
+        "en": "Lifecycle policies automate 'move to IA after 30 days, Glacier after 90, delete after 365'. Set once, save continuously."
+      }
+    },
+    {
+      "id": 52,
+      "category": "EC2",
+      "question": {
+        "ja": "EC2インスタンスを停止しても課金が続くのは？",
+        "en": "What keeps charging when EC2 instance is stopped?"
+      },
+      "options": {
+        "A": {
+          "ja": "インスタンス料金",
+          "en": "インスタンス料金"
+        },
+        "B": {
+          "ja": "EBSボリューム",
+          "en": "EBSボリューム"
+        },
+        "C": {
+          "ja": "ネットワーク料金",
+          "en": "ネットワーク料金"
+        },
+        "D": {
+          "ja": "すべて停止",
+          "en": "すべて停止"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "EC2停止中もEBSボリューム料金は継続課金。Elastic IPも未使用状態になるので課金開始。完全にコストを止めるにはTerminateが必要。",
+        "en": "EBS volumes keep charging when EC2 is stopped. Elastic IPs also start charging when unused. Terminate to stop all costs."
+      }
+    },
+    {
+      "id": 53,
+      "category": "サポート",
+      "question": {
+        "ja": "AWSサポートに障害対応の緊急度を伝える際、最も緊急なケースは？",
+        "en": "What's the most urgent severity level for AWS Support?"
+      },
+      "options": {
+        "A": {
+          "ja": "一般的なガイダンス",
+          "en": "一般的なガイダンス"
+        },
+        "B": {
+          "ja": "システム障害",
+          "en": "システム障害"
+        },
+        "C": {
+          "ja": "本番システムダウン",
+          "en": "本番システムダウン"
+        },
+        "D": {
+          "ja": "ビジネスクリティカルなシステムダウン",
+          "en": "ビジネスクリティカルなシステムダウン"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "「ビジネスクリティカルなシステムダウン」が最高緊急度。Enterprise/Business で15分以内の初回応答。適切な緊急度選択で対応速度が変わります。",
+        "en": "'Business-critical system down' is highest severity. Enterprise/Business get 15-minute response. Choose severity carefully for faster response."
+      }
+    },
+    {
+      "id": 54,
+      "category": "Organizations",
+      "question": {
+        "ja": "AWS Organizationsで複数アカウント管理のメリットは？",
+        "en": "Benefits of managing multiple accounts with AWS Organizations?"
+      },
+      "options": {
+        "A": {
+          "ja": "一括請求でボリューム割引",
+          "en": "一括請求でボリューム割引"
+        },
+        "B": {
+          "ja": "サービスコントロールポリシー（SCP）",
+          "en": "サービスコントロールポリシー（SCP）"
+        },
+        "C": {
+          "ja": "リザーブドインスタンス共有",
+          "en": "リザーブドインスタンス共有"
+        },
+        "D": {
+          "ja": "すべて",
+          "en": "すべて"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "一括請求でボリューム割引最大化、SCPでガバナンス、RIの共有で効率化。マルチアカウント戦略はコストとセキュリティ両面でメリット大。",
+        "en": "Consolidated billing for volume discounts, SCPs for governance, RI sharing for efficiency. Multi-account strategy benefits both cost and security."
+      }
+    },
+    {
+      "id": 55,
+      "category": "Graviton",
+      "question": {
+        "ja": "AWS Graviton プロセッサ搭載インスタンスのメリットは？",
+        "en": "Benefits of AWS Graviton processor instances?"
+      },
+      "options": {
+        "A": {
+          "ja": "最大40%コスト削減",
+          "en": "最大40%コスト削減"
+        },
+        "B": {
+          "ja": "x86互換性",
+          "en": "x86互換性"
+        },
+        "C": {
+          "ja": "Windows対応",
+          "en": "Windows対応"
+        },
+        "D": {
+          "ja": "すべてのソフトウェアが動作",
+          "en": "すべてのソフトウェアが動作"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "Graviton（ARM）インスタンスは同等x86比で最大40%安く、エネルギー効率も高い。Linux/コンテナワークロードでは積極的に検討を。",
+        "en": "Graviton (ARM) instances are up to 40% cheaper than equivalent x86, with better energy efficiency. Consider for Linux/container workloads."
+      }
+    },
+    {
+      "id": 56,
+      "category": "SQS",
+      "question": {
+        "ja": "SQSの料金体系は？",
+        "en": "How is SQS priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "B": {
+          "ja": "リクエスト数課金",
+          "en": "リクエスト数課金"
+        },
+        "C": {
+          "ja": "メッセージサイズ課金",
+          "en": "メッセージサイズ課金"
+        },
+        "D": {
+          "ja": "キュー数課金",
+          "en": "キュー数課金"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "SQSはリクエスト数課金（100万リクエストあたり$0.40〜）。月100万リクエストまで無料。1リクエストで最大10メッセージ取得可能なのでバッチ処理で効率化。",
+        "en": "SQS charges per request ($0.40/million+). 1M requests/month free. Batch up to 10 messages per request for efficiency."
+      }
+    },
+    {
+      "id": 57,
+      "category": "SNS",
+      "question": {
+        "ja": "SNSでモバイルプッシュ通知の料金は？",
+        "en": "SNS mobile push notification pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "100万件ごとに$0.50",
+          "en": "100万件ごとに$0.50"
+        },
+        "C": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "D": {
+          "ja": "デバイス数課金",
+          "en": "デバイス数課金"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "モバイルプッシュは100万件ごとに$0.50。最初の100万件/月は無料。SMS配信は別料金で国によって異なります。",
+        "en": "Mobile push is $0.50 per million. First 1M/month free. SMS is charged separately and varies by country."
+      }
+    },
+    {
+      "id": 58,
+      "category": "API Gateway",
+      "question": {
+        "ja": "API Gatewayの料金体系は？",
+        "en": "How is API Gateway priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "API数課金",
+          "en": "API数課金"
+        },
+        "B": {
+          "ja": "リクエスト数 + データ転送",
+          "en": "リクエスト数 + データ転送"
+        },
+        "C": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "D": {
+          "ja": "レスポンス時間課金",
+          "en": "レスポンス時間課金"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "リクエスト数課金（REST APIは100万リクエストあたり$3.50〜）+ データ転送。HTTP APIはREST APIより約70%安い。用途に応じて選択を。",
+        "en": "Charges per request (REST API $3.50/million+) + data transfer. HTTP API is ~70% cheaper than REST. Choose based on requirements."
+      }
+    },
+    {
+      "id": 59,
+      "category": "Kinesis",
+      "question": {
+        "ja": "Kinesis Data Streamsの料金で最も重要な要素は？",
+        "en": "Most important cost factor in Kinesis Data Streams?"
+      },
+      "options": {
+        "A": {
+          "ja": "シャード数（時間課金）",
+          "en": "シャード数（時間課金）"
+        },
+        "B": {
+          "ja": "データサイズ",
+          "en": "データサイズ"
+        },
+        "C": {
+          "ja": "コンシューマー数",
+          "en": "コンシューマー数"
+        },
+        "D": {
+          "ja": "リージョン",
+          "en": "リージョン"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "シャード数×時間で課金（$0.015/シャード/時間）。シャードは常時課金されるので、不要になったらシャード数削減を。オンデマンドモードもあり。",
+        "en": "Charged by shard-hours ($0.015/shard/hour). Shards charge continuously, so reduce when not needed. On-demand mode also available."
+      }
+    },
+    {
+      "id": 60,
+      "category": "Redshift",
+      "question": {
+        "ja": "Redshiftでコストを削減する方法は？",
+        "en": "How to reduce Redshift costs?"
+      },
+      "options": {
+        "A": {
+          "ja": "リザーブドノード",
+          "en": "リザーブドノード"
+        },
+        "B": {
+          "ja": "一時停止機能",
+          "en": "一時停止機能"
+        },
+        "C": {
+          "ja": "Redshift Serverless",
+          "en": "Redshift Serverless"
+        },
+        "D": {
+          "ja": "すべて",
+          "en": "すべて"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "リザーブドノードで最大75%割引、一時停止で課金停止、Serverlessで使用分だけ課金。ワークロードに応じて最適な選択を。",
+        "en": "Reserved nodes save up to 75%, pause stops billing, Serverless pays for usage only. Choose based on workload pattern."
+      }
+    },
+    {
+      "id": 61,
+      "category": "ElastiCache",
+      "question": {
+        "ja": "ElastiCache（Redis/Memcached）の料金体系は？",
+        "en": "How is ElastiCache (Redis/Memcached) priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "データ量課金",
+          "en": "データ量課金"
+        },
+        "B": {
+          "ja": "ノードタイプ × 時間",
+          "en": "ノードタイプ × 時間"
+        },
+        "C": {
+          "ja": "リクエスト数",
+          "en": "リクエスト数"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ノードタイプと実行時間で課金。RDS同様リザーブドノードで割引可能。Serverlessオプションも登場し、使った分だけ課金も可能に。",
+        "en": "Charged by node type × hours. Reserved nodes available like RDS. Serverless option now available for pay-per-use."
+      }
+    },
+    {
+      "id": 62,
+      "category": "EFS",
+      "question": {
+        "ja": "EFS（Elastic File System）のコスト削減オプションは？",
+        "en": "Cost reduction options for EFS?"
+      },
+      "options": {
+        "A": {
+          "ja": "ライフサイクル管理",
+          "en": "ライフサイクル管理"
+        },
+        "B": {
+          "ja": "Infrequent Accessストレージクラス",
+          "en": "Infrequent Accessストレージクラス"
+        },
+        "C": {
+          "ja": "スループットモード選択",
+          "en": "スループットモード選択"
+        },
+        "D": {
+          "ja": "すべて",
+          "en": "すべて"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "ライフサイクル管理でIAに自動移動（最大92%削減）。スループットモードはバースト/プロビジョンド/Elasticから選択。One Zoneも検討を。",
+        "en": "Lifecycle management auto-moves to IA (up to 92% savings). Choose throughput mode: Bursting/Provisioned/Elastic. Consider One Zone."
+      }
+    },
+    {
+      "id": 63,
+      "category": "Step Functions",
+      "question": {
+        "ja": "Step Functionsの料金モデルは？",
+        "en": "How is Step Functions priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "ワークフロー数",
+          "en": "ワークフロー数"
+        },
+        "B": {
+          "ja": "状態遷移数",
+          "en": "状態遷移数"
+        },
+        "C": {
+          "ja": "実行時間",
+          "en": "実行時間"
+        },
+        "D": {
+          "ja": "Lambda呼び出し数",
+          "en": "Lambda呼び出し数"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Standardワークフローは状態遷移1000回あたり$0.025。Expressワークフローはリクエスト数と実行時間課金で、頻繁な実行に向いています。",
+        "en": "Standard workflow charges $0.025 per 1000 state transitions. Express workflow charges per request + duration, better for frequent executions."
+      }
+    },
+    {
+      "id": 64,
+      "category": "WAF",
+      "question": {
+        "ja": "AWS WAFの料金体系は？",
+        "en": "How is AWS WAF priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "Web ACL + ルール + リクエスト数",
+          "en": "Web ACL + ルール + リクエスト数"
+        },
+        "B": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "C": {
+          "ja": "ブロック数のみ",
+          "en": "ブロック数のみ"
+        },
+        "D": {
+          "ja": "帯域幅",
+          "en": "帯域幅"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "Web ACL（$5/月）+ ルール（$1/月）+ リクエスト（100万あたり$0.60）。Managed Rulesは追加料金あり。DDoS対策のShieldと組み合わせ推奨。",
+        "en": "Web ACL ($5/month) + Rules ($1/month) + Requests ($0.60/million). Managed Rules have additional costs. Combine with Shield for DDoS."
+      }
+    },
+    {
+      "id": 65,
+      "category": "Shield",
+      "question": {
+        "ja": "AWS Shield Advancedの月額料金は？",
+        "en": "Monthly cost for AWS Shield Advanced?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "$3,000",
+          "en": "$3,000"
+        },
+        "C": {
+          "ja": "$10,000",
+          "en": "$10,000"
+        },
+        "D": {
+          "ja": "従量課金のみ",
+          "en": "従量課金のみ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Shield Advancedは月額$3,000（年間契約）。高額ですがDDoS攻撃時のコスト保護、24/7 DDoS Response Teamアクセスが含まれます。Shield Standardは無料。",
+        "en": "Shield Advanced is $3,000/month (annual commitment). Expensive but includes DDoS cost protection and 24/7 DRT access. Shield Standard is free."
+      }
+    },
+    {
+      "id": 66,
+      "category": "Secrets Manager",
+      "question": {
+        "ja": "Secrets Managerの料金は？",
+        "en": "Secrets Manager pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "シークレットあたり$0.40/月 + API呼び出し",
+          "en": "シークレットあたり$0.40/月 + API呼び出し"
+        },
+        "B": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "C": {
+          "ja": "容量課金",
+          "en": "容量課金"
+        },
+        "D": {
+          "ja": "ユーザー数課金",
+          "en": "ユーザー数課金"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "シークレット1つあたり$0.40/月 + 10,000 API呼び出しあたり$0.05。SSM Parameter Store（無料）と比較してコストを検討。自動ローテーション機能が必要なら価値あり。",
+        "en": "$ 0.40/secret/month + $0.05/10K API calls. Compare with free SSM Parameter Store. Worth it if you need auto-rotation."
+      }
+    },
+    {
+      "id": 67,
+      "category": "KMS",
+      "question": {
+        "ja": "AWS KMSのカスタマーマネージドキーの月額料金は？",
+        "en": "Monthly cost for a KMS customer managed key?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "$1/月",
+          "en": "$1/月"
+        },
+        "C": {
+          "ja": "$10/月",
+          "en": "$10/月"
+        },
+        "D": {
+          "ja": "使用量のみ",
+          "en": "使用量のみ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "カスタマーマネージドキー1つあたり$1/月 + API使用料金。AWS管理キーは無料。大量のキーを作成するとコストが積み上がるので設計時に注意。",
+        "en": "$1/month per customer managed key + API usage. AWS managed keys are free. Many keys add up, so plan carefully."
+      }
+    },
+    {
+      "id": 68,
+      "category": "Certificate Manager",
+      "question": {
+        "ja": "AWS Certificate Manager（ACM）でのSSL/TLS証明書の料金は？",
+        "en": "Cost of SSL/TLS certificates in AWS Certificate Manager (ACM)?"
+      },
+      "options": {
+        "A": {
+          "ja": "証明書あたり$75/年",
+          "en": "証明書あたり$75/年"
+        },
+        "B": {
+          "ja": "無料（AWS サービスで使用時）",
+          "en": "無料（AWS サービスで使用時）"
+        },
+        "C": {
+          "ja": "ドメイン数課金",
+          "en": "ドメイン数課金"
+        },
+        "D": {
+          "ja": "トラフィック課金",
+          "en": "トラフィック課金"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ACMでプロビジョニングしたパブリック証明書は、CloudFront/ALB等のAWSサービスで使用時は無料。EC2で直接使用する場合は別途設定が必要。",
+        "en": "ACM public certificates are free when used with AWS services like CloudFront/ALB. Different setup needed for direct EC2 use."
+      }
+    },
+    {
+      "id": 69,
+      "category": "Route 53",
+      "question": {
+        "ja": "Route 53のホストゾーン料金は？",
+        "en": "Route 53 hosted zone pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "$0.50/月/ホストゾーン",
+          "en": "$0.50/月/ホストゾーン"
+        },
+        "C": {
+          "ja": "$5/月/ホストゾーン",
+          "en": "$5/月/ホストゾーン"
+        },
+        "D": {
+          "ja": "クエリ数のみ",
+          "en": "クエリ数のみ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ホストゾーン$0.50/月 + クエリ100万回あたり$0.40〜。25ホストゾーンまでは$0.50/月、それ以上は$0.10/月。ドメイン登録料は別途。",
+        "en": "$0.50/month per hosted zone + $0.40/million queries. First 25 zones are $0.50, beyond that $0.10. Domain registration separate."
+      }
+    },
+    {
+      "id": 70,
+      "category": "Transfer Family",
+      "question": {
+        "ja": "AWS Transfer Familyの料金体系は？",
+        "en": "AWS Transfer Family pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "プロトコル × 時間 + データ転送",
+          "en": "プロトコル × 時間 + データ転送"
+        },
+        "B": {
+          "ja": "データ転送のみ",
+          "en": "データ転送のみ"
+        },
+        "C": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "D": {
+          "ja": "ユーザー数課金",
+          "en": "ユーザー数課金"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "SFTP/FTPS/FTPサーバー時間課金（約$0.30/時間）+ データアップロード/ダウンロード課金。常時稼働だと月額$200以上。代替案も検討を。",
+        "en": "Server hourly fee (~$0.30/hr) for SFTP/FTPS/FTP + data upload/download charges. 24/7 costs $200+/month. Consider alternatives."
+      }
+    },
+    {
+      "id": 71,
+      "category": "Glue",
+      "question": {
+        "ja": "AWS Glueの料金で最も重要な要素は？",
+        "en": "Most important cost factor in AWS Glue?"
+      },
+      "options": {
+        "A": {
+          "ja": "DPU（Data Processing Unit）× 時間",
+          "en": "DPU（Data Processing Unit）× 時間"
+        },
+        "B": {
+          "ja": "データ量",
+          "en": "データ量"
+        },
+        "C": {
+          "ja": "ジョブ数",
+          "en": "ジョブ数"
+        },
+        "D": {
+          "ja": "テーブル数",
+          "en": "テーブル数"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "DPU×時間課金（$0.44/DPU時間）。最小2DPU、10分単位で課金。ジョブ最適化でDPU削減、開発中はScala Sparkで効率的にテストを。",
+        "en": "$0.44/DPU-hour. Minimum 2 DPUs, billed in 10-minute increments. Optimize jobs to reduce DPUs, use Scala Spark for efficient dev testing."
+      }
+    },
+    {
+      "id": 72,
+      "category": "Athena",
+      "question": {
+        "ja": "Amazon Athenaの料金体系は？",
+        "en": "How is Amazon Athena priced?"
+      },
+      "options": {
+        "A": {
+          "ja": "クエリ実行時間",
+          "en": "クエリ実行時間"
+        },
+        "B": {
+          "ja": "スキャンしたデータ量",
+          "en": "スキャンしたデータ量"
+        },
+        "C": {
+          "ja": "テーブル数",
+          "en": "テーブル数"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "スキャンしたデータ量1TBあたり$5。パーティション、Parquet形式、圧縮でスキャン量削減。クエリ最適化で大幅コスト削減可能。",
+        "en": "$5 per TB scanned. Reduce scans with partitioning, Parquet format, compression. Query optimization can dramatically cut costs."
+      }
+    },
+    {
+      "id": 73,
+      "category": "EMR",
+      "question": {
+        "ja": "EMRでのコスト削減オプションは？",
+        "en": "Cost reduction options for EMR?"
+      },
+      "options": {
+        "A": {
+          "ja": "スポットインスタンス使用",
+          "en": "スポットインスタンス使用"
+        },
+        "B": {
+          "ja": "EMR on EKS",
+          "en": "EMR on EKS"
+        },
+        "C": {
+          "ja": "一時クラスター（処理完了後に終了）",
+          "en": "一時クラスター（処理完了後に終了）"
+        },
+        "D": {
+          "ja": "すべて",
+          "en": "すべて"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "タスクノードにスポット使用で60-90%削減、一時クラスターで不要時課金なし、EMR on EKSで既存インフラ活用。マネージドスケーリングも効果的。",
+        "en": "Spot for task nodes saves 60-90%, transient clusters stop when done, EMR on EKS uses existing infra. Managed scaling also effective."
+      }
+    },
+    {
+      "id": 74,
+      "category": "SageMaker",
+      "question": {
+        "ja": "SageMakerでコストがかかりやすいのは？",
+        "en": "What typically costs the most in SageMaker?"
+      },
+      "options": {
+        "A": {
+          "ja": "ノートブックインスタンス",
+          "en": "ノートブックインスタンス"
+        },
+        "B": {
+          "ja": "トレーニングジョブ",
+          "en": "トレーニングジョブ"
+        },
+        "C": {
+          "ja": "推論エンドポイント（常時稼働）",
+          "en": "推論エンドポイント（常時稼働）"
+        },
+        "D": {
+          "ja": "ストレージ",
+          "en": "ストレージ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "推論エンドポイントは24時間稼働で高額に。Serverless Inferenceやマルチモデルエンドポイントでコスト削減。開発中はノートブック停止忘れに注意。",
+        "en": "Inference endpoints running 24/7 get expensive. Use Serverless Inference or multi-model endpoints. Don't forget to stop dev notebooks."
+      }
+    },
+    {
+      "id": 75,
+      "category": "Comprehend",
+      "question": {
+        "ja": "Amazon Comprehend（自然言語処理）の料金は？",
+        "en": "Amazon Comprehend (NLP) pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "文字数課金",
+          "en": "文字数課金"
+        },
+        "B": {
+          "ja": "リクエスト数課金",
+          "en": "リクエスト数課金"
+        },
+        "C": {
+          "ja": "ユニット（100文字）課金",
+          "en": "ユニット（100文字）課金"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "1ユニット=100文字で課金。最小3ユニット/リクエスト。大量処理にはバッチ処理（非同期）でコスト削減可能。Custom Modelsは追加料金。",
+        "en": "Charged per unit (100 characters). Minimum 3 units/request. Batch processing (async) reduces costs for large volumes. Custom Models cost extra."
+      }
+    },
+    {
+      "id": 76,
+      "category": "Rekognition",
+      "question": {
+        "ja": "Amazon Rekognitionの料金体系は？",
+        "en": "Amazon Rekognition pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "画像/ビデオあたり課金",
+          "en": "画像/ビデオあたり課金"
+        },
+        "B": {
+          "ja": "処理時間課金",
+          "en": "処理時間課金"
+        },
+        "C": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "D": {
+          "ja": "ストレージ課金",
+          "en": "ストレージ課金"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "画像は1000枚あたり$1〜、ビデオは分析時間で課金。顔検索はインデックス登録された顔数でも課金。最初の5000画像/月は無料（12ヶ月）。",
+        "en": "Images $1+/1000, video charged by analysis time. Face Search also charges for indexed faces. First 5000 images/month free (12 months)."
+      }
+    },
+    {
+      "id": 77,
+      "category": "Textract",
+      "question": {
+        "ja": "Amazon Textract（OCR）でコストがかかりやすい機能は？",
+        "en": "Which Textract feature tends to cost more?"
+      },
+      "options": {
+        "A": {
+          "ja": "テキスト検出",
+          "en": "テキスト検出"
+        },
+        "B": {
+          "ja": "フォーム抽出",
+          "en": "フォーム抽出"
+        },
+        "C": {
+          "ja": "テーブル抽出",
+          "en": "テーブル抽出"
+        },
+        "D": {
+          "ja": "BとC",
+          "en": "BとC"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "テキスト検出は$1.50/1000ページ。フォーム/テーブル抽出は$15/1000ページと10倍高い。必要な機能だけ使用してコスト最適化を。",
+        "en": "Text detection $1.50/1000 pages. Form/Table extraction $15/1000 pages (10x more). Use only needed features to optimize costs."
+      }
+    },
+    {
+      "id": 78,
+      "category": "Polly",
+      "question": {
+        "ja": "Amazon Polly（TTS）の無料枠は？",
+        "en": "Amazon Polly (TTS) free tier?"
+      },
+      "options": {
+        "A": {
+          "ja": "月100万文字（12ヶ月）",
+          "en": "月100万文字（12ヶ月）"
+        },
+        "B": {
+          "ja": "月500万文字（12ヶ月）",
+          "en": "月500万文字（12ヶ月）"
+        },
+        "C": {
+          "ja": "永久無料",
+          "en": "永久無料"
+        },
+        "D": {
+          "ja": "無料枠なし",
+          "en": "無料枠なし"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "12ヶ月間、月500万文字まで無料。その後は100万文字あたり$4（Standard）/ $16（Neural）。Neuralボイスは高品質だが4倍高い。",
+        "en": "5M characters/month free for 12 months. After: $4/million (Standard) / $16/million (Neural). Neural is higher quality but 4x cost."
+      }
+    },
+    {
+      "id": 79,
+      "category": "Transcribe",
+      "question": {
+        "ja": "Amazon Transcribe（音声認識）の料金体系は？",
+        "en": "Amazon Transcribe (speech-to-text) pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "オーディオ秒数課金",
+          "en": "オーディオ秒数課金"
+        },
+        "B": {
+          "ja": "出力文字数課金",
+          "en": "出力文字数課金"
+        },
+        "C": {
+          "ja": "ファイル数課金",
+          "en": "ファイル数課金"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "オーディオ秒数で課金。最初の12ヶ月は月60分まで無料。その後は$0.024/分〜。Medical/Custom vocabularyは追加料金。",
+        "en": "Charged per audio second. First 12 months: 60 minutes/month free. After: $0.024/minute+. Medical/Custom vocabulary costs extra."
+      }
+    },
+    {
+      "id": 80,
+      "category": "Translate",
+      "question": {
+        "ja": "Amazon Translateの料金は？",
+        "en": "Amazon Translate pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "文字数課金",
+          "en": "文字数課金"
+        },
+        "B": {
+          "ja": "言語ペア課金",
+          "en": "言語ペア課金"
+        },
+        "C": {
+          "ja": "リクエスト数課金",
+          "en": "リクエスト数課金"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "100万文字あたり$15。最初の12ヶ月は月200万文字無料。バッチ翻訳（S3経由）も同料金。言語の組み合わせによる料金差はなし。",
+        "en": "$15/million characters. First 12 months: 2M characters/month free. Batch translation (via S3) same price. No difference by language pair."
+      }
+    },
+    {
+      "id": 81,
+      "category": "EventBridge",
+      "question": {
+        "ja": "Amazon EventBridgeの料金で無料なのは？",
+        "en": "What's free in Amazon EventBridge?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSサービスからのイベント",
+          "en": "AWSサービスからのイベント"
+        },
+        "B": {
+          "ja": "カスタムイベント",
+          "en": "カスタムイベント"
+        },
+        "C": {
+          "ja": "サードパーティイベント",
+          "en": "サードパーティイベント"
+        },
+        "D": {
+          "ja": "すべて無料",
+          "en": "すべて無料"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "AWSサービス発行イベントは無料。カスタム/サードパーティイベントは100万件あたり$1。スケジュール呼び出しも無料。非常にコスト効率が良い。",
+        "en": "AWS service events are free. Custom/3rd party events $1/million. Scheduled invocations also free. Very cost-effective."
+      }
+    },
+    {
+      "id": 82,
+      "category": "CodePipeline",
+      "question": {
+        "ja": "AWS CodePipelineの料金は？",
+        "en": "AWS CodePipeline pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "パイプラインあたり月額$1",
+          "en": "パイプラインあたり月額$1"
+        },
+        "B": {
+          "ja": "ビルド時間課金",
+          "en": "ビルド時間課金"
+        },
+        "C": {
+          "ja": "デプロイ数課金",
+          "en": "デプロイ数課金"
+        },
+        "D": {
+          "ja": "無料",
+          "en": "無料"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "アクティブなパイプラインあたり月額$1。最初の1パイプラインは無料（永久）。CodeBuild/CodeDeployは別料金。CI/CDとしては非常に安価。",
+        "en": "$1/month per active pipeline. First pipeline free forever. CodeBuild/CodeDeploy charged separately. Very affordable for CI/CD."
+      }
+    },
+    {
+      "id": 83,
+      "category": "CodeBuild",
+      "question": {
+        "ja": "AWS CodeBuildの料金体系は？",
+        "en": "AWS CodeBuild pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "ビルド分数課金",
+          "en": "ビルド分数課金"
+        },
+        "B": {
+          "ja": "ビルド数課金",
+          "en": "ビルド数課金"
+        },
+        "C": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "D": {
+          "ja": "リポジトリ数",
+          "en": "リポジトリ数"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "ビルド分数×コンピュートタイプで課金。月100分まで無料（永久）。キャッシュ活用でビルド時間短縮＝コスト削減。",
+        "en": "Charged by build minutes × compute type. 100 minutes/month free forever. Use caching to reduce build time = lower costs."
+      }
+    },
+    {
+      "id": 84,
+      "category": "Well-Architected",
+      "question": {
+        "ja": "AWS Well-Architected Toolの料金は？",
+        "en": "AWS Well-Architected Tool pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "ワークロード数課金",
+          "en": "ワークロード数課金"
+        },
+        "B": {
+          "ja": "レビュー数課金",
+          "en": "レビュー数課金"
+        },
+        "C": {
+          "ja": "コンサルタント料金",
+          "en": "コンサルタント料金"
+        },
+        "D": {
+          "ja": "無料",
+          "en": "無料"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "Well-Architected Toolは完全無料。ワークロードをレビューしてベストプラクティスとのギャップを特定。コスト最適化の柱も含まれます。",
+        "en": "Well-Architected Tool is completely free. Review workloads, identify gaps with best practices. Includes cost optimization pillar."
+      }
+    },
+    {
+      "id": 85,
+      "category": "Control Tower",
+      "question": {
+        "ja": "AWS Control Towerの料金は？",
+        "en": "AWS Control Tower pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "アカウント数課金",
+          "en": "アカウント数課金"
+        },
+        "B": {
+          "ja": "ガードレール数課金",
+          "en": "ガードレール数課金"
+        },
+        "C": {
+          "ja": "Control Tower自体は無料（使用するサービスは課金）",
+          "en": "Control Tower自体は無料（使用するサービスは課金）"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Control Tower自体は無料。ただしConfig Rules、CloudTrail、S3等の使用分は課金されます。マルチアカウント管理の標準的なアプローチ。",
+        "en": "Control Tower itself is free. But underlying services (Config Rules, CloudTrail, S3) are charged. Standard approach for multi-account."
+      }
+    },
+    {
+      "id": 86,
+      "category": "Config",
+      "question": {
+        "ja": "AWS Configの料金で最もコストがかかりやすいのは？",
+        "en": "What typically costs the most in AWS Config?"
+      },
+      "options": {
+        "A": {
+          "ja": "Config Rules評価",
+          "en": "Config Rules評価"
+        },
+        "B": {
+          "ja": "設定項目の記録",
+          "en": "設定項目の記録"
+        },
+        "C": {
+          "ja": "スナップショット",
+          "en": "スナップショット"
+        },
+        "D": {
+          "ja": "すべて同程度",
+          "en": "すべて同程度"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "設定項目の記録（$0.003/項目）が積み上がりやすい。リソースの多いアカウントでは月数百ドルになることも。記録対象リソースタイプを絞る検討を。",
+        "en": "Configuration item recording ($0.003/item) adds up. High-resource accounts can cost hundreds monthly. Consider limiting recorded resource types."
+      }
+    },
+    {
+      "id": 87,
+      "category": "CloudFormation",
+      "question": {
+        "ja": "AWS CloudFormationの料金は？",
+        "en": "AWS CloudFormation pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "スタック数課金",
+          "en": "スタック数課金"
+        },
+        "B": {
+          "ja": "リソース数課金",
+          "en": "リソース数課金"
+        },
+        "C": {
+          "ja": "基本無料（一部有料オプション）",
+          "en": "基本無料（一部有料オプション）"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "CloudFormation自体は無料。ただしHandler operations（サードパーティリソース）は課金。作成されるリソース（EC2等）は通常通り課金。",
+        "en": "CloudFormation itself is free. Handler operations (3rd party resources) are charged. Resources created (EC2, etc.) charged normally."
+      }
+    },
+    {
+      "id": 88,
+      "category": "Systems Manager",
+      "question": {
+        "ja": "SSM Session Managerの料金は？",
+        "en": "SSM Session Manager pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "セッション数課金",
+          "en": "セッション数課金"
+        },
+        "B": {
+          "ja": "接続時間課金",
+          "en": "接続時間課金"
+        },
+        "C": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "D": {
+          "ja": "インスタンス数課金",
+          "en": "インスタンス数課金"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Session Managerは無料。SSHキーやバスティオンホスト不要でEC2に接続可能。セキュリティ向上＆コスト削減の一石二鳥。",
+        "en": "Session Manager is free. Connect to EC2 without SSH keys or bastion hosts. Improves security AND saves costs."
+      }
+    },
+    {
+      "id": 89,
+      "category": "Backup",
+      "question": {
+        "ja": "AWS Backupの料金体系は？",
+        "en": "AWS Backup pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "バックアップストレージ + リストア",
+          "en": "バックアップストレージ + リストア"
+        },
+        "B": {
+          "ja": "ジョブ数課金",
+          "en": "ジョブ数課金"
+        },
+        "C": {
+          "ja": "保護リソース数課金",
+          "en": "保護リソース数課金"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "バックアップストレージ（GB/月）+ リストア（GB）で課金。Backup Vault Lock等の追加機能は別料金。リソースごとのネイティブバックアップより一元管理が楽。",
+        "en": "Charged for backup storage (GB/month) + restore (GB). Extra features like Vault Lock cost more. Easier to manage than native backups."
+      }
+    },
+    {
+      "id": 90,
+      "category": "Directory Service",
+      "question": {
+        "ja": "AWS Directory Serviceで最も安価なオプションは？",
+        "en": "Most affordable AWS Directory Service option?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWS Managed Microsoft AD",
+          "en": "AWS Managed Microsoft AD"
+        },
+        "B": {
+          "ja": "AD Connector",
+          "en": "AD Connector"
+        },
+        "C": {
+          "ja": "Simple AD",
+          "en": "Simple AD"
+        },
+        "D": {
+          "ja": "すべて同価格",
+          "en": "すべて同価格"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Simple ADは$0.05/時間〜（約$36/月〜）。AD Connectorは既存ADへの接続、Managed Microsoft ADは本格的なAD。要件に応じて選択を。",
+        "en": "Simple AD starts at $0.05/hr (~$36/month). AD Connector connects to existing AD, Managed Microsoft AD for full AD features. Choose based on needs."
+      }
+    },
+    {
+      "id": 91,
+      "category": "QuickSight",
+      "question": {
+        "ja": "Amazon QuickSightの料金モデルは？",
+        "en": "Amazon QuickSight pricing model?"
+      },
+      "options": {
+        "A": {
+          "ja": "ダッシュボード数課金",
+          "en": "ダッシュボード数課金"
+        },
+        "B": {
+          "ja": "ユーザーあたり月額課金",
+          "en": "ユーザーあたり月額課金"
+        },
+        "C": {
+          "ja": "データ量課金",
+          "en": "データ量課金"
+        },
+        "D": {
+          "ja": "クエリ数課金",
+          "en": "クエリ数課金"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ユーザーあたり月額$9〜$24（Authorはより高い）。読者専用の場合はセッション課金も可能。SPICE容量追加は別料金。",
+        "en": "Per user monthly $9-$24 (Authors cost more). Reader session pricing also available. Extra SPICE capacity costs additional."
+      }
+    },
+    {
+      "id": 92,
+      "category": "Lake Formation",
+      "question": {
+        "ja": "AWS Lake Formationの料金は？",
+        "en": "AWS Lake Formation pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "データ量課金",
+          "en": "データ量課金"
+        },
+        "B": {
+          "ja": "クエリ数課金",
+          "en": "クエリ数課金"
+        },
+        "C": {
+          "ja": "Lake Formation自体は無料",
+          "en": "Lake Formation自体は無料"
+        },
+        "D": {
+          "ja": "ユーザー数課金",
+          "en": "ユーザー数課金"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Lake Formation自体は無料。ただしS3、Glue、Athena等の使用分は通常通り課金されます。データレイク構築の権限管理を一元化できます。",
+        "en": "Lake Formation itself is free. S3, Glue, Athena, etc. are charged normally. Centralizes data lake permission management."
+      }
+    },
+    {
+      "id": 93,
+      "category": "EKS",
+      "question": {
+        "ja": "Amazon EKSのコントロールプレーン料金は？",
+        "en": "Amazon EKS control plane pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "無料",
+          "en": "無料"
+        },
+        "B": {
+          "ja": "$0.10/時間（約$73/月）",
+          "en": "$0.10/時間（約$73/月）"
+        },
+        "C": {
+          "ja": "ノード数課金",
+          "en": "ノード数課金"
+        },
+        "D": {
+          "ja": "Pod数課金",
+          "en": "Pod数課金"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "EKSクラスターごとに$0.10/時間（約$73/月）。ワーカーノードのEC2/Fargateは別途課金。ECS（無料）との比較検討を。",
+        "en": "$0.10/hour per EKS cluster (~$73/month). Worker node EC2/Fargate charged separately. Compare with ECS (free control plane)."
+      }
+    },
+    {
+      "id": 94,
+      "category": "App Runner",
+      "question": {
+        "ja": "AWS App Runnerの料金体系は？",
+        "en": "AWS App Runner pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "コンテナ時間 + メモリ",
+          "en": "コンテナ時間 + メモリ"
+        },
+        "B": {
+          "ja": "リクエスト数",
+          "en": "リクエスト数"
+        },
+        "C": {
+          "ja": "ビルド時間 + プロビジョンド時間 + アクティブ時間",
+          "en": "ビルド時間 + プロビジョンド時間 + アクティブ時間"
+        },
+        "D": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "ビルド時間 + プロビジョンドコンテナ時間（待機時）+ アクティブ時間（リクエスト処理時）で課金。自動スケールの簡単なコンテナ実行に最適。",
+        "en": "Build time + provisioned container time (waiting) + active time (processing requests). Great for easy auto-scaling containers."
+      }
+    },
+    {
+      "id": 95,
+      "category": "Lightsail",
+      "question": {
+        "ja": "Amazon Lightsailの特徴的な料金モデルは？",
+        "en": "Lightsail's distinctive pricing model?"
+      },
+      "options": {
+        "A": {
+          "ja": "従量課金",
+          "en": "従量課金"
+        },
+        "B": {
+          "ja": "月額固定（予測可能）",
+          "en": "月額固定（予測可能）"
+        },
+        "C": {
+          "ja": "年額一括",
+          "en": "年額一括"
+        },
+        "D": {
+          "ja": "無料",
+          "en": "無料"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "月額$3.50〜の固定料金でインスタンス+ストレージ+転送量がパッケージ化。初心者や小規模サイトに最適。超過分は従量課金。",
+        "en": "$3.50+/month fixed price includes instance + storage + transfer. Perfect for beginners, small sites. Overage charged separately."
+      }
+    },
+    {
+      "id": 96,
+      "category": "Outposts",
+      "question": {
+        "ja": "AWS Outpostsの料金モデルは？",
+        "en": "AWS Outposts pricing model?"
+      },
+      "options": {
+        "A": {
+          "ja": "使用量課金",
+          "en": "使用量課金"
+        },
+        "B": {
+          "ja": "3年契約の月額固定",
+          "en": "3年契約の月額固定"
+        },
+        "C": {
+          "ja": "購入（一括払い）",
+          "en": "購入（一括払い）"
+        },
+        "D": {
+          "ja": "BとC両方",
+          "en": "BとC両方"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "3年契約の月額サブスクリプションまたは一括購入。ラック型は$200K〜。オンプレミスでAWSを必要とする特殊要件向け。",
+        "en": "3-year monthly subscription or upfront purchase. Rack starts at ~$200K. For special requirements needing AWS on-premises."
+      }
+    },
+    {
+      "id": 97,
+      "category": "Snow Family",
+      "question": {
+        "ja": "AWS Snowball Edgeの料金体系は？",
+        "en": "AWS Snowball Edge pricing?"
+      },
+      "options": {
+        "A": {
+          "ja": "データ量課金",
+          "en": "データ量課金"
+        },
+        "B": {
+          "ja": "デバイス使用日数課金",
+          "en": "デバイス使用日数課金"
+        },
+        "C": {
+          "ja": "月額固定",
+          "en": "月額固定"
+        },
+        "D": {
+          "ja": "無料",
+          "en": "無料"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デバイス使用料金（日額課金、最初の10日含む）+ 配送料。S3へのデータ転送は無料。大量データのAWS移行に最もコスト効率的な場合も。",
+        "en": "Device fee (daily, first 10 days included) + shipping. Data transfer to S3 is free. Often most cost-effective for large data migrations."
+      }
+    },
+    {
+      "id": 98,
+      "category": "Wavelength",
+      "question": {
+        "ja": "AWS Wavelengthの追加料金は？",
+        "en": "Additional costs for AWS Wavelength?"
+      },
+      "options": {
+        "A": {
+          "ja": "追加料金なし",
+          "en": "追加料金なし"
+        },
+        "B": {
+          "ja": "Wavelengthゾーンでのリソース使用分",
+          "en": "Wavelengthゾーンでのリソース使用分"
+        },
+        "C": {
+          "ja": "キャリアとの契約料",
+          "en": "キャリアとの契約料"
+        },
+        "D": {
+          "ja": "BとC",
+          "en": "BとC"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Wavelengthゾーンでのリソース使用分が課金（通常リージョンとは別料金体系）。5Gエッジでの超低遅延が必要なユースケース向け。",
+        "en": "Charged for resources in Wavelength Zones (different pricing than normal regions). For ultra-low latency use cases at 5G edge."
+      }
+    },
+    {
+      "id": 99,
+      "category": "Total Cost",
+      "question": {
+        "ja": "AWS TCO Calculator（総所有コスト計算機）で比較できるのは？",
+        "en": "What can AWS TCO Calculator compare?"
+      },
+      "options": {
+        "A": {
+          "ja": "AWSサービス間の比較",
+          "en": "AWSサービス間の比較"
+        },
+        "B": {
+          "ja": "オンプレミスvsAWSのコスト比較",
+          "en": "オンプレミスvsAWSのコスト比較"
+        },
+        "C": {
+          "ja": "リージョン間の比較",
+          "en": "リージョン間の比較"
+        },
+        "D": {
+          "ja": "サポートプラン間の比較",
+          "en": "サポートプラン間の比較"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "TCO Calculatorはオンプレミス環境とAWSのコストを比較。サーバー、ストレージ、ネットワーク、人件費等を総合的に計算。移行の意思決定に活用。",
+        "en": "TCO Calculator compares on-premises vs AWS costs. Calculates servers, storage, network, labor, etc. Useful for migration decisions."
+      }
+    },
+    {
+      "id": 100,
+      "category": "まとめ",
+      "question": {
+        "ja": "AWSコスト最適化の最も重要な原則は？",
+        "en": "Most important principle for AWS cost optimization?"
+      },
+      "options": {
+        "A": {
+          "ja": "常に最安のサービスを選ぶ",
+          "en": "常に最安のサービスを選ぶ"
+        },
+        "B": {
+          "ja": "使った分だけ払い、継続的に最適化する",
+          "en": "使った分だけ払い、継続的に最適化する"
+        },
+        "C": {
+          "ja": "すべてリザーブドにする",
+          "en": "すべてリザーブドにする"
+        },
+        "D": {
+          "ja": "無料枠だけを使う",
+          "en": "無料枠だけを使う"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "「Pay for what you use」が基本。Right-sizing、不要リソース削除、適切な購入オプション選択を継続的に行うことがコスト最適化の本質です。",
+        "en": "'Pay for what you use' is fundamental. Continuous right-sizing, removing unused resources, choosing proper purchasing options is the essence of cost optimization."
+      }
+    }
+  ]
+}

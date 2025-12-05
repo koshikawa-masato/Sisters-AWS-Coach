@@ -4,8 +4,8 @@ streamlit>=1.28.0
 # TTS - ElevenLabs
 elevenlabs>=1.0.0
 
-# LLM
-openai>=1.0.0
+# AWS
+boto3>=1.28.0
 
 # Utilities
 python-dotenv>=1.0.0

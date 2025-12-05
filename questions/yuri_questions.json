@@ -1,0 +1,3106 @@
+{
+  "character": "Yuri",
+  "specialty": "技術詳細・アーキテクチャ・数値",
+  "questions": [
+    {
+      "id": 1,
+      "category": "制限値",
+      "question": {
+        "ja": "Lambda関数の最大実行時間は？",
+        "en": "What is the maximum execution time for a Lambda function?"
+      },
+      "options": {
+        "A": {
+          "ja": "5分",
+          "en": "5 minutes"
+        },
+        "B": {
+          "ja": "10分",
+          "en": "10 minutes"
+        },
+        "C": {
+          "ja": "15分",
+          "en": "15 minutes"
+        },
+        "D": {
+          "ja": "60分",
+          "en": "60 minutes"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Lambda最大タイムアウトは15分（900秒）です。これを超える処理はStep FunctionsでのLambdaチェーン、またはECS/Fargateへの移行を検討します。",
+        "en": "Lambda maximum timeout is 15 minutes (900 seconds). For longer tasks, consider Step Functions chaining or migrating to ECS/Fargate."
+      }
+    },
+    {
+      "id": 2,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "VPCのプライベートサブネットからインターネットにアウトバウンド通信するには何が必要？",
+        "en": "What is required for outbound internet access from a private subnet in a VPC?"
+      },
+      "options": {
+        "A": {
+          "ja": "Internet Gateway のみ",
+          "en": "Internet Gateway only"
+        },
+        "B": {
+          "ja": "NAT Gateway + Route Table設定",
+          "en": "NAT Gateway + Route Table configuration"
+        },
+        "C": {
+          "ja": "Security Group のみ",
+          "en": "Security Group only"
+        },
+        "D": {
+          "ja": "VPC Peering",
+          "en": "VPC Peering"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "NAT Gatewayをパブリックサブネットにデプロイし、プライベートサブネットのルートテーブルで0.0.0.0/0をNAT Gatewayに向けます。インバウンドは拒否、アウトバウンドのみ許可する構成です。",
+        "en": "Deploy NAT Gateway in public subnet, route 0.0.0.0/0 to it from private subnet route table. This allows outbound only, blocking unsolicited inbound."
+      }
+    },
+    {
+      "id": 3,
+      "category": "データベース",
+      "question": {
+        "ja": "DynamoDBでRead Capacity Unit（RCU）1つで読み取れる強い整合性のあるデータ量は？",
+        "en": "How much data can 1 Read Capacity Unit (RCU) read with strong consistency in DynamoDB?"
+      },
+      "options": {
+        "A": {
+          "ja": "1KB",
+          "en": "1KB"
+        },
+        "B": {
+          "ja": "4KB",
+          "en": "4KB"
+        },
+        "C": {
+          "ja": "16KB",
+          "en": "16KB"
+        },
+        "D": {
+          "ja": "64KB",
+          "en": "64KB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "1 RCU = 4KBまでの強い整合性読み取り、または8KBまでの結果整合性読み取り/秒。アイテムサイズが4KBを超えると追加RCUが消費されます。",
+        "en": "1 RCU = up to 4KB strongly consistent read, or 8KB eventually consistent read per second. Items larger than 4KB consume additional RCUs."
+      }
+    },
+    {
+      "id": 4,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3の1オブジェクトの最大サイズは？",
+        "en": "What is the maximum size of a single S3 object?"
+      },
+      "options": {
+        "A": {
+          "ja": "5GB",
+          "en": "5GB"
+        },
+        "B": {
+          "ja": "50GB",
+          "en": "50GB"
+        },
+        "C": {
+          "ja": "5TB",
+          "en": "5TB"
+        },
+        "D": {
+          "ja": "50TB",
+          "en": "50TB"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "最大5TB。ただし1回のPUTでアップロードできるのは5GBまで。5GB超のオブジェクトはマルチパートアップロードが必須です。",
+        "en": "Maximum 5TB. However, single PUT is limited to 5GB. Objects larger than 5GB require multipart upload."
+      }
+    },
+    {
+      "id": 5,
+      "category": "コンピュート",
+      "question": {
+        "ja": "Auto Scalingでスケールアウトするトリガーとして適切なCloudWatchメトリクスは？",
+        "en": "Which CloudWatch metric is appropriate for triggering Auto Scaling scale-out?"
+      },
+      "options": {
+        "A": {
+          "ja": "StatusCheckFailed",
+          "en": "StatusCheckFailed"
+        },
+        "B": {
+          "ja": "CPUUtilization",
+          "en": "CPUUtilization"
+        },
+        "C": {
+          "ja": "NetworkPacketsIn",
+          "en": "NetworkPacketsIn"
+        },
+        "D": {
+          "ja": "DiskReadBytes",
+          "en": "DiskReadBytes"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "CPUUtilizationは最も一般的なスケーリングトリガー。例：「平均CPU使用率が70%を5分間超えたらインスタンス追加」のようなポリシーを設定します。",
+        "en": "CPUUtilization is the most common scaling trigger. Example policy: 'Add instance when average CPU exceeds 70% for 5 minutes'."
+      }
+    },
+    {
+      "id": 6,
+      "category": "制限値",
+      "question": {
+        "ja": "1つのAWSアカウントで作成できるVPCのデフォルト上限は？",
+        "en": "What is the default limit of VPCs per AWS account?"
+      },
+      "options": {
+        "A": {
+          "ja": "2",
+          "en": "2"
+        },
+        "B": {
+          "ja": "5",
+          "en": "5"
+        },
+        "C": {
+          "ja": "10",
+          "en": "10"
+        },
+        "D": {
+          "ja": "20",
+          "en": "20"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルトは5 VPC/リージョン。Service Quotasから上限緩和申請可能。多くの場合、すぐに承認されます。",
+        "en": "Default is 5 VPCs per region. Request increase via Service Quotas. Usually approved quickly."
+      }
+    },
+    {
+      "id": 7,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "Security GroupとNetwork ACLの違いで正しいのは？",
+        "en": "What's the correct difference between Security Group and Network ACL?"
+      },
+      "options": {
+        "A": {
+          "ja": "Security Groupはステートレス",
+          "en": "Security Groupはステートレス"
+        },
+        "B": {
+          "ja": "NACLはステートフル",
+          "en": "NACLはステートフル"
+        },
+        "C": {
+          "ja": "Security Groupはインスタンスレベル、NACLはサブネットレベル",
+          "en": "Security Groupはインスタンスレベル、NACLはサブネットレベル"
+        },
+        "D": {
+          "ja": "NACLはデフォルトで全トラフィック拒否",
+          "en": "NACLはデフォルトで全トラフィック拒否"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Security Groupはインスタンス（ENI）レベルでステートフル、NACLはサブネットレベルでステートレス。デフォルトNACLは全トラフィック許可、カスタムNACLは全拒否から開始。",
+        "en": "Security Group is instance (ENI) level, stateful. NACL is subnet level, stateless. Default NACL allows all, custom NACL denies all by default."
+      }
+    },
+    {
+      "id": 8,
+      "category": "制限値",
+      "question": {
+        "ja": "SQS標準キューのメッセージ保持期間のデフォルトと最大は？",
+        "en": "What are the default and maximum message retention periods for SQS standard queue?"
+      },
+      "options": {
+        "A": {
+          "ja": "1日",
+          "en": "7日"
+        },
+        "B": {
+          "ja": "4日",
+          "en": "14日"
+        },
+        "C": {
+          "ja": "7日",
+          "en": "30日"
+        },
+        "D": {
+          "ja": "1日",
+          "en": "14日"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルト4日、最大14日。処理されないメッセージは期限後に自動削除されます。デッドレターキューで未処理メッセージを捕捉する設計を推奨。",
+        "en": "Default 4 days, maximum 14 days. Unprocessed messages auto-delete after expiry. Design with Dead Letter Queue to capture failed messages."
+      }
+    },
+    {
+      "id": 9,
+      "category": "データベース",
+      "question": {
+        "ja": "RDS Multi-AZフェイルオーバーにかかる時間は通常どれくらい？",
+        "en": "How long does RDS Multi-AZ failover typically take?"
+      },
+      "options": {
+        "A": {
+          "ja": "数秒",
+          "en": "数秒"
+        },
+        "B": {
+          "ja": "60〜120秒",
+          "en": "60-120 second(s)"
+        },
+        "C": {
+          "ja": "5〜10分",
+          "en": "5-10 minutes"
+        },
+        "D": {
+          "ja": "30分以上",
+          "en": "30 minutes以上"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "通常60〜120秒。DNSレコードがスタンバイに切り替わります。アプリケーション側でコネクション再接続のリトライロジックが必要です。",
+        "en": "Typically 60-120 seconds. DNS record switches to standby. Application needs connection retry logic."
+      }
+    },
+    {
+      "id": 10,
+      "category": "ストレージ",
+      "question": {
+        "ja": "EBS gp3ボリュームのベースラインIOPSは？",
+        "en": "What is the baseline IOPS for EBS gp3 volumes?"
+      },
+      "options": {
+        "A": {
+          "ja": "100 IOPS",
+          "en": "100 IOPS"
+        },
+        "B": {
+          "ja": "1,000 IOPS",
+          "en": "1,000 IOPS"
+        },
+        "C": {
+          "ja": "3,000 IOPS",
+          "en": "3,000 IOPS"
+        },
+        "D": {
+          "ja": "16,000 IOPS",
+          "en": "16,000 IOPS"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "gp3は3,000 IOPSがベースライン（サイズ無関係）。最大16,000 IOPSまでプロビジョン可能。gp2はサイズ依存（3 IOPS/GB）で、gp3の方が柔軟です。",
+        "en": "gp3 baseline is 3,000 IOPS regardless of size. Can provision up to 16,000 IOPS. gp2 depends on size (3 IOPS/GB). gp3 is more flexible."
+      }
+    },
+    {
+      "id": 11,
+      "category": "制限値",
+      "question": {
+        "ja": "Lambda関数に設定できる最大メモリは？",
+        "en": "What is the maximum memory configurable for a Lambda function?"
+      },
+      "options": {
+        "A": {
+          "ja": "3,008 MB",
+          "en": "3,008 MB"
+        },
+        "B": {
+          "ja": "5,120 MB",
+          "en": "5,120 MB"
+        },
+        "C": {
+          "ja": "10,240 MB",
+          "en": "10,240 MB"
+        },
+        "D": {
+          "ja": "15,360 MB",
+          "en": "15,360 MB"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "最大10,240 MB（10 GB）。メモリに比例してCPUパワーも増加します。メモリ増加でCPU負荷の高い処理が高速化し、結果的にコスト削減になる場合も。",
+        "en": "Maximum 10,240 MB (10 GB). CPU power scales proportionally with memory. More memory can speed up CPU-bound tasks, potentially reducing costs."
+      }
+    },
+    {
+      "id": 12,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "CloudFrontのオリジンとして使用できないものは？",
+        "en": "Which cannot be used as a CloudFront origin?"
+      },
+      "options": {
+        "A": {
+          "ja": "S3バケット",
+          "en": "S3バケット"
+        },
+        "B": {
+          "ja": "ALB",
+          "en": "ALB"
+        },
+        "C": {
+          "ja": "EC2インスタンス",
+          "en": "EC2インスタンス"
+        },
+        "D": {
+          "ja": "AWS Lambda（直接）",
+          "en": "AWS Lambda（直接）"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "LambdaはCloudFrontから直接オリジンにできません。Lambda@EdgeまたはCloudFront Functions として使うか、API Gateway経由でLambdaを呼び出します。",
+        "en": "Lambda cannot be a direct CloudFront origin. Use Lambda@Edge, CloudFront Functions, or invoke Lambda via API Gateway."
+      }
+    },
+    {
+      "id": 13,
+      "category": "データベース",
+      "question": {
+        "ja": "DynamoDBのパーティションキーを選ぶ際の最重要基準は？",
+        "en": "Most important criteria when choosing a DynamoDB partition key?"
+      },
+      "options": {
+        "A": {
+          "ja": "文字列型であること",
+          "en": "文字列型であること"
+        },
+        "B": {
+          "ja": "短い名前であること",
+          "en": "短い名前であること"
+        },
+        "C": {
+          "ja": "高いカーディナリティ（多様な値）",
+          "en": "高いカーディナリティ（多様な値）"
+        },
+        "D": {
+          "ja": "数値型であること",
+          "en": "数値型であること"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "高カーディナリティ（ユニークな値が多い）が最重要。同じキー値にリクエストが集中するとホットパーティション問題が発生し、スロットリングの原因に。",
+        "en": "High cardinality (many unique values) is key. Requests concentrated on same key cause hot partition issues and throttling."
+      }
+    },
+    {
+      "id": 14,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "VPC間通信でTransit GatewayがVPCピアリングより優れている点は？",
+        "en": "When is Transit Gateway better than VPC Peering?"
+      },
+      "options": {
+        "A": {
+          "ja": "2つのVPC間の通信",
+          "en": "2のVPC間の通信"
+        },
+        "B": {
+          "ja": "多数のVPCをハブ&スポーク型で接続",
+          "en": "多数のVPCをハブ&スポーク型で接続"
+        },
+        "C": {
+          "ja": "低レイテンシーが必要な場合",
+          "en": "低レイテンシーが必要な場合"
+        },
+        "D": {
+          "ja": "コスト重視の場合",
+          "en": "コスト重視の場合"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "VPCピアリングは1対1接続でフルメッシュになりがち。Transit Gatewayは中央ハブとして多数のVPC/VPN/Direct Connectを接続。10+VPCなら Transit Gateway推奨。",
+        "en": "VPC Peering is 1-to-1, becomes full mesh. Transit Gateway acts as hub for many VPCs/VPNs/Direct Connect. Recommended for 10+ VPCs."
+      }
+    },
+    {
+      "id": 15,
+      "category": "制限値",
+      "question": {
+        "ja": "1つのS3バケットに保存できるオブジェクト数の上限は？",
+        "en": "Maximum number of objects in a single S3 bucket?"
+      },
+      "options": {
+        "A": {
+          "ja": "100万",
+          "en": "100万"
+        },
+        "B": {
+          "ja": "1億",
+          "en": "1億"
+        },
+        "C": {
+          "ja": "1兆",
+          "en": "1兆"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "オブジェクト数に上限なし。バケット内に無制限にオブジェクトを保存可能。ただし、LIST操作のパフォーマンスを考慮してプレフィックス設計を。",
+        "en": "No limit on object count. Store unlimited objects per bucket. Design prefixes carefully for LIST operation performance."
+      }
+    },
+    {
+      "id": 16,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "IAMポリシーで明示的なDenyがある場合、他のポリシーでAllowがあるとどうなる？",
+        "en": "If an IAM policy has explicit Deny, what happens when another policy has Allow?"
+      },
+      "options": {
+        "A": {
+          "ja": "Allowが優先",
+          "en": "Allowが優先"
+        },
+        "B": {
+          "ja": "Denyが優先",
+          "en": "Denyが優先"
+        },
+        "C": {
+          "ja": "後に評価されたものが優先",
+          "en": "後に評価されたものが優先"
+        },
+        "D": {
+          "ja": "エラーになる",
+          "en": "エラーになる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "明示的Denyは常に優先（Explicit Deny wins）。デフォルトはImplicit Deny。許可するにはExplicit Allowが必要で、Explicit Denyがあれば無効化されます。",
+        "en": "Explicit Deny always wins. Default is Implicit Deny. Need Explicit Allow to permit, but Explicit Deny overrides all Allows."
+      }
+    },
+    {
+      "id": 17,
+      "category": "コンピュート",
+      "question": {
+        "ja": "EC2インスタンスメタデータにアクセスするURLは？",
+        "en": "URL to access EC2 instance metadata?"
+      },
+      "options": {
+        "A": {
+          "ja": "http://169.254.169.254/latest/meta-data/",
+          "en": "http://169.254.169.254/latest/meta-data/"
+        },
+        "B": {
+          "ja": "http://localhost/metadata/",
+          "en": "http://localhost/metadata/"
+        },
+        "C": {
+          "ja": "http://127.0.0.1/instance-data/",
+          "en": "http://127.0.0.1/instance-data/"
+        },
+        "D": {
+          "ja": "http://aws.internal/meta-data/",
+          "en": "http://aws.internal/meta-data/"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "169.254.169.254はリンクローカルアドレス。メタデータV2（IMDSv2）ではセッショントークンが必要で、よりセキュアです。",
+        "en": "169.254.169.254 is a link-local address. Metadata V2 (IMDSv2) requires session token for better security."
+      }
+    },
+    {
+      "id": 18,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3のイベント通知先として使用できないものは？",
+        "en": "Which cannot receive S3 event notifications?"
+      },
+      "options": {
+        "A": {
+          "ja": "Lambda",
+          "en": "Lambda"
+        },
+        "B": {
+          "ja": "SQS",
+          "en": "SQS"
+        },
+        "C": {
+          "ja": "SNS",
+          "en": "SNS"
+        },
+        "D": {
+          "ja": "Kinesis Data Streams（直接）",
+          "en": "Kinesis Data Streams（直接）"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "S3イベント通知はLambda、SQS、SNS、EventBridgeに直接送信可能。Kinesisには直接送れませんが、Lambda経由で転送できます。",
+        "en": "S3 events can go directly to Lambda, SQS, SNS, EventBridge. Not directly to Kinesis, but can route via Lambda."
+      }
+    },
+    {
+      "id": 19,
+      "category": "制限値",
+      "question": {
+        "ja": "API Gatewayのデフォルトのスロットリング制限は？",
+        "en": "Default throttling limit for API Gateway?"
+      },
+      "options": {
+        "A": {
+          "ja": "100 リクエスト/秒",
+          "en": "100 リクエスト/秒"
+        },
+        "B": {
+          "ja": "1,000 リクエスト/秒",
+          "en": "1,000 リクエスト/秒"
+        },
+        "C": {
+          "ja": "10,000 リクエスト/秒",
+          "en": "10,000 リクエスト/秒"
+        },
+        "D": {
+          "ja": "100,000 リクエスト/秒",
+          "en": "100,000 リクエスト/秒"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "デフォルト10,000 リクエスト/秒（リージョンあたり）。バースト制限5,000。上限緩和申請でさらに増加可能。",
+        "en": "Default 10,000 requests/second per region. Burst limit 5,000. Can request increase via Service Quotas."
+      }
+    },
+    {
+      "id": 20,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "ALBとNLBの違いで正しいのは？",
+        "en": "Correct difference between ALB and NLB?"
+      },
+      "options": {
+        "A": {
+          "ja": "ALBはTCPレベル、NLBはHTTPレベル",
+          "en": "ALBはTCPレベル、NLBはHTTPレベル"
+        },
+        "B": {
+          "ja": "NLBは静的IPをサポート",
+          "en": "NLBは静的IPをサポート"
+        },
+        "C": {
+          "ja": "ALBの方がレイテンシーが低い",
+          "en": "ALBの方がレイテンシーが低い"
+        },
+        "D": {
+          "ja": "NLBはパスベースルーティングをサポート",
+          "en": "NLBはパスベースルーティングをサポート"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "NLBはElastic IPを持てるため静的IPが必要な場合に最適。ALBはL7（HTTP/HTTPS）でパスベースルーティング、NLBはL4（TCP/UDP）で超低レイテンシー。",
+        "en": "NLB supports Elastic IP for static IP needs. ALB is L7 (HTTP/HTTPS) with path routing, NLB is L4 (TCP/UDP) with ultra-low latency."
+      }
+    },
+    {
+      "id": 21,
+      "category": "データベース",
+      "question": {
+        "ja": "Aurora Serverless v2のスケーリング単位は？",
+        "en": "Scaling unit for Aurora Serverless v2?"
+      },
+      "options": {
+        "A": {
+          "ja": "インスタンスクラス",
+          "en": "インスタンスクラス"
+        },
+        "B": {
+          "ja": "ACU（Aurora Capacity Unit）",
+          "en": "ACU（Aurora Capacity Unit）"
+        },
+        "C": {
+          "ja": "vCPU",
+          "en": "vCPU"
+        },
+        "D": {
+          "ja": "メモリGB",
+          "en": "メモリGB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ACU（1 ACU ≈ 2GB RAM）でスケール。0.5〜128 ACUの範囲で秒単位で自動調整。プロビジョンドとServerlessを同じクラスタで混在可能。",
+        "en": "Scales by ACU (1 ACU ≈ 2GB RAM). Auto-adjusts 0.5-128 ACU per second. Can mix Provisioned and Serverless in same cluster."
+      }
+    },
+    {
+      "id": 22,
+      "category": "制限値",
+      "question": {
+        "ja": "CloudFormationスタックあたりのリソース数の上限は？",
+        "en": "Maximum resources per CloudFormation stack?"
+      },
+      "options": {
+        "A": {
+          "ja": "100",
+          "en": "100"
+        },
+        "B": {
+          "ja": "200",
+          "en": "200"
+        },
+        "C": {
+          "ja": "500",
+          "en": "500"
+        },
+        "D": {
+          "ja": "1000",
+          "en": "1000"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "1スタックあたり500リソースまで。超える場合はネストスタックで分割。テンプレートサイズは1MBまで（S3経由）。",
+        "en": "500 resources per stack max. Use nested stacks for larger deployments. Template size max 1MB (via S3)."
+      }
+    },
+    {
+      "id": 23,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "VPCエンドポイントの2つのタイプは？",
+        "en": "What are the two types of VPC endpoints?"
+      },
+      "options": {
+        "A": {
+          "ja": "Public",
+          "en": "Private"
+        },
+        "B": {
+          "ja": "Gateway",
+          "en": "Interface"
+        },
+        "C": {
+          "ja": "Standard",
+          "en": "Premium"
+        },
+        "D": {
+          "ja": "Internal",
+          "en": "External"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Gateway（S3/DynamoDB用、無料）とInterface（PrivateLink使用、ENIベース、時間課金）。Interfaceエンドポイントは多くのAWSサービスをサポート。",
+        "en": "Gateway (S3/DynamoDB, free) and Interface (PrivateLink, ENI-based, hourly charge). Interface endpoints support many AWS services."
+      }
+    },
+    {
+      "id": 24,
+      "category": "コンピュート",
+      "question": {
+        "ja": "ECS TaskでFargateを使う場合、タスク定義で指定が必須なのは？",
+        "en": "What must be specified in ECS task definition for Fargate?"
+      },
+      "options": {
+        "A": {
+          "ja": "インスタンスタイプ",
+          "en": "インスタンスタイプ"
+        },
+        "B": {
+          "ja": "AMI ID",
+          "en": "AMI ID"
+        },
+        "C": {
+          "ja": "CPU/メモリ",
+          "en": "CPU/メモリ"
+        },
+        "D": {
+          "ja": "EBSボリュームサイズ",
+          "en": "EBSボリュームサイズ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Fargateではタスクレベルでcpu/memory指定が必須。有効な組み合わせが決まっています（例：256 CPU / 512MB〜2GB）。EC2起動タイプでは任意。",
+        "en": "Fargate requires cpu/memory at task level. Valid combinations are defined (e.g., 256 CPU / 512MB-2GB). Optional for EC2 launch type."
+      }
+    },
+    {
+      "id": 25,
+      "category": "制限値",
+      "question": {
+        "ja": "DynamoDBの1アイテムの最大サイズは？",
+        "en": "Maximum size of a single DynamoDB item?"
+      },
+      "options": {
+        "A": {
+          "ja": "64KB",
+          "en": "64KB"
+        },
+        "B": {
+          "ja": "256KB",
+          "en": "256KB"
+        },
+        "C": {
+          "ja": "400KB",
+          "en": "400KB"
+        },
+        "D": {
+          "ja": "1MB",
+          "en": "1MB"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "1アイテム最大400KB（属性名含む）。大きなデータはS3に保存してDynamoDBにはポインタを格納するパターンを使用。",
+        "en": "Max 400KB per item (including attribute names). For large data, store in S3 and keep pointer in DynamoDB."
+      }
+    },
+    {
+      "id": 26,
+      "category": "ストレージ",
+      "question": {
+        "ja": "EFSの3つのストレージクラスとは？",
+        "en": "What are the 3 EFS storage classes?"
+      },
+      "options": {
+        "A": {
+          "ja": "Standard",
+          "en": "IA / Glacier"
+        },
+        "B": {
+          "ja": "Standard",
+          "en": "Infrequent Access / Archive"
+        },
+        "C": {
+          "ja": "Hot",
+          "en": "Warm / Cold"
+        },
+        "D": {
+          "ja": "Frequent",
+          "en": "Standard / Archive"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Standard、Infrequent Access（IA）、Archive の3クラス。ライフサイクル管理で自動移動可能。Archiveは最安だがアクセスに50ms以上。",
+        "en": "Standard, Infrequent Access (IA), Archive. Lifecycle management auto-transitions. Archive cheapest but 50ms+ access latency."
+      }
+    },
+    {
+      "id": 27,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "KMSキーの自動ローテーション期間は？",
+        "en": "KMS key automatic rotation period?"
+      },
+      "options": {
+        "A": {
+          "ja": "30日",
+          "en": "30 days"
+        },
+        "B": {
+          "ja": "90日",
+          "en": "90 days"
+        },
+        "C": {
+          "ja": "365日",
+          "en": "365 day(s)"
+        },
+        "D": {
+          "ja": "カスタマイズ可能（90〜2560日）",
+          "en": "カスタマイズ可能（90-2560 day(s)）"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "自動ローテーションは90日〜2560日でカスタマイズ可能（2024年以降）。以前は1年固定でした。古いキーマテリアルは復号用に保持されます。",
+        "en": "Customizable 90-2560 days (since 2024). Previously fixed at 1 year. Old key material retained for decryption."
+      }
+    },
+    {
+      "id": 28,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "SQS FIFOキューの最大スループットは？",
+        "en": "Maximum throughput of SQS FIFO queue?"
+      },
+      "options": {
+        "A": {
+          "ja": "300 メッセージ/秒",
+          "en": "300 メッセージ/秒"
+        },
+        "B": {
+          "ja": "3,000 メッセージ/秒（バッチ処理時）",
+          "en": "3,000 メッセージ/秒（バッチ処理時）"
+        },
+        "C": {
+          "ja": "30,000 メッセージ/秒",
+          "en": "30,000 メッセージ/秒"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "FIFOは300 TPS（トランザクション/秒）、バッチ処理で最大3,000メッセージ/秒。高スループット設定で最大70,000 TPS可能。標準キューは実質無制限。",
+        "en": "FIFO: 300 TPS, up to 3,000 messages/sec with batching. High throughput mode: up to 70,000 TPS. Standard queue is virtually unlimited."
+      }
+    },
+    {
+      "id": 29,
+      "category": "制限値",
+      "question": {
+        "ja": "Route 53で1つのホストゾーンに作成できるレコード数の上限は？",
+        "en": "Maximum records per Route 53 hosted zone?"
+      },
+      "options": {
+        "A": {
+          "ja": "1,000",
+          "en": "1,000"
+        },
+        "B": {
+          "ja": "10,000",
+          "en": "10,000"
+        },
+        "C": {
+          "ja": "100,000",
+          "en": "100,000"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルト10,000レコード/ホストゾーン。上限緩和申請可能。大規模ドメインでは分割や委任を検討。",
+        "en": "Default 10,000 records per hosted zone. Can request increase. Consider splitting or delegation for large domains."
+      }
+    },
+    {
+      "id": 30,
+      "category": "データベース",
+      "question": {
+        "ja": "ElastiCache Redisでクラスターモードを有効にする主な理由は？",
+        "en": "Main reason to enable cluster mode in ElastiCache Redis?"
+      },
+      "options": {
+        "A": {
+          "ja": "Multi-AZ対応",
+          "en": "Multi-AZ対応"
+        },
+        "B": {
+          "ja": "データを複数ノードに分散（シャーディング）",
+          "en": "データを複数ノードに分散（シャーディング）"
+        },
+        "C": {
+          "ja": "自動バックアップ",
+          "en": "自動バックアップ"
+        },
+        "D": {
+          "ja": "暗号化サポート",
+          "en": "暗号化サポート"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "クラスターモードはデータを複数シャードに分散し、読み書きスループットとメモリ容量を水平スケール。大規模データセットや高トラフィックに必須。",
+        "en": "Cluster mode distributes data across shards, scaling read/write throughput and memory horizontally. Essential for large datasets or high traffic."
+      }
+    },
+    {
+      "id": 31,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "AWS Direct Connectの標準的な接続速度オプションは？",
+        "en": "Standard connection speed options for AWS Direct Connect?"
+      },
+      "options": {
+        "A": {
+          "ja": "100 Mbps",
+          "en": "1 Gbps"
+        },
+        "B": {
+          "ja": "1 Gbps",
+          "en": "10 Gbps / 100 Gbps"
+        },
+        "C": {
+          "ja": "50 Mbps",
+          "en": "500 Mbps"
+        },
+        "D": {
+          "ja": "10 Gbps のみ",
+          "en": "10 Gbps  only"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Dedicated接続は1/10/100 Gbps。Hosted接続は50 Mbps〜10 Gbps。LAG（Link Aggregation）で複数接続を束ねることも可能。",
+        "en": "Dedicated connections: 1/10/100 Gbps. Hosted connections: 50 Mbps to 10 Gbps. LAG can bundle multiple connections."
+      }
+    },
+    {
+      "id": 32,
+      "category": "コンピュート",
+      "question": {
+        "ja": "EC2のプレイスメントグループで「クラスター」タイプの特徴は？",
+        "en": "Characteristic of EC2 'cluster' placement group?"
+      },
+      "options": {
+        "A": {
+          "ja": "複数AZに分散",
+          "en": "複数AZに分散"
+        },
+        "B": {
+          "ja": "同一AZ内で低レイテンシー",
+          "en": "同一AZ内で低レイテンシー"
+        },
+        "C": {
+          "ja": "異なるラックに配置",
+          "en": "異なるラックに配置"
+        },
+        "D": {
+          "ja": "障害時の自動移動",
+          "en": "障害時の自動移動"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Clusterは同一AZ/ラック内に配置し、最低レイテンシー・最高帯域を実現。HPC/MLワークロード向け。Spreadは異なるラック、Partitionは論理グループ分離。",
+        "en": "Cluster places instances in same AZ/rack for lowest latency, highest bandwidth. For HPC/ML. Spread uses different racks, Partition isolates logical groups."
+      }
+    },
+    {
+      "id": 33,
+      "category": "制限値",
+      "question": {
+        "ja": "Step Functionsの1実行の最大ステート遷移数は？",
+        "en": "Maximum state transitions per Step Functions execution?"
+      },
+      "options": {
+        "A": {
+          "ja": "1,000",
+          "en": "1,000"
+        },
+        "B": {
+          "ja": "25,000",
+          "en": "25,000"
+        },
+        "C": {
+          "ja": "100,000",
+          "en": "100,000"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Standard Workflowは25,000ステート遷移/実行。Express Workflowは無制限（5分以内の短い実行向け）。長い処理は分割を検討。",
+        "en": "Standard Workflow: 25,000 state transitions/execution. Express Workflow: unlimited (for short executions under 5 min). Consider splitting long processes."
+      }
+    },
+    {
+      "id": 34,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS WAFで評価されるルールの優先順位は？",
+        "en": "How are AWS WAF rules prioritized?"
+      },
+      "options": {
+        "A": {
+          "ja": "アルファベット順",
+          "en": "アルファベット順"
+        },
+        "B": {
+          "ja": "作成日順",
+          "en": "作成日順"
+        },
+        "C": {
+          "ja": "数値優先度（低い方が先）",
+          "en": "数値優先度（低い方が先）"
+        },
+        "D": {
+          "ja": "ランダム",
+          "en": "ランダム"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "数値優先度で評価（0が最高優先）。最初にマッチしたルールのアクションが適用されます。Block > Allow > Countの順で慎重に設計。",
+        "en": "Evaluated by numeric priority (0 is highest). First matching rule's action applies. Design carefully: Block > Allow > Count."
+      }
+    },
+    {
+      "id": 35,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3 Glacierからのデータ取り出しオプションで最速は？",
+        "en": "Fastest retrieval option from S3 Glacier?"
+      },
+      "options": {
+        "A": {
+          "ja": "Bulk（5〜12時間）",
+          "en": "Bulk（5-12 hour(s)）"
+        },
+        "B": {
+          "ja": "Standard（3〜5時間）",
+          "en": "Standard（3-5 hour(s)）"
+        },
+        "C": {
+          "ja": "Expedited（1〜5分）",
+          "en": "Expedited（1-5 minutes）"
+        },
+        "D": {
+          "ja": "Instant（ミリ秒）",
+          "en": "Instant（ミリ秒）"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Expeditedは1〜5分だが最も高額。Glacier Instant Retrievalならミリ秒でアクセス可能（別ストレージクラス）。用途に応じて選択。",
+        "en": "Expedited is 1-5 min but most expensive. Glacier Instant Retrieval offers millisecond access (different storage class). Choose based on needs."
+      }
+    },
+    {
+      "id": 36,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "Kinesis Data Streamsの1シャードあたりの書き込み容量は？",
+        "en": "Write capacity per Kinesis Data Streams shard?"
+      },
+      "options": {
+        "A": {
+          "ja": "500 KB/秒",
+          "en": "500 KB/秒"
+        },
+        "B": {
+          "ja": "1 MB/秒",
+          "en": "1 MB/秒"
+        },
+        "C": {
+          "ja": "5 MB/秒",
+          "en": "5 MB/秒"
+        },
+        "D": {
+          "ja": "10 MB/秒",
+          "en": "10 MB/秒"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "1シャード = 1 MB/秒（または1000レコード/秒）の書き込み、2 MB/秒の読み取り。シャード数を増やしてスケール。",
+        "en": "1 shard = 1 MB/sec (or 1000 records/sec) write, 2 MB/sec read. Scale by adding shards."
+      }
+    },
+    {
+      "id": 37,
+      "category": "データベース",
+      "question": {
+        "ja": "RDSのRead Replicaを作成できる最大数は？",
+        "en": "Maximum Read Replicas for RDS?"
+      },
+      "options": {
+        "A": {
+          "ja": "3",
+          "en": "3"
+        },
+        "B": {
+          "ja": "5",
+          "en": "5"
+        },
+        "C": {
+          "ja": "15",
+          "en": "15"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "MySQL/MariaDB/PostgreSQL/Oracleは最大5つ。Auroraは最大15のリードレプリカ。レプリカは読み取り負荷分散とDR用途に使用。",
+        "en": "MySQL/MariaDB/PostgreSQL/Oracle: max 5. Aurora: max 15 read replicas. Use for read scaling and DR."
+      }
+    },
+    {
+      "id": 38,
+      "category": "制限値",
+      "question": {
+        "ja": "SNSトピックのサブスクリプション数の上限は？",
+        "en": "Maximum subscriptions per SNS topic?"
+      },
+      "options": {
+        "A": {
+          "ja": "1,000",
+          "en": "1,000"
+        },
+        "B": {
+          "ja": "10,000",
+          "en": "10,000"
+        },
+        "C": {
+          "ja": "100,000",
+          "en": "100,000"
+        },
+        "D": {
+          "ja": "12,500,000",
+          "en": "12,500,000"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "1トピックあたり最大12,500,000サブスクリプション。ただしHTTP/S、メール、SMSなどプロトコルごとに制限があるので注意。",
+        "en": "Max 12.5 million subscriptions per topic. Note that individual protocols (HTTP/S, email, SMS) have their own limits."
+      }
+    },
+    {
+      "id": 39,
+      "category": "コンピュート",
+      "question": {
+        "ja": "Lambda関数のデプロイパッケージ（zip）の最大サイズは？",
+        "en": "Maximum Lambda deployment package (zip) size?"
+      },
+      "options": {
+        "A": {
+          "ja": "50 MB",
+          "en": "50 MB"
+        },
+        "B": {
+          "ja": "100 MB",
+          "en": "100 MB"
+        },
+        "C": {
+          "ja": "250 MB（展開後）",
+          "en": "250 MB（展開後）"
+        },
+        "D": {
+          "ja": "500 MB",
+          "en": "500 MB"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "zip直接は50MB、S3経由は250MB（展開後）。コンテナイメージは最大10GB。Layerを使って依存関係を分離するとサイズ管理しやすい。",
+        "en": "Direct zip: 50MB, via S3: 250MB (unzipped). Container image: up to 10GB. Use Layers to separate dependencies for easier size management."
+      }
+    },
+    {
+      "id": 40,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "Global Acceleratorが提供する機能は？",
+        "en": "What does Global Accelerator provide?"
+      },
+      "options": {
+        "A": {
+          "ja": "CDNキャッシュ",
+          "en": "CDNキャッシュ"
+        },
+        "B": {
+          "ja": "静的エニーキャストIP + AWSグローバルネットワーク",
+          "en": "静的エニーキャストIP + AWSグローバルネットワーク"
+        },
+        "C": {
+          "ja": "DNS解決",
+          "en": "DNS解決"
+        },
+        "D": {
+          "ja": "WAF機能",
+          "en": "WAF機能"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "2つの静的エニーキャストIPを提供し、AWSグローバルネットワーク経由でトラフィックをルーティング。エンドポイントヘルスチェックと自動フェイルオーバーも。",
+        "en": "Provides 2 static anycast IPs, routes traffic via AWS global network. Includes endpoint health checks and automatic failover."
+      }
+    },
+    {
+      "id": 41,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Secrets Managerでサポートされる自動ローテーション対象は？",
+        "en": "What does AWS Secrets Manager support for automatic rotation?"
+      },
+      "options": {
+        "A": {
+          "ja": "RDS認証情報のみ",
+          "en": "RDS認証情報 only"
+        },
+        "B": {
+          "ja": "RDS、Redshift、DocumentDB、カスタム",
+          "en": "RDS、Redshift、DocumentDB、カスタム"
+        },
+        "C": {
+          "ja": "すべてのAWSサービス認証情報",
+          "en": "すべてのAWSサービス認証情報"
+        },
+        "D": {
+          "ja": "IAMユーザーパスワード",
+          "en": "IAMユーザーパスワード"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "RDS、Redshift、DocumentDB用のビルトインローテーション関数あり。その他はカスタムLambda関数で実装。IAMパスワードはSecrets Manager対象外。",
+        "en": "Built-in rotation for RDS, Redshift, DocumentDB. Others via custom Lambda. IAM passwords are not managed by Secrets Manager."
+      }
+    },
+    {
+      "id": 42,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3 Transfer Accelerationが使用するのは？",
+        "en": "What does S3 Transfer Acceleration use?"
+      },
+      "options": {
+        "A": {
+          "ja": "Direct Connect",
+          "en": "Direct Connect"
+        },
+        "B": {
+          "ja": "CloudFrontエッジロケーション",
+          "en": "CloudFrontエッジロケーション"
+        },
+        "C": {
+          "ja": "VPNトンネル",
+          "en": "VPNトンネル"
+        },
+        "D": {
+          "ja": "専用回線",
+          "en": "専用回線"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "CloudFrontエッジロケーションにアップロードし、AWSバックボーンネットワークでS3へ転送。遠距離からの大きなオブジェクトアップロードで効果大。",
+        "en": "Uploads to CloudFront edge, transfers to S3 via AWS backbone. Most effective for large object uploads from distant locations."
+      }
+    },
+    {
+      "id": 43,
+      "category": "制限値",
+      "question": {
+        "ja": "IAMユーザーが所属できるグループの最大数は？",
+        "en": "Maximum IAM groups a user can belong to?"
+      },
+      "options": {
+        "A": {
+          "ja": "5",
+          "en": "5"
+        },
+        "B": {
+          "ja": "10",
+          "en": "10"
+        },
+        "C": {
+          "ja": "20",
+          "en": "20"
+        },
+        "D": {
+          "ja": "100",
+          "en": "100"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "1ユーザーあたり最大10グループ。アカウントあたりのグループ数は300（上限緩和で500まで）。設計時に考慮を。",
+        "en": "Max 10 groups per user. 300 groups per account (up to 500 with increase). Consider in design."
+      }
+    },
+    {
+      "id": 44,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "EventBridgeルールのターゲットとして指定できる最大数は？",
+        "en": "Maximum targets per EventBridge rule?"
+      },
+      "options": {
+        "A": {
+          "ja": "1",
+          "en": "1"
+        },
+        "B": {
+          "ja": "5",
+          "en": "5"
+        },
+        "C": {
+          "ja": "10",
+          "en": "10"
+        },
+        "D": {
+          "ja": "25",
+          "en": "25"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "1ルールあたり最大5ターゲット。それ以上必要な場合は複数ルールを作成するか、SNS/SQSでファンアウトパターンを使用。",
+        "en": "Max 5 targets per rule. For more, create multiple rules or use SNS/SQS for fan-out pattern."
+      }
+    },
+    {
+      "id": 45,
+      "category": "データベース",
+      "question": {
+        "ja": "DynamoDB Streamsのレコード保持期間は？",
+        "en": "DynamoDB Streams record retention period?"
+      },
+      "options": {
+        "A": {
+          "ja": "1時間",
+          "en": "1 hour"
+        },
+        "B": {
+          "ja": "24時間",
+          "en": "24 hour(s)"
+        },
+        "C": {
+          "ja": "7日",
+          "en": "7 days"
+        },
+        "D": {
+          "ja": "30日",
+          "en": "30 days"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "ストリームレコードは24時間保持。Lambda/Kinesis Consumer で処理。変更データキャプチャ（CDC）やイベント駆動アーキテクチャに使用。",
+        "en": "Stream records retained 24 hours. Process with Lambda/Kinesis Consumer. Used for CDC and event-driven architecture."
+      }
+    },
+    {
+      "id": 46,
+      "category": "コンピュート",
+      "question": {
+        "ja": "Lambda@Edgeの実行リージョンは？",
+        "en": "Where does Lambda@Edge execute?"
+      },
+      "options": {
+        "A": {
+          "ja": "us-east-1のみ",
+          "en": "us-east-1 only"
+        },
+        "B": {
+          "ja": "オリジンと同じリージョン",
+          "en": "オリジンと同じリージョン"
+        },
+        "C": {
+          "ja": "CloudFrontエッジロケーション",
+          "en": "CloudFrontエッジロケーション"
+        },
+        "D": {
+          "ja": "最寄りのAWSリージョン",
+          "en": "最寄りのAWSリージョン"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Lambda@EdgeはCloudFrontエッジロケーションで実行。関数自体はus-east-1で作成。ユーザーに近い場所で処理するため低レイテンシー。",
+        "en": "Lambda@Edge executes at CloudFront edge locations. Function created in us-east-1. Low latency by processing close to users."
+      }
+    },
+    {
+      "id": 47,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "VPC Flow Logsのログ送信先として使用できないものは？",
+        "en": "Which cannot be a VPC Flow Logs destination?"
+      },
+      "options": {
+        "A": {
+          "ja": "CloudWatch Logs",
+          "en": "CloudWatch Logs"
+        },
+        "B": {
+          "ja": "S3",
+          "en": "S3"
+        },
+        "C": {
+          "ja": "Kinesis Data Firehose",
+          "en": "Kinesis Data Firehose"
+        },
+        "D": {
+          "ja": "DynamoDB",
+          "en": "DynamoDB"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "Flow LogsはCloudWatch Logs、S3、Kinesis Data Firehoseに送信可能。DynamoDBは直接サポートされません。分析はAthenaやQuickSightで。",
+        "en": "Flow Logs can go to CloudWatch Logs, S3, Kinesis Data Firehose. DynamoDB not directly supported. Analyze with Athena or QuickSight."
+      }
+    },
+    {
+      "id": 48,
+      "category": "制限値",
+      "question": {
+        "ja": "Athenaでのクエリ結果ファイルの最大サイズは？",
+        "en": "Maximum query result file size in Athena?"
+      },
+      "options": {
+        "A": {
+          "ja": "1GB",
+          "en": "1GB"
+        },
+        "B": {
+          "ja": "5GB",
+          "en": "5GB"
+        },
+        "C": {
+          "ja": "制限なし（S3に保存）",
+          "en": "制限なし（S3に保存）"
+        },
+        "D": {
+          "ja": "100GB",
+          "en": "100GB"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "結果はS3に保存されるためファイルサイズ制限なし。ただしタイムアウトは30分（DML）。大きなクエリは分割やパーティションを活用。",
+        "en": "No size limit as results go to S3. But timeout is 30 min (DML). For large queries, use partitioning and splitting."
+      }
+    },
+    {
+      "id": 49,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "IAMロールの信頼ポリシー（Trust Policy）で定義するのは？",
+        "en": "What does IAM role trust policy define?"
+      },
+      "options": {
+        "A": {
+          "ja": "ロールが実行できるアクション",
+          "en": "ロールが実行できるアクション"
+        },
+        "B": {
+          "ja": "ロールを引き受けられるプリンシパル",
+          "en": "ロールを引き受けられるプリンシパル"
+        },
+        "C": {
+          "ja": "ロールのリソース制限",
+          "en": "ロールのリソース制限"
+        },
+        "D": {
+          "ja": "ロールの有効期限",
+          "en": "ロールの有効期限"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Trust Policyは「誰がこのロールをAssumeできるか」を定義。権限ポリシーは「何ができるか」を定義。両方が必要。",
+        "en": "Trust Policy defines 'who can assume this role'. Permission Policy defines 'what can be done'. Both are required."
+      }
+    },
+    {
+      "id": 50,
+      "category": "ストレージ",
+      "question": {
+        "ja": "EBS io2 Block Expressの最大IOPSは？",
+        "en": "Maximum IOPS for EBS io2 Block Express?"
+      },
+      "options": {
+        "A": {
+          "ja": "16,000",
+          "en": "16,000"
+        },
+        "B": {
+          "ja": "64,000",
+          "en": "64,000"
+        },
+        "C": {
+          "ja": "256,000",
+          "en": "256,000"
+        },
+        "D": {
+          "ja": "500,000",
+          "en": "500,000"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "io2 Block Expressは最大256,000 IOPS、4,000 MB/秒スループット。Nitroインスタンスでサポート。最高性能のEBSオプション。",
+        "en": "io2 Block Express: max 256,000 IOPS, 4,000 MB/s throughput. Supported on Nitro instances. Highest performance EBS option."
+      }
+    },
+    {
+      "id": 51,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "API GatewayのHTTP APIとREST APIの主な違いは？",
+        "en": "Main difference between API Gateway HTTP API and REST API?"
+      },
+      "options": {
+        "A": {
+          "ja": "HTTP APIはWebSocketをサポート",
+          "en": "HTTP APIはWebSocketをサポート"
+        },
+        "B": {
+          "ja": "HTTP APIは安価だが機能が限定的",
+          "en": "HTTP APIは安価だが機能が限定的"
+        },
+        "C": {
+          "ja": "REST APIはLambdaをサポートしない",
+          "en": "REST APIはLambdaをサポートしない"
+        },
+        "D": {
+          "ja": "機能は同じで名前だけ違う",
+          "en": "機能は同じで名前だけ違う"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "HTTP APIはREST APIより約70%安価で低レイテンシー。ただしリソースポリシー、WAF統合などの高度な機能はREST APIのみ。",
+        "en": "HTTP API is ~70% cheaper with lower latency than REST API. But resource policies, WAF integration are REST API only."
+      }
+    },
+    {
+      "id": 52,
+      "category": "データベース",
+      "question": {
+        "ja": "Aurora Global Databaseのセカンダリリージョンへのレプリケーション遅延は？",
+        "en": "Aurora Global Database replication lag to secondary region?"
+      },
+      "options": {
+        "A": {
+          "ja": "同期レプリケーション（0秒）",
+          "en": "同期レプリケーション（0 second(s)）"
+        },
+        "B": {
+          "ja": "通常1秒未満",
+          "en": "通常1 second(s)未満"
+        },
+        "C": {
+          "ja": "約5分",
+          "en": "約5 minutes"
+        },
+        "D": {
+          "ja": "約30分",
+          "en": "約30 minutes"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "専用インフラで通常1秒未満のレプリケーション遅延。RPO 1秒、RTO 1分未満を実現。クロスリージョンDRに最適。",
+        "en": "Dedicated infrastructure for typically under 1 second lag. Achieves RPO 1 sec, RTO under 1 min. Ideal for cross-region DR."
+      }
+    },
+    {
+      "id": 53,
+      "category": "制限値",
+      "question": {
+        "ja": "CloudWatch Logsの1つのログイベントの最大サイズは？",
+        "en": "Maximum size of a single CloudWatch Logs event?"
+      },
+      "options": {
+        "A": {
+          "ja": "64KB",
+          "en": "64KB"
+        },
+        "B": {
+          "ja": "256KB",
+          "en": "256KB"
+        },
+        "C": {
+          "ja": "1MB",
+          "en": "1MB"
+        },
+        "D": {
+          "ja": "5MB",
+          "en": "5MB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "1ログイベント最大256KB。バッチで送信時は1MBまたは10,000イベントが上限。大きなログは分割して送信。",
+        "en": "Max 256KB per log event. Batch limit: 1MB or 10,000 events. Split large logs before sending."
+      }
+    },
+    {
+      "id": 54,
+      "category": "コンピュート",
+      "question": {
+        "ja": "EKS Fargateで使用できないKubernetes機能は？",
+        "en": "Which Kubernetes feature is NOT available on EKS Fargate?"
+      },
+      "options": {
+        "A": {
+          "ja": "Deployment",
+          "en": "Deployment"
+        },
+        "B": {
+          "ja": "DaemonSet",
+          "en": "DaemonSet"
+        },
+        "C": {
+          "ja": "Service",
+          "en": "Service"
+        },
+        "D": {
+          "ja": "ConfigMap",
+          "en": "ConfigMap"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Fargateは各PodにVMを割り当てるため、ノードごとに1つ実行するDaemonSetは使用不可。監視エージェントはサイドカーパターンで実装。",
+        "en": "Fargate assigns VM per Pod, so DaemonSet (1 per node) unavailable. Implement monitoring agents as sidecars."
+      }
+    },
+    {
+      "id": 55,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "Route 53のルーティングポリシーでヘルスチェック結果に基づくのは？",
+        "en": "Which Route 53 routing policy uses health check results?"
+      },
+      "options": {
+        "A": {
+          "ja": "シンプル",
+          "en": "シンプル"
+        },
+        "B": {
+          "ja": "加重",
+          "en": "加重"
+        },
+        "C": {
+          "ja": "フェイルオーバー",
+          "en": "フェイルオーバー"
+        },
+        "D": {
+          "ja": "すべて使用可能",
+          "en": "すべて使用可能"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "シンプル以外のすべてのポリシーでヘルスチェック可能。フェイルオーバーはアクティブ-パッシブ構成に最適。加重、地理位置情報、レイテンシーベースも対応。",
+        "en": "All policies except Simple support health checks. Failover is ideal for active-passive. Weighted, geolocation, latency-based also supported."
+      }
+    },
+    {
+      "id": 56,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Configの「コンプライアンスルール」が評価するタイミングは？",
+        "en": "When does AWS Config 'compliance rule' evaluate?"
+      },
+      "options": {
+        "A": {
+          "ja": "リソース変更時のみ",
+          "en": "リソース変更時 only"
+        },
+        "B": {
+          "ja": "定期的（スケジュール）のみ",
+          "en": "定期的（スケジュール） only"
+        },
+        "C": {
+          "ja": "変更時と定期の両方が選択可能",
+          "en": "変更時と定期の両方が選択可能"
+        },
+        "D": {
+          "ja": "手動実行のみ",
+          "en": "手動実行 only"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "Config Rulesは変更トリガー（リソース変更時）または定期トリガー（1/3/6/12/24時間）を選択可能。両方設定も可能。",
+        "en": "Config Rules can be change-triggered or periodic (1/3/6/12/24 hours). Can configure both. Depends on compliance requirements."
+      }
+    },
+    {
+      "id": 57,
+      "category": "ストレージ",
+      "question": {
+        "ja": "FSx for Lustreがキャッシュ可能なデータソースは？",
+        "en": "What data source can FSx for Lustre cache?"
+      },
+      "options": {
+        "A": {
+          "ja": "EBS",
+          "en": "EBS"
+        },
+        "B": {
+          "ja": "S3",
+          "en": "S3"
+        },
+        "C": {
+          "ja": "EFS",
+          "en": "EFS"
+        },
+        "D": {
+          "ja": "Glacier",
+          "en": "Glacier"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "FSx for LustreはS3と透過的に連携し、S3データを自動キャッシュ。HPC/ML向け高性能ファイルシステム。処理完了後にS3に書き戻しも可能。",
+        "en": "FSx for Lustre transparently integrates with S3, auto-caching S3 data. High-performance file system for HPC/ML. Can write back to S3."
+      }
+    },
+    {
+      "id": 58,
+      "category": "制限値",
+      "question": {
+        "ja": "1つのAWSアカウントで作成できるS3バケットのデフォルト上限は？",
+        "en": "Default maximum S3 buckets per AWS account?"
+      },
+      "options": {
+        "A": {
+          "ja": "10",
+          "en": "10"
+        },
+        "B": {
+          "ja": "100",
+          "en": "100"
+        },
+        "C": {
+          "ja": "1,000",
+          "en": "1,000"
+        },
+        "D": {
+          "ja": "10,000",
+          "en": "10,000"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルト100バケット/アカウント。Service Quotasから最大1,000まで緩和申請可能。プレフィックス設計で少ないバケット数で運用を。",
+        "en": "Default 100 buckets/account. Can request up to 1,000 via Service Quotas. Design with prefixes to minimize bucket count."
+      }
+    },
+    {
+      "id": 59,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "Amazon MQ（ActiveMQ/RabbitMQ）を選ぶ理由は？",
+        "en": "When to choose Amazon MQ (ActiveMQ/RabbitMQ)?"
+      },
+      "options": {
+        "A": {
+          "ja": "新規開発でサーバーレスが必要",
+          "en": "新規開発でサーバーレスが必要"
+        },
+        "B": {
+          "ja": "既存のJMS/AMQP対応アプリの移行",
+          "en": "既存のJMS/AMQP対応アプリの移行"
+        },
+        "C": {
+          "ja": "最大スループットが必要",
+          "en": "最大スループットが必要"
+        },
+        "D": {
+          "ja": "無料枠を使いたい",
+          "en": "無料枠を使いたい"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "既存のJMS/AMQP/STOMP/MQTTアプリをコード変更なしで移行できる。新規ならSQS/SNSがサーバーレスで推奨。MQはマネージドブローカー。",
+        "en": "Migrate existing JMS/AMQP/STOMP/MQTT apps with no code changes. For new apps, SQS/SNS recommended (serverless). MQ is managed broker."
+      }
+    },
+    {
+      "id": 60,
+      "category": "データベース",
+      "question": {
+        "ja": "DynamoDBでTransactWriteItemsで1回のトランザクションに含められる最大アイテム数は？",
+        "en": "Maximum items in a single DynamoDB TransactWriteItems?"
+      },
+      "options": {
+        "A": {
+          "ja": "10",
+          "en": "10"
+        },
+        "B": {
+          "ja": "25",
+          "en": "25"
+        },
+        "C": {
+          "ja": "50",
+          "en": "50"
+        },
+        "D": {
+          "ja": "100",
+          "en": "100"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "1トランザクション最大25アイテム。サイズは合計4MB以下。ACIDトランザクションを提供し、すべて成功またはすべて失敗。",
+        "en": "Max 25 items per transaction. Total size under 4MB. Provides ACID transactions - all succeed or all fail."
+      }
+    },
+    {
+      "id": 61,
+      "category": "コンピュート",
+      "question": {
+        "ja": "EC2 Auto Scalingのデフォルトクールダウン期間は？",
+        "en": "Default cooldown period for EC2 Auto Scaling?"
+      },
+      "options": {
+        "A": {
+          "ja": "60秒",
+          "en": "60 second(s)"
+        },
+        "B": {
+          "ja": "300秒",
+          "en": "300 second(s)"
+        },
+        "C": {
+          "ja": "600秒",
+          "en": "600 second(s)"
+        },
+        "D": {
+          "ja": "900秒",
+          "en": "900 second(s)"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルト300秒（5分）。前のスケーリングアクティビティ完了後、新しいアクティビティを開始するまでの待機時間。過剰スケーリング防止。",
+        "en": "Default 300 seconds (5 min). Wait time after previous scaling activity before starting new one. Prevents excessive scaling."
+      }
+    },
+    {
+      "id": 62,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "PrivateLinkを使用してサービスを公開する際に必要なのは？",
+        "en": "What's required to expose a service via PrivateLink?"
+      },
+      "options": {
+        "A": {
+          "ja": "Internet Gateway",
+          "en": "Internet Gateway"
+        },
+        "B": {
+          "ja": "Network Load Balancer + VPCエンドポイントサービス",
+          "en": "Network Load Balancer + VPCエンドポイントサービス"
+        },
+        "C": {
+          "ja": "Application Load Balancer",
+          "en": "Application Load Balancer"
+        },
+        "D": {
+          "ja": "NAT Gateway",
+          "en": "NAT Gateway"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "サービスプロバイダーはNLBを作成し、VPCエンドポイントサービスとして公開。コンシューマーはInterfaceエンドポイントで接続。プライベート接続を実現。",
+        "en": "Service provider creates NLB and exposes as VPC endpoint service. Consumer connects via Interface endpoint. Enables private connectivity."
+      }
+    },
+    {
+      "id": 63,
+      "category": "制限値",
+      "question": {
+        "ja": "Lambdaの同時実行数のアカウントレベルデフォルト上限は？",
+        "en": "Default account-level concurrent execution limit for Lambda?"
+      },
+      "options": {
+        "A": {
+          "ja": "100",
+          "en": "100"
+        },
+        "B": {
+          "ja": "500",
+          "en": "500"
+        },
+        "C": {
+          "ja": "1,000",
+          "en": "1,000"
+        },
+        "D": {
+          "ja": "10,000",
+          "en": "10,000"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "デフォルト1,000同時実行/リージョン。Service Quotasで上限緩和可能。関数ごとにReserved Concurrencyで分離も可能。",
+        "en": "Default 1,000 concurrent executions per region. Can increase via Service Quotas. Use Reserved Concurrency to isolate functions."
+      }
+    },
+    {
+      "id": 64,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Shield Standardが保護するのは？",
+        "en": "What does AWS Shield Standard protect?"
+      },
+      "options": {
+        "A": {
+          "ja": "EC2のみ",
+          "en": "EC2 only"
+        },
+        "B": {
+          "ja": "CloudFront、Route 53、Global Accelerator",
+          "en": "CloudFront、Route 53、Global Accelerator"
+        },
+        "C": {
+          "ja": "すべてのAWSサービス",
+          "en": "すべてのAWSサービス"
+        },
+        "D": {
+          "ja": "申し込んだリソースのみ",
+          "en": "申し込んだリソース only"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Shield Standardは無料で自動的にCloudFront、Route 53、Global Acceleratorを保護。L3/L4 DDoS攻撃対策。Shield Advancedはより広範なサービスを保護。",
+        "en": "Shield Standard (free) automatically protects CloudFront, Route 53, Global Accelerator. L3/L4 DDoS protection. Shield Advanced covers more services."
+      }
+    },
+    {
+      "id": 65,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3のバージョニングを有効にした後、オブジェクトを削除すると何が起こる？",
+        "en": "What happens when you delete an object in a versioned S3 bucket?"
+      },
+      "options": {
+        "A": {
+          "ja": "完全に削除される",
+          "en": "完全に削除される"
+        },
+        "B": {
+          "ja": "削除マーカーが追加される",
+          "en": "削除マーカーが追加される"
+        },
+        "C": {
+          "ja": "Glacierに移動する",
+          "en": "Glacierに移動する"
+        },
+        "D": {
+          "ja": "エラーになる",
+          "en": "エラーになる"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "削除マーカー（Delete Marker）が最新バージョンとして追加され、オブジェクトは見えなくなる。以前のバージョンは保持され復元可能。完全削除にはバージョンID指定が必要。",
+        "en": "Delete Marker added as latest version, object becomes invisible. Previous versions retained and recoverable. Permanent delete requires version ID."
+      }
+    },
+    {
+      "id": 66,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "AWS BatchとLambdaの使い分けで正しいのは？",
+        "en": "When to use AWS Batch vs Lambda?"
+      },
+      "options": {
+        "A": {
+          "ja": "Batchは15分以上のジョブ向け",
+          "en": "Batchは15 minutes以上のジョブ向け"
+        },
+        "B": {
+          "ja": "Lambdaは大規模データ処理向け",
+          "en": "Lambdaは大規模データ処理向け"
+        },
+        "C": {
+          "ja": "どちらも同じユースケース",
+          "en": "どちらも同じユースケース"
+        },
+        "D": {
+          "ja": "Batchは1分以内のジョブ向け",
+          "en": "Batchは1 minute(s)以内のジョブ向け"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "Lambdaは最大15分。それを超える長時間ジョブ、大規模データ処理、特定のソフトウェア/GPU が必要な場合はAWS Batch（ECS/Fargate/EC2）を使用。",
+        "en": "Lambda max 15 min. Use AWS Batch (ECS/Fargate/EC2) for longer jobs, large data processing, specific software/GPU requirements."
+      }
+    },
+    {
+      "id": 67,
+      "category": "データベース",
+      "question": {
+        "ja": "RDS Proxyを使用する主なメリットは？",
+        "en": "Main benefit of using RDS Proxy?"
+      },
+      "options": {
+        "A": {
+          "ja": "バックアップの自動化",
+          "en": "バックアップの自動化"
+        },
+        "B": {
+          "ja": "コネクションプーリングとフェイルオーバー高速化",
+          "en": "コネクションプーリングとフェイルオーバー高速化"
+        },
+        "C": {
+          "ja": "暗号化の追加",
+          "en": "暗号化の追加"
+        },
+        "D": {
+          "ja": "レプリカの作成",
+          "en": "レプリカの作成"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "コネクションプーリングでDB接続を効率化（Lambda等の大量接続に有効）。フェイルオーバー時間も66%短縮。IAM認証もサポート。",
+        "en": "Connection pooling improves DB connection efficiency (useful for Lambda mass connections). Reduces failover time by 66%. Supports IAM auth."
+      }
+    },
+    {
+      "id": 68,
+      "category": "制限値",
+      "question": {
+        "ja": "Secrets Managerで1つのシークレットに保存できる最大サイズは？",
+        "en": "Maximum size of a single secret in Secrets Manager?"
+      },
+      "options": {
+        "A": {
+          "ja": "4KB",
+          "en": "4KB"
+        },
+        "B": {
+          "ja": "10KB",
+          "en": "10KB"
+        },
+        "C": {
+          "ja": "64KB",
+          "en": "64KB"
+        },
+        "D": {
+          "ja": "256KB",
+          "en": "256KB"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "シークレット値は最大64KB。証明書やJSONなど大きなデータも保存可能。バイナリと文字列の両方をサポート。",
+        "en": "Max 64KB per secret value. Can store certificates, JSON, larger data. Supports both binary and string."
+      }
+    },
+    {
+      "id": 69,
+      "category": "コンピュート",
+      "question": {
+        "ja": "Graviton（ARM）プロセッサを使用できないAWSサービスは？",
+        "en": "Which AWS service does NOT support Graviton (ARM) processors?"
+      },
+      "options": {
+        "A": {
+          "ja": "EC2",
+          "en": "EC2"
+        },
+        "B": {
+          "ja": "Lambda",
+          "en": "Lambda"
+        },
+        "C": {
+          "ja": "Fargate",
+          "en": "Fargate"
+        },
+        "D": {
+          "ja": "すべてサポート",
+          "en": "すべてサポート"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "EC2、Lambda、Fargate、RDS、ElastiCache等、多くのサービスでGravitonをサポート。x86比で最大40%コスト削減可能。",
+        "en": "Graviton supported in EC2, Lambda, Fargate, RDS, ElastiCache, and more. Up to 40% cost savings vs x86."
+      }
+    },
+    {
+      "id": 70,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "AWS Client VPNで使用される認証方法は？",
+        "en": "Authentication methods used by AWS Client VPN?"
+      },
+      "options": {
+        "A": {
+          "ja": "証明書認証のみ",
+          "en": "証明書認証 only"
+        },
+        "B": {
+          "ja": "Active Directory認証のみ",
+          "en": "Active Directory認証 only"
+        },
+        "C": {
+          "ja": "証明書、AD、SAML-based IdP",
+          "en": "証明書、AD、SAML-based IdP"
+        },
+        "D": {
+          "ja": "IAMユーザー認証",
+          "en": "IAMユーザー認証"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "相互認証（証明書）、Active Directory認証、SAML-based IdP認証の3つをサポート。組み合わせも可能。",
+        "en": "Supports mutual (certificate), Active Directory, and SAML-based IdP authentication. Can combine methods."
+      }
+    },
+    {
+      "id": 71,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "GuardDutyが分析するデータソースは？",
+        "en": "What data sources does GuardDuty analyze?"
+      },
+      "options": {
+        "A": {
+          "ja": "CloudTrailのみ",
+          "en": "CloudTrail only"
+        },
+        "B": {
+          "ja": "VPC Flow Logsのみ",
+          "en": "VPC Flow Logs only"
+        },
+        "C": {
+          "ja": "CloudTrail、VPC Flow Logs、DNS Logs等",
+          "en": "CloudTrail、VPC Flow Logs、DNS Logs等"
+        },
+        "D": {
+          "ja": "アプリケーションログ",
+          "en": "アプリケーションログ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "CloudTrailイベント、VPC Flow Logs、DNS Logsを自動分析。追加でS3データイベント、EKS監査ログ、Lambda Network Activityも。MLで脅威検知。",
+        "en": "Auto-analyzes CloudTrail events, VPC Flow Logs, DNS Logs. Optionally S3 data events, EKS audit logs, Lambda Network Activity. ML-based threat detection."
+      }
+    },
+    {
+      "id": 72,
+      "category": "ストレージ",
+      "question": {
+        "ja": "EBSスナップショットの保存場所は？",
+        "en": "Where are EBS snapshots stored?"
+      },
+      "options": {
+        "A": {
+          "ja": "同じEBSボリューム内",
+          "en": "同じEBSボリューム内"
+        },
+        "B": {
+          "ja": "S3（AWS管理）",
+          "en": "S3（AWS管理）"
+        },
+        "C": {
+          "ja": "Glacier",
+          "en": "Glacier"
+        },
+        "D": {
+          "ja": "別のAZ",
+          "en": "別のAZ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "スナップショットはAWS管理のS3に増分保存。ユーザーのS3バケットには表示されない。複数AZに冗長化され高い耐久性。",
+        "en": "Snapshots stored incrementally in AWS-managed S3. Not visible in your S3 buckets. Redundant across multiple AZs for high durability."
+      }
+    },
+    {
+      "id": 73,
+      "category": "制限値",
+      "question": {
+        "ja": "CloudWatch Alarmsの評価期間の最小値は？",
+        "en": "Minimum evaluation period for CloudWatch Alarms?"
+      },
+      "options": {
+        "A": {
+          "ja": "1秒",
+          "en": "1 second(s)"
+        },
+        "B": {
+          "ja": "10秒",
+          "en": "10 second(s)"
+        },
+        "C": {
+          "ja": "1分",
+          "en": "1 minute(s)"
+        },
+        "D": {
+          "ja": "5分",
+          "en": "5 minutes"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "高解像度メトリクスは10秒間隔で評価可能（追加料金）。標準メトリクスは1分または5分。詳細モニタリングは1分データポイント。",
+        "en": "High-resolution metrics can evaluate at 10-second intervals (extra cost). Standard metrics: 1 or 5 min. Detailed monitoring: 1-min data points."
+      }
+    },
+    {
+      "id": 74,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "AppSyncが提供するAPIタイプは？",
+        "en": "What API type does AppSync provide?"
+      },
+      "options": {
+        "A": {
+          "ja": "REST API",
+          "en": "REST API"
+        },
+        "B": {
+          "ja": "GraphQL API",
+          "en": "GraphQL API"
+        },
+        "C": {
+          "ja": "gRPC API",
+          "en": "gRPC API"
+        },
+        "D": {
+          "ja": "SOAP API",
+          "en": "SOAP API"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "AppSyncはマネージドGraphQLサービス。リアルタイムサブスクリプション、オフライン同期をサポート。DynamoDB、Lambda、HTTP等と統合可能。",
+        "en": "AppSync is managed GraphQL service. Supports real-time subscriptions, offline sync. Integrates with DynamoDB, Lambda, HTTP, etc."
+      }
+    },
+    {
+      "id": 75,
+      "category": "データベース",
+      "question": {
+        "ja": "MemoryDBの特徴は？",
+        "en": "What's special about Amazon MemoryDB?"
+      },
+      "options": {
+        "A": {
+          "ja": "Redis互換でインメモリ専用",
+          "en": "Redis互換でインメモリ専用"
+        },
+        "B": {
+          "ja": "Redis互換で永続性とトランザクションログ",
+          "en": "Redis互換で永続性とトランザクションログ"
+        },
+        "C": {
+          "ja": "Memcached互換",
+          "en": "Memcached互換"
+        },
+        "D": {
+          "ja": "グラフデータベース",
+          "en": "グラフデータベース"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Redis互換で、Multi-AZトランザクションログによる永続性を提供。ElastiCacheは純粋なキャッシュ、MemoryDBはプライマリDBとして使用可能。",
+        "en": "Redis compatible with durability via Multi-AZ transaction log. ElastiCache is pure cache, MemoryDB can be primary database."
+      }
+    },
+    {
+      "id": 76,
+      "category": "コンピュート",
+      "question": {
+        "ja": "EC2のENI（Elastic Network Interface）にアタッチできるセキュリティグループの最大数は？",
+        "en": "Maximum security groups attachable to an EC2 ENI?"
+      },
+      "options": {
+        "A": {
+          "ja": "1",
+          "en": "1"
+        },
+        "B": {
+          "ja": "5",
+          "en": "5"
+        },
+        "C": {
+          "ja": "10",
+          "en": "10"
+        },
+        "D": {
+          "ja": "25",
+          "en": "25"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルト5 SG/ENI。各SGは最大60ルール（インバウンド+アウトバウンド）。上限緩和可能だが、複雑になるので設計に注意。",
+        "en": "Default 5 SGs per ENI. Each SG: max 60 rules (inbound+outbound). Can increase limit, but watch complexity in design."
+      }
+    },
+    {
+      "id": 77,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "AWS Site-to-Site VPNのスループット上限は？",
+        "en": "Throughput limit for AWS Site-to-Site VPN?"
+      },
+      "options": {
+        "A": {
+          "ja": "100 Mbps",
+          "en": "100 Mbps"
+        },
+        "B": {
+          "ja": "500 Mbps",
+          "en": "500 Mbps"
+        },
+        "C": {
+          "ja": "1.25 Gbps",
+          "en": "1.25 Gbps"
+        },
+        "D": {
+          "ja": "10 Gbps",
+          "en": "10 Gbps"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "1トンネルあたり最大1.25 Gbps。冗長性のため2トンネルが推奨。より高い帯域幅が必要な場合はDirect Connectを検討。",
+        "en": "Max 1.25 Gbps per tunnel. 2 tunnels recommended for redundancy. Consider Direct Connect for higher bandwidth needs."
+      }
+    },
+    {
+      "id": 78,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Organizationsで使用するSCP（Service Control Policy）の効果は？",
+        "en": "What is the effect of SCP (Service Control Policy) in AWS Organizations?"
+      },
+      "options": {
+        "A": {
+          "ja": "アクセス権限を付与する",
+          "en": "アクセス権限を付与する"
+        },
+        "B": {
+          "ja": "アクセス権限の上限を設定する",
+          "en": "アクセス権限の上限を設定する"
+        },
+        "C": {
+          "ja": "リソースを作成する",
+          "en": "リソースを作成する"
+        },
+        "D": {
+          "ja": "コストを制限する",
+          "en": "コストを制限する"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "SCPは許可されるアクションの上限を定義（ガードレール）。IAMポリシーがAllowでもSCPがDenyなら拒否。権限を付与するわけではない。",
+        "en": "SCPs define maximum permissions (guardrails). Even if IAM policy Allows, SCP Deny blocks. SCPs don't grant permissions."
+      }
+    },
+    {
+      "id": 79,
+      "category": "制限値",
+      "question": {
+        "ja": "SageMaker推論エンドポイントのモデル入力ペイロード最大サイズは？",
+        "en": "Maximum model input payload size for SageMaker inference endpoint?"
+      },
+      "options": {
+        "A": {
+          "ja": "1MB",
+          "en": "1MB"
+        },
+        "B": {
+          "ja": "6MB",
+          "en": "6MB"
+        },
+        "C": {
+          "ja": "25MB",
+          "en": "25MB"
+        },
+        "D": {
+          "ja": "100MB",
+          "en": "100MB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "同期推論は最大6MB。大きなペイロードは非同期推論（最大1GB）またはBatch Transformを使用。",
+        "en": "Sync inference max 6MB. For larger payloads, use async inference (max 1GB) or Batch Transform."
+      }
+    },
+    {
+      "id": 80,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3 Object Lockのモードで、rootユーザーでも削除できないのは？",
+        "en": "Which S3 Object Lock mode prevents deletion even by root user?"
+      },
+      "options": {
+        "A": {
+          "ja": "Governance mode",
+          "en": "Governance mode"
+        },
+        "B": {
+          "ja": "Compliance mode",
+          "en": "Compliance mode"
+        },
+        "C": {
+          "ja": "Legal Hold",
+          "en": "Legal Hold"
+        },
+        "D": {
+          "ja": "すべて削除可能",
+          "en": "すべて削除可能"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Compliance modeは保持期間中、rootでも削除不可。Governance modeは特別な権限があれば削除可能。法規制対応にはCompliance mode必須。",
+        "en": "Compliance mode: no one, not even root, can delete during retention. Governance mode allows deletion with special permissions. Compliance for regulatory needs."
+      }
+    },
+    {
+      "id": 81,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "Step Functions ExpressとStandardワークフローの違いは？",
+        "en": "Difference between Step Functions Express and Standard workflows?"
+      },
+      "options": {
+        "A": {
+          "ja": "Expressは最大5分、Standardは最大1年",
+          "en": "Expressは最大5 minutes、Standardは最大1年"
+        },
+        "B": {
+          "ja": "Expressの方が高コスト",
+          "en": "Expressの方が高コスト"
+        },
+        "C": {
+          "ja": "Standardは同期実行のみ",
+          "en": "Standardは同期実行 only"
+        },
+        "D": {
+          "ja": "機能は同じ",
+          "en": "機能は同じ"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "Express: 最大5分、高頻度、イベント処理向け。Standard: 最大1年、長時間ワークフロー向け。Expressは状態遷移数ではなく実行回数とメモリ時間で課金。",
+        "en": "Express: max 5 min, high-frequency, event processing. Standard: max 1 year, long-running workflows. Express charges by execution and memory-time, not transitions."
+      }
+    },
+    {
+      "id": 82,
+      "category": "データベース",
+      "question": {
+        "ja": "RDSのストレージ自動スケーリングの最大増加量は？",
+        "en": "Maximum storage increase for RDS auto scaling?"
+      },
+      "options": {
+        "A": {
+          "ja": "現在の10%",
+          "en": "現在の10%"
+        },
+        "B": {
+          "ja": "5GBまたは現在の10%の大きい方",
+          "en": "5 GBまたは現在の10%の大きい方"
+        },
+        "C": {
+          "ja": "64TB",
+          "en": "64TB"
+        },
+        "D": {
+          "ja": "増加量に制限なし",
+          "en": "増加量に制限なし"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "MySQL/PostgreSQL/MariaDBは最大64TB、SQL Serverは16TBまで自動スケール可能。一度に5GBまたは10%の大きい方で増加。",
+        "en": "Auto-scales up to 64TB for MySQL/PostgreSQL/MariaDB, 16TB for SQL Server. Increases by larger of 5GB or 10% at a time."
+      }
+    },
+    {
+      "id": 83,
+      "category": "コンピュート",
+      "question": {
+        "ja": "Lambda SnapStartが対象とするランタイムは？",
+        "en": "Which runtime is Lambda SnapStart designed for?"
+      },
+      "options": {
+        "A": {
+          "ja": "Python",
+          "en": "Python"
+        },
+        "B": {
+          "ja": "Node.js",
+          "en": "Node.js"
+        },
+        "C": {
+          "ja": "Java",
+          "en": "Java"
+        },
+        "D": {
+          "ja": "すべて",
+          "en": "すべて"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "SnapStartはJava向けの機能で、コールドスタートを最大10倍高速化。初期化済みスナップショットをキャッシュして再利用。",
+        "en": "SnapStart is for Java, speeding cold starts up to 10x. Caches initialized snapshots for reuse."
+      }
+    },
+    {
+      "id": 84,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "AWS Network Firewallが提供する機能は？",
+        "en": "What does AWS Network Firewall provide?"
+      },
+      "options": {
+        "A": {
+          "ja": "DDoS保護のみ",
+          "en": "DDoS保護 only"
+        },
+        "B": {
+          "ja": "VPCレベルのステートフルファイアウォール",
+          "en": "VPCレベルのステートフルファイアウォール"
+        },
+        "C": {
+          "ja": "DNSフィルタリングのみ",
+          "en": "DNSフィルタリング only"
+        },
+        "D": {
+          "ja": "WAF機能",
+          "en": "WAF機能"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "VPCトラフィックをフィルタリングするマネージドファイアウォール。ステートフル/ステートレスルール、侵入検知/防止、ドメインフィルタリングをサポート。",
+        "en": "Managed firewall for VPC traffic. Supports stateful/stateless rules, intrusion detection/prevention, domain filtering."
+      }
+    },
+    {
+      "id": 85,
+      "category": "制限値",
+      "question": {
+        "ja": "Glue ETLジョブで使用できる最大DPU数は？",
+        "en": "Maximum DPUs for a Glue ETL job?"
+      },
+      "options": {
+        "A": {
+          "ja": "10",
+          "en": "10"
+        },
+        "B": {
+          "ja": "100",
+          "en": "100"
+        },
+        "C": {
+          "ja": "300",
+          "en": "300"
+        },
+        "D": {
+          "ja": "1000",
+          "en": "1000"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "最大300 DPU（Data Processing Unit）。1 DPU = 4 vCPU + 16GB RAM相当。大規模ETL処理に使用。",
+        "en": "Max 300 DPUs (Data Processing Units). 1 DPU ≈ 4 vCPU + 16GB RAM. For large-scale ETL."
+      }
+    },
+    {
+      "id": 86,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "AWS Security Hubが統合するセキュリティサービスに含まれないのは？",
+        "en": "Which is NOT integrated with AWS Security Hub?"
+      },
+      "options": {
+        "A": {
+          "ja": "GuardDuty",
+          "en": "GuardDuty"
+        },
+        "B": {
+          "ja": "Inspector",
+          "en": "Inspector"
+        },
+        "C": {
+          "ja": "Macie",
+          "en": "Macie"
+        },
+        "D": {
+          "ja": "Trusted Advisor（すべてのチェック）",
+          "en": "Trusted Advisor（すべてのチェック）"
+        }
+      },
+      "correct": "D",
+      "explanation": {
+        "ja": "Security HubはGuardDuty、Inspector、Macie、IAM Access Analyzer等と統合。Trusted Advisorは一部のみ（セキュリティ関連のベストプラクティス）。",
+        "en": "Security Hub integrates with GuardDuty, Inspector, Macie, IAM Access Analyzer, etc. Trusted Advisor only partially (security best practices)."
+      }
+    },
+    {
+      "id": 87,
+      "category": "ストレージ",
+      "question": {
+        "ja": "S3 Replicationでサポートされる方向は？",
+        "en": "Replication directions supported by S3?"
+      },
+      "options": {
+        "A": {
+          "ja": "同一リージョンのみ",
+          "en": "同一リージョン only"
+        },
+        "B": {
+          "ja": "クロスリージョンのみ",
+          "en": "クロスリージョン only"
+        },
+        "C": {
+          "ja": "同一リージョン、クロスリージョン両方",
+          "en": "同一リージョン、クロスリージョン両方"
+        },
+        "D": {
+          "ja": "バケット内コピーのみ",
+          "en": "バケット内コピー only"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "SRR（Same-Region）とCRR（Cross-Region）の両方をサポート。バージョニング必須。双方向レプリケーションも可能（2つのルール）。",
+        "en": "Supports both SRR (Same-Region) and CRR (Cross-Region) replication. Versioning required. Bi-directional also possible (2 rules)."
+      }
+    },
+    {
+      "id": 88,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "Amazon Connectが提供するサービスは？",
+        "en": "What service does Amazon Connect provide?"
+      },
+      "options": {
+        "A": {
+          "ja": "ファイル転送",
+          "en": "ファイル転送"
+        },
+        "B": {
+          "ja": "クラウドコンタクトセンター",
+          "en": "クラウドコンタクトセンター"
+        },
+        "C": {
+          "ja": "VPN接続",
+          "en": "VPN接続"
+        },
+        "D": {
+          "ja": "メール配信",
+          "en": "メール配信"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "クラウドベースのコンタクトセンターサービス。音声通話、チャット、タスク管理をサポート。Lambda、Lex、Pollyと統合可能。",
+        "en": "Cloud-based contact center service. Supports voice calls, chat, task management. Integrates with Lambda, Lex, Polly."
+      }
+    },
+    {
+      "id": 89,
+      "category": "制限値",
+      "question": {
+        "ja": "CodeBuildでのビルドタイムアウトのデフォルトと最大は？",
+        "en": "Default and maximum build timeout for CodeBuild?"
+      },
+      "options": {
+        "A": {
+          "ja": "30分",
+          "en": "1時間"
+        },
+        "B": {
+          "ja": "1時間",
+          "en": "8時間"
+        },
+        "C": {
+          "ja": "1時間",
+          "en": "480分（8時間）"
+        },
+        "D": {
+          "ja": "無制限",
+          "en": "Unlimited"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "デフォルト1時間、最大8時間。長時間ビルドはタイムアウト設定を忘れずに。キャッシュ活用でビルド時間短縮を。",
+        "en": "Default 1 hour, max 8 hours. Set timeout for long builds. Use caching to reduce build time."
+      }
+    },
+    {
+      "id": 90,
+      "category": "データベース",
+      "question": {
+        "ja": "Neptune DBが対応するグラフモデルは？",
+        "en": "Graph models supported by Neptune DB?"
+      },
+      "options": {
+        "A": {
+          "ja": "Property Graphのみ",
+          "en": "Property Graph only"
+        },
+        "B": {
+          "ja": "RDF/SPARQLのみ",
+          "en": "RDF/SPARQL only"
+        },
+        "C": {
+          "ja": "Property Graph と RDF 両方",
+          "en": "Property Graph と RDF 両方"
+        },
+        "D": {
+          "ja": "Document Model",
+          "en": "Document Model"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "NeptuneはProperty Graph（Gremlin/openCypher）とRDF（SPARQL）の両方をサポート。ナレッジグラフ、ソーシャルネットワーク分析に最適。",
+        "en": "Neptune supports both Property Graph (Gremlin/openCypher) and RDF (SPARQL). Ideal for knowledge graphs, social network analysis."
+      }
+    },
+    {
+      "id": 91,
+      "category": "コンピュート",
+      "question": {
+        "ja": "EC2 Nitro Enclavesが提供するのは？",
+        "en": "What does EC2 Nitro Enclaves provide?"
+      },
+      "options": {
+        "A": {
+          "ja": "GPU仮想化",
+          "en": "GPU仮想化"
+        },
+        "B": {
+          "ja": "分離された処理環境（機密コンピューティング）",
+          "en": "分離された処理環境（機密コンピューティング）"
+        },
+        "C": {
+          "ja": "ネットワーク高速化",
+          "en": "ネットワーク高速化"
+        },
+        "D": {
+          "ja": "ストレージ暗号化",
+          "en": "ストレージ暗号化"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Nitro Enclavesは親インスタンスからも分離された安全な実行環境。永続ストレージなし、ネットワーク直接アクセスなし。機密データ処理に最適。",
+        "en": "Nitro Enclaves provide isolated execution environment, separated even from parent instance. No persistent storage, no direct network. For confidential data processing."
+      }
+    },
+    {
+      "id": 92,
+      "category": "ネットワーク",
+      "question": {
+        "ja": "VPCの最大サブネット数は？",
+        "en": "Maximum subnets per VPC?"
+      },
+      "options": {
+        "A": {
+          "ja": "20",
+          "en": "20"
+        },
+        "B": {
+          "ja": "100",
+          "en": "100"
+        },
+        "C": {
+          "ja": "200",
+          "en": "200"
+        },
+        "D": {
+          "ja": "500",
+          "en": "500"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "デフォルト200サブネット/VPC。Service Quotasで上限緩和可能。大規模VPCでは設計時にIP範囲を慎重に計画。",
+        "en": "Default 200 subnets per VPC. Can increase via Service Quotas. Plan IP ranges carefully for large VPCs."
+      }
+    },
+    {
+      "id": 93,
+      "category": "制限値",
+      "question": {
+        "ja": "X-Rayで保持されるトレースデータの期間は？",
+        "en": "How long is X-Ray trace data retained?"
+      },
+      "options": {
+        "A": {
+          "ja": "24時間",
+          "en": "24 hour(s)"
+        },
+        "B": {
+          "ja": "7日",
+          "en": "7 days"
+        },
+        "C": {
+          "ja": "30日",
+          "en": "30 days"
+        },
+        "D": {
+          "ja": "90日",
+          "en": "90 days"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "トレースデータは30日間保持。長期保存が必要な場合はS3にエクスポート。サンプリングでコストと詳細度のバランスを調整。",
+        "en": "Trace data retained 30 days. Export to S3 for longer retention. Adjust sampling for cost vs detail balance."
+      }
+    },
+    {
+      "id": 94,
+      "category": "セキュリティ",
+      "question": {
+        "ja": "IAM Identity Center（旧SSO）でサポートされる外部IdPプロトコルは？",
+        "en": "External IdP protocol supported by IAM Identity Center (formerly SSO)?"
+      },
+      "options": {
+        "A": {
+          "ja": "OAuth 2.0のみ",
+          "en": "OAuth 2.0 only"
+        },
+        "B": {
+          "ja": "SAML 2.0のみ",
+          "en": "SAML 2.0 only"
+        },
+        "C": {
+          "ja": "SAML 2.0とSCIM",
+          "en": "SAML 2.0とSCIM"
+        },
+        "D": {
+          "ja": "LDAPのみ",
+          "en": "LDAP only"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "SAML 2.0で認証フェデレーション、SCIMでユーザー/グループ自動プロビジョニング。Okta、Azure AD等と統合可能。",
+        "en": "SAML 2.0 for auth federation, SCIM for auto user/group provisioning. Integrates with Okta, Azure AD, etc."
+      }
+    },
+    {
+      "id": 95,
+      "category": "ストレージ",
+      "question": {
+        "ja": "Storage Gatewayの3つのタイプは？",
+        "en": "What are the 3 types of Storage Gateway?"
+      },
+      "options": {
+        "A": {
+          "ja": "File",
+          "en": "Volume / Tape"
+        },
+        "B": {
+          "ja": "Block",
+          "en": "Object / Archive"
+        },
+        "C": {
+          "ja": "Hot",
+          "en": "Warm / Cold"
+        },
+        "D": {
+          "ja": "Primary",
+          "en": "Secondary / Backup"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "File Gateway（NFS/SMB→S3）、Volume Gateway（iSCSI→EBS/S3）、Tape Gateway（VTL→Glacier）。オンプレミスとAWSストレージの橋渡し。",
+        "en": "File Gateway (NFS/SMB→S3), Volume Gateway (iSCSI→EBS/S3), Tape Gateway (VTL→Glacier). Bridges on-premises to AWS storage."
+      }
+    },
+    {
+      "id": 96,
+      "category": "アーキテクチャ",
+      "question": {
+        "ja": "IoT CoreのMQTTメッセージペイロード最大サイズは？",
+        "en": "Maximum MQTT message payload size for IoT Core?"
+      },
+      "options": {
+        "A": {
+          "ja": "8KB",
+          "en": "8KB"
+        },
+        "B": {
+          "ja": "128KB",
+          "en": "128KB"
+        },
+        "C": {
+          "ja": "256KB",
+          "en": "256KB"
+        },
+        "D": {
+          "ja": "1MB",
+          "en": "1MB"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "MQTTペイロード最大128KB。それ以上のデータはS3にアップロードしてリンクを送信。デバイスリソースも考慮して設計。",
+        "en": "MQTT payload max 128KB. For larger data, upload to S3 and send link. Consider device resources in design."
+      }
+    },
+    {
+      "id": 97,
+      "category": "データベース",
+      "question": {
+        "ja": "Timestreamが得意とするデータタイプは？",
+        "en": "What data type is Timestream optimized for?"
+      },
+      "options": {
+        "A": {
+          "ja": "リレーショナルデータ",
+          "en": "リレーショナルデータ"
+        },
+        "B": {
+          "ja": "時系列データ",
+          "en": "時系列データ"
+        },
+        "C": {
+          "ja": "グラフデータ",
+          "en": "グラフデータ"
+        },
+        "D": {
+          "ja": "ドキュメントデータ",
+          "en": "ドキュメントデータ"
+        }
+      },
+      "correct": "B",
+      "explanation": {
+        "ja": "Timestreamは時系列データ専用DB。IoT、アプリメトリクス、DevOpsモニタリング向け。自動データ階層化とビルトイン分析関数。",
+        "en": "Timestream is purpose-built for time series data. For IoT, app metrics, DevOps monitoring. Auto tiering and built-in analytics functions."
+      }
+    },
+    {
+      "id": 98,
+      "category": "制限値",
+      "question": {
+        "ja": "Elastic Beanstalkで1環境にデプロイできるアプリケーションバージョンの上限は？",
+        "en": "Maximum application versions per Elastic Beanstalk environment?"
+      },
+      "options": {
+        "A": {
+          "ja": "100",
+          "en": "100"
+        },
+        "B": {
+          "ja": "500",
+          "en": "500"
+        },
+        "C": {
+          "ja": "1000",
+          "en": "1000"
+        },
+        "D": {
+          "ja": "無制限（ストレージ依存）",
+          "en": "Unlimited（ストレージ依存）"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "1アプリケーションあたり最大1000バージョン。ライフサイクルポリシーで古いバージョンを自動削除設定を推奨。",
+        "en": "Max 1000 versions per application. Recommend lifecycle policy to auto-delete old versions."
+      }
+    },
+    {
+      "id": 99,
+      "category": "コンピュート",
+      "question": {
+        "ja": "App Runnerの最小インスタンス数は？",
+        "en": "Minimum instance count for App Runner?"
+      },
+      "options": {
+        "A": {
+          "ja": "0（完全スケールダウン可能）",
+          "en": "0（完全スケールダウン可能）"
+        },
+        "B": {
+          "ja": "1",
+          "en": "1"
+        },
+        "C": {
+          "ja": "2",
+          "en": "2"
+        },
+        "D": {
+          "ja": "設定による",
+          "en": "設定による"
+        }
+      },
+      "correct": "A",
+      "explanation": {
+        "ja": "最小0インスタンスまでスケールダウン可能（プロビジョンドインスタンスは課金継続）。リクエスト時に自動スケールアップ。コスト効率的。",
+        "en": "Can scale down to 0 instances (provisioned instances still charged). Auto scales up on request. Cost-effective."
+      }
+    },
+    {
+      "id": 100,
+      "category": "まとめ",
+      "question": {
+        "ja": "AWSのWell-Architected Frameworkの6つの柱に含まれないのは？",
+        "en": "Which is NOT one of the 6 pillars of AWS Well-Architected Framework?"
+      },
+      "options": {
+        "A": {
+          "ja": "運用の卓越性",
+          "en": "運用の卓越性"
+        },
+        "B": {
+          "ja": "コスト最適化",
+          "en": "コスト最適化"
+        },
+        "C": {
+          "ja": "開発速度",
+          "en": "開発速度"
+        },
+        "D": {
+          "ja": "サステナビリティ",
+          "en": "サステナビリティ"
+        }
+      },
+      "correct": "C",
+      "explanation": {
+        "ja": "6つの柱: 運用の卓越性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化、サステナビリティ。開発速度は含まれません。",
+        "en": "6 pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability. Development speed is not included."
+      }
+    }
+  ]
+}
