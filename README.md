@@ -3,7 +3,12 @@
 **3姉妹+おじさんと一緒にAWS資格を学ぼう！**
 **Learn AWS Certification with 3 Sisters + Uncle!**
 
-[![Live Demo](https://img.shields.io/badge/🎬_Live_Demo-YouTube-red?style=for-the-badge)](https://youtu.be/AxCwgs-DId4)
+## 🎬 Live Demo / デモ動画
+
+[![Sisters AWS Coach Demo](https://img.youtube.com/vi/AxCwgs-DId4/maxresdefault.jpg)](https://youtu.be/AxCwgs-DId4)
+
+▶️ **クリックして動画を見る / Click to watch**
+
 [![Try It](https://img.shields.io/badge/🚀_Try_It-aws.three--sisters.ai-orange?style=for-the-badge)](https://aws.three-sisters.ai)
 
 ---
