@@ -3,6 +3,9 @@
 **3姉妹+おじさんと一緒にAWS資格を学ぼう！**
 **Learn AWS Certification with 3 Sisters + Uncle!**
 
+[![Live Demo](https://img.shields.io/badge/🎬_Live_Demo-YouTube-red?style=for-the-badge)](https://youtu.be/AxCwgs-DId4)
+[![Try It](https://img.shields.io/badge/🚀_Try_It-aws.three--sisters.ai-orange?style=for-the-badge)](https://aws.three-sisters.ai)
+
 ---
 
 ## 概要 / Overview
