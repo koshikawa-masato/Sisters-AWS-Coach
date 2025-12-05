@@ -239,6 +239,10 @@ def render_sidebar():
 
     with st.sidebar:
         st.title("☁️ AWS Coach")
+        if lang == "en":
+            st.caption("*Ace AWS with AI Family!*")
+        else:
+            st.caption("*AIファミリーと合格へ!*")
 
         # Language selection
         lang_options = list(LANGUAGES.keys())
