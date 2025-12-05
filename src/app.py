@@ -441,7 +441,8 @@ def render_online_question():
 
         # Character explanation button
         if st.session_state.character_explanation:
-            st.info(f"{char_emoji} **{char}**: {st.session_state.character_explanation}")
+            with st.expander(f"{char_emoji} {char} の解説" if lang == "ja" else f"{char_emoji} {char}'s Explanation", expanded=True):
+                st.write(st.session_state.character_explanation)
 
             # TTS button
             if st.button(t["listen_explanation"], key="tts_btn"):
@@ -575,7 +576,8 @@ def render_offline_question():
         if st.session_state.character_explanation:
             char = st.session_state.current_character
             char_emoji = CHARACTERS[char]["emoji"]
-            st.info(f"{char_emoji} **{char}**: {st.session_state.character_explanation}")
+            with st.expander(f"{char_emoji} {char} の解説" if lang == "ja" else f"{char_emoji} {char}'s Explanation", expanded=True):
+                st.write(st.session_state.character_explanation)
 
             if st.button(t["listen_explanation"], key="tts_btn"):
                 try:
