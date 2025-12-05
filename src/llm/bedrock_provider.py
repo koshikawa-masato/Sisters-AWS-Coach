@@ -256,6 +256,6 @@ Generate a 2-3 sentence explanation in English, in the character's voice.
         return self.generate(
             system_prompt=system_prompt,
             user_prompt=user_prompt,
-            max_tokens=300,
+            max_tokens=600,
             temperature=0.7
         )

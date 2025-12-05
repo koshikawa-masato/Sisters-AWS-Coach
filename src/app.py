@@ -141,7 +141,7 @@ Respond in {lang_name} only.
     response = llm.generate(
         system_prompt=system_prompt,
         user_prompt=user_prompt,
-        max_tokens=300
+        max_tokens=600
     )
     return response
 
