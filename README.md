@@ -21,6 +21,76 @@ Each character provides explanations with their unique personality, with text-to
 
 ---
 
+## なぜこのアプリを作ったか / Why We Built This
+
+### 日本語
+
+「AWSの資格勉強、正直つまらない...」
+
+そう感じたことはありませんか？分厚い参考書、単調な問題集、一人で黙々と勉強する孤独感。私たちも同じでした。
+
+だからこそ、**楽しく、飽きずに、続けられる**学習ツールを作りました。4人の個性豊かなAIキャラクターが、あなたの学習パートナーになります。正解しても不正解でも、キャラクターが励ましてくれる。音声で解説を聞けるから、通勤中でも学習できる。
+
+**「勉強」を「会話」に変える。** それがSisters AWS Coachのコンセプトです。
+
+### English
+
+"Studying for AWS certification is honestly boring..."
+
+Have you ever felt that way? Thick textbooks, monotonous practice tests, the loneliness of studying alone. We felt the same.
+
+That's why we built a learning tool that's **fun, engaging, and sustainable**. Four unique AI characters become your learning partners. Whether you answer correctly or incorrectly, they encourage you. Listen to explanations via voice, so you can study even during your commute.
+
+**Turn "studying" into "conversation."** That's the concept behind Sisters AWS Coach.
+
+---
+
+## 誰に向いているか / Who Is This For
+
+### 日本語
+
+- AWS SAA資格を目指しているが、勉強が続かない人
+- 一人で勉強するのが苦手な人
+- 参考書を読むより、対話形式で学びたい人
+- 通勤時間や隙間時間を活用したい人
+- 英語でも日本語でも学習したい人
+
+### English
+
+- Anyone preparing for AWS SAA who struggles to keep studying
+- Those who find it hard to study alone
+- People who prefer interactive learning over reading textbooks
+- Those who want to utilize commute time or spare moments
+- Anyone who wants to learn in both English and Japanese
+
+---
+
+## AWSで作る、AWSの学習ツール / Built on AWS, For AWS
+
+### 日本語
+
+このアプリは、**AWS自体を活用して構築**されています。AWSを学びながら、AWSの技術に触れる。それがこのプロジェクトの特徴です。
+
+| 使用しているAWSサービス | 用途 |
+|------------------------|------|
+| **Amazon Bedrock** | Claude AIによる問題生成・解説 |
+| **Bedrock Knowledge Base** | RAGによる最新AWS情報の取得 |
+
+AWSの資格を取るなら、AWSで動くアプリで学ぶ。これ以上の説得力はありません。
+
+### English
+
+This app is **built using AWS itself**. Learn AWS while experiencing AWS technology firsthand. That's what makes this project unique.
+
+| AWS Service Used | Purpose |
+|-----------------|---------|
+| **Amazon Bedrock** | Question generation & explanations via Claude AI |
+| **Bedrock Knowledge Base** | RAG for up-to-date AWS information |
+
+If you're getting AWS certified, learn with an app that runs on AWS. There's no better proof of concept.
+
+---
+
 ## キャラクター / Characters
 
 | Character | Emoji | Style |
