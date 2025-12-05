@@ -778,16 +778,15 @@ def render_stats():
 def main():
     """Main application"""
     init_session_state()
+    render_sidebar()
+
+    t = UI_TEXT[st.session_state.language]
+    lang = st.session_state.language
 
     # Check if showing stats page
     if st.session_state.get("show_stats", False):
         render_stats()
         return
-
-    render_sidebar()
-
-    t = UI_TEXT[st.session_state.language]
-    lang = st.session_state.language
 
     # Main content
     st.title(t["app_title"])
